@@ -1,0 +1,2044 @@
+//
+//Written by GowinSynthesis
+//Product Version "GowinSynthesis V1.9.8.08"
+//Sun Oct 23 07:37:09 2022
+
+//Source file index table:
+//file0 "\D:/Tasks/PocketLab-RTL/src/adc.v"
+//file1 "\D:/Tasks/PocketLab-RTL/src/bram_dac/bram_dac.v"
+//file2 "\D:/Tasks/PocketLab-RTL/src/ccu.v"
+//file3 "\D:/Tasks/PocketLab-RTL/src/clkdiv_adda/clkdiv_adda.v"
+//file4 "\D:/Tasks/PocketLab-RTL/src/dac.v"
+//file5 "\D:/Tasks/PocketLab-RTL/src/fifo_adc/fifo_adc.v"
+//file6 "\D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.v"
+//file7 "\D:/Tasks/PocketLab-RTL/src/fifo_spi_send/fifo_spi_send.v"
+//file8 "\D:/Tasks/PocketLab-RTL/src/main.v"
+//file9 "\D:/Tasks/PocketLab-RTL/src/pll_main/pll_main.v"
+//file10 "\D:/Tasks/PocketLab-RTL/src/spi_recv.v"
+//file11 "\D:/Tasks/PocketLab-RTL/src/spi_send.v"
+`timescale 100 ps/100 ps
+module pll_main (
+  osc_27m_d,
+  n4_6,
+  sys_clk,
+  sys_resetn
+)
+;
+input osc_27m_d;
+input n4_6;
+output sys_clk;
+output sys_resetn;
+wire clkoutp_o;
+wire clkoutd_o;
+wire clkoutd3_o;
+wire VCC;
+wire GND;
+  rPLL rpll_inst (
+    .CLKOUT(sys_clk),
+    .CLKOUTP(clkoutp_o),
+    .CLKOUTD(clkoutd_o),
+    .CLKOUTD3(clkoutd3_o),
+    .LOCK(sys_resetn),
+    .CLKIN(osc_27m_d),
+    .CLKFB(GND),
+    .FBDSEL({GND,GND,GND,GND,GND,GND}),
+    .IDSEL({GND,GND,GND,GND,GND,GND}),
+    .ODSEL({GND,GND,GND,GND,GND,GND}),
+    .DUTYDA({GND,GND,GND,GND}),
+    .PSDA({GND,GND,GND,GND}),
+    .FDLY({GND,GND,GND,GND}),
+    .RESET(n4_6),
+    .RESET_P(GND) 
+);
+defparam rpll_inst.CLKFB_SEL="internal";
+defparam rpll_inst.CLKOUTD3_SRC="CLKOUT";
+defparam rpll_inst.CLKOUTD_BYPASS="false";
+defparam rpll_inst.CLKOUTD_SRC="CLKOUT";
+defparam rpll_inst.CLKOUTP_BYPASS="false";
+defparam rpll_inst.CLKOUTP_DLY_STEP=0;
+defparam rpll_inst.CLKOUTP_FT_DIR=1'b1;
+defparam rpll_inst.CLKOUT_BYPASS="false";
+defparam rpll_inst.CLKOUT_DLY_STEP=0;
+defparam rpll_inst.CLKOUT_FT_DIR=1'b1;
+defparam rpll_inst.DEVICE="GW2A-18C";
+defparam rpll_inst.DUTYDA_SEL="1000";
+defparam rpll_inst.DYN_DA_EN="false";
+defparam rpll_inst.DYN_FBDIV_SEL="false";
+defparam rpll_inst.DYN_IDIV_SEL="false";
+defparam rpll_inst.DYN_ODIV_SEL="false";
+defparam rpll_inst.DYN_SDIV_SEL=2;
+defparam rpll_inst.FBDIV_SEL=12;
+defparam rpll_inst.FCLKIN="27";
+defparam rpll_inst.IDIV_SEL=6;
+defparam rpll_inst.ODIV_SEL=16;
+defparam rpll_inst.PSDA_SEL="0000";
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+endmodule /* pll_main */
+module clkdiv_adda (
+  sys_clk,
+  sys_resetn,
+  adda_clk
+)
+;
+input sys_clk;
+input sys_resetn;
+output adda_clk;
+wire VCC;
+wire GND;
+  CLKDIV clkdiv_inst (
+    .CLKOUT(adda_clk),
+    .CALIB(GND),
+    .HCLKIN(sys_clk),
+    .RESETN(sys_resetn) 
+);
+defparam clkdiv_inst.DIV_MODE="2";
+defparam clkdiv_inst.GSREN="false";
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+endmodule /* clkdiv_adda */
+module bram_dac (
+  n4_6,
+  n6_6,
+  buffer_rd_dv,
+  n88_6,
+  buffer_rd_addr,
+  dac_data_d
+)
+;
+input n4_6;
+input n6_6;
+input buffer_rd_dv;
+input n88_6;
+input [15:0] buffer_rd_addr;
+output [7:0] dac_data_d;
+wire dff_q_0;
+wire dff_q_1;
+wire dff_q_2;
+wire dff_q_3;
+wire mux_o_0;
+wire mux_o_1;
+wire mux_o_3;
+wire mux_o_4;
+wire mux_o_6;
+wire mux_o_7;
+wire mux_o_9;
+wire mux_o_10;
+wire mux_o_12;
+wire mux_o_13;
+wire mux_o_15;
+wire mux_o_16;
+wire mux_o_18;
+wire mux_o_19;
+wire mux_o_21;
+wire mux_o_22;
+wire [0:0] sdpb_inst_0_dout;
+wire [0:0] sdpb_inst_1_dout;
+wire [0:0] sdpb_inst_2_dout;
+wire [0:0] sdpb_inst_3_dout;
+wire [1:1] sdpb_inst_4_dout;
+wire [1:1] sdpb_inst_5_dout;
+wire [1:1] sdpb_inst_6_dout;
+wire [1:1] sdpb_inst_7_dout;
+wire [2:2] sdpb_inst_8_dout;
+wire [2:2] sdpb_inst_9_dout;
+wire [2:2] sdpb_inst_10_dout;
+wire [2:2] sdpb_inst_11_dout;
+wire [3:3] sdpb_inst_12_dout;
+wire [3:3] sdpb_inst_13_dout;
+wire [3:3] sdpb_inst_14_dout;
+wire [3:3] sdpb_inst_15_dout;
+wire [4:4] sdpb_inst_16_dout;
+wire [4:4] sdpb_inst_17_dout;
+wire [4:4] sdpb_inst_18_dout;
+wire [4:4] sdpb_inst_19_dout;
+wire [5:5] sdpb_inst_20_dout;
+wire [5:5] sdpb_inst_21_dout;
+wire [5:5] sdpb_inst_22_dout;
+wire [5:5] sdpb_inst_23_dout;
+wire [6:6] sdpb_inst_24_dout;
+wire [6:6] sdpb_inst_25_dout;
+wire [6:6] sdpb_inst_26_dout;
+wire [6:6] sdpb_inst_27_dout;
+wire [7:7] sdpb_inst_28_dout;
+wire [7:7] sdpb_inst_29_dout;
+wire [7:7] sdpb_inst_30_dout;
+wire [7:7] sdpb_inst_31_dout;
+wire [31:1] DO;
+wire [31:1] DO_0;
+wire [31:1] DO_1;
+wire [31:1] DO_2;
+wire [31:1] DO_3;
+wire [31:1] DO_4;
+wire [31:1] DO_5;
+wire [31:1] DO_6;
+wire [31:1] DO_7;
+wire [31:1] DO_8;
+wire [31:1] DO_9;
+wire [31:1] DO_10;
+wire [31:1] DO_11;
+wire [31:1] DO_12;
+wire [31:1] DO_13;
+wire [31:1] DO_14;
+wire [31:1] DO_15;
+wire [31:1] DO_16;
+wire [31:1] DO_17;
+wire [31:1] DO_18;
+wire [31:1] DO_19;
+wire [31:1] DO_20;
+wire [31:1] DO_21;
+wire [31:1] DO_22;
+wire [31:1] DO_23;
+wire [31:1] DO_24;
+wire [31:1] DO_25;
+wire [31:1] DO_26;
+wire [31:1] DO_27;
+wire [31:1] DO_28;
+wire [31:1] DO_29;
+wire [31:1] DO_30;
+wire VCC;
+wire GND;
+  DFFE dff_inst_0 (
+    .Q(dff_q_0),
+    .D(buffer_rd_addr[15]),
+    .CLK(n6_6),
+    .CE(buffer_rd_dv) 
+);
+  DFFE dff_inst_1 (
+    .Q(dff_q_1),
+    .D(dff_q_0),
+    .CLK(n6_6),
+    .CE(buffer_rd_dv) 
+);
+  DFFE dff_inst_2 (
+    .Q(dff_q_2),
+    .D(buffer_rd_addr[14]),
+    .CLK(n6_6),
+    .CE(buffer_rd_dv) 
+);
+  DFFE dff_inst_3 (
+    .Q(dff_q_3),
+    .D(dff_q_2),
+    .CLK(n6_6),
+    .CE(buffer_rd_dv) 
+);
+  SDPB sdpb_inst_0 (
+    .DO({DO[31:1],sdpb_inst_0_dout[0]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_0.BIT_WIDTH_0=1;
+defparam sdpb_inst_0.BIT_WIDTH_1=1;
+defparam sdpb_inst_0.BLK_SEL_0=3'b000;
+defparam sdpb_inst_0.BLK_SEL_1=3'b000;
+defparam sdpb_inst_0.READ_MODE=1'b1;
+defparam sdpb_inst_0.RESET_MODE="SYNC";
+  SDPB sdpb_inst_1 (
+    .DO({DO_0[31:1],sdpb_inst_1_dout[0]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_1.BIT_WIDTH_0=1;
+defparam sdpb_inst_1.BIT_WIDTH_1=1;
+defparam sdpb_inst_1.BLK_SEL_0=3'b001;
+defparam sdpb_inst_1.BLK_SEL_1=3'b001;
+defparam sdpb_inst_1.READ_MODE=1'b1;
+defparam sdpb_inst_1.RESET_MODE="SYNC";
+  SDPB sdpb_inst_2 (
+    .DO({DO_1[31:1],sdpb_inst_2_dout[0]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_2.BIT_WIDTH_0=1;
+defparam sdpb_inst_2.BIT_WIDTH_1=1;
+defparam sdpb_inst_2.BLK_SEL_0=3'b010;
+defparam sdpb_inst_2.BLK_SEL_1=3'b010;
+defparam sdpb_inst_2.READ_MODE=1'b1;
+defparam sdpb_inst_2.RESET_MODE="SYNC";
+  SDPB sdpb_inst_3 (
+    .DO({DO_2[31:1],sdpb_inst_3_dout[0]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_3.BIT_WIDTH_0=1;
+defparam sdpb_inst_3.BIT_WIDTH_1=1;
+defparam sdpb_inst_3.BLK_SEL_0=3'b011;
+defparam sdpb_inst_3.BLK_SEL_1=3'b011;
+defparam sdpb_inst_3.READ_MODE=1'b1;
+defparam sdpb_inst_3.RESET_MODE="SYNC";
+  SDPB sdpb_inst_4 (
+    .DO({DO_3[31:1],sdpb_inst_4_dout[1]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_4.BIT_WIDTH_0=1;
+defparam sdpb_inst_4.BIT_WIDTH_1=1;
+defparam sdpb_inst_4.BLK_SEL_0=3'b000;
+defparam sdpb_inst_4.BLK_SEL_1=3'b000;
+defparam sdpb_inst_4.READ_MODE=1'b1;
+defparam sdpb_inst_4.RESET_MODE="SYNC";
+  SDPB sdpb_inst_5 (
+    .DO({DO_4[31:1],sdpb_inst_5_dout[1]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_5.BIT_WIDTH_0=1;
+defparam sdpb_inst_5.BIT_WIDTH_1=1;
+defparam sdpb_inst_5.BLK_SEL_0=3'b001;
+defparam sdpb_inst_5.BLK_SEL_1=3'b001;
+defparam sdpb_inst_5.READ_MODE=1'b1;
+defparam sdpb_inst_5.RESET_MODE="SYNC";
+  SDPB sdpb_inst_6 (
+    .DO({DO_5[31:1],sdpb_inst_6_dout[1]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_6.BIT_WIDTH_0=1;
+defparam sdpb_inst_6.BIT_WIDTH_1=1;
+defparam sdpb_inst_6.BLK_SEL_0=3'b010;
+defparam sdpb_inst_6.BLK_SEL_1=3'b010;
+defparam sdpb_inst_6.READ_MODE=1'b1;
+defparam sdpb_inst_6.RESET_MODE="SYNC";
+  SDPB sdpb_inst_7 (
+    .DO({DO_6[31:1],sdpb_inst_7_dout[1]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_7.BIT_WIDTH_0=1;
+defparam sdpb_inst_7.BIT_WIDTH_1=1;
+defparam sdpb_inst_7.BLK_SEL_0=3'b011;
+defparam sdpb_inst_7.BLK_SEL_1=3'b011;
+defparam sdpb_inst_7.READ_MODE=1'b1;
+defparam sdpb_inst_7.RESET_MODE="SYNC";
+  SDPB sdpb_inst_8 (
+    .DO({DO_7[31:1],sdpb_inst_8_dout[2]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_8.BIT_WIDTH_0=1;
+defparam sdpb_inst_8.BIT_WIDTH_1=1;
+defparam sdpb_inst_8.BLK_SEL_0=3'b000;
+defparam sdpb_inst_8.BLK_SEL_1=3'b000;
+defparam sdpb_inst_8.READ_MODE=1'b1;
+defparam sdpb_inst_8.RESET_MODE="SYNC";
+  SDPB sdpb_inst_9 (
+    .DO({DO_8[31:1],sdpb_inst_9_dout[2]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_9.BIT_WIDTH_0=1;
+defparam sdpb_inst_9.BIT_WIDTH_1=1;
+defparam sdpb_inst_9.BLK_SEL_0=3'b001;
+defparam sdpb_inst_9.BLK_SEL_1=3'b001;
+defparam sdpb_inst_9.READ_MODE=1'b1;
+defparam sdpb_inst_9.RESET_MODE="SYNC";
+  SDPB sdpb_inst_10 (
+    .DO({DO_9[31:1],sdpb_inst_10_dout[2]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_10.BIT_WIDTH_0=1;
+defparam sdpb_inst_10.BIT_WIDTH_1=1;
+defparam sdpb_inst_10.BLK_SEL_0=3'b010;
+defparam sdpb_inst_10.BLK_SEL_1=3'b010;
+defparam sdpb_inst_10.READ_MODE=1'b1;
+defparam sdpb_inst_10.RESET_MODE="SYNC";
+  SDPB sdpb_inst_11 (
+    .DO({DO_10[31:1],sdpb_inst_11_dout[2]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_11.BIT_WIDTH_0=1;
+defparam sdpb_inst_11.BIT_WIDTH_1=1;
+defparam sdpb_inst_11.BLK_SEL_0=3'b011;
+defparam sdpb_inst_11.BLK_SEL_1=3'b011;
+defparam sdpb_inst_11.READ_MODE=1'b1;
+defparam sdpb_inst_11.RESET_MODE="SYNC";
+  SDPB sdpb_inst_12 (
+    .DO({DO_11[31:1],sdpb_inst_12_dout[3]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_12.BIT_WIDTH_0=1;
+defparam sdpb_inst_12.BIT_WIDTH_1=1;
+defparam sdpb_inst_12.BLK_SEL_0=3'b000;
+defparam sdpb_inst_12.BLK_SEL_1=3'b000;
+defparam sdpb_inst_12.READ_MODE=1'b1;
+defparam sdpb_inst_12.RESET_MODE="SYNC";
+  SDPB sdpb_inst_13 (
+    .DO({DO_12[31:1],sdpb_inst_13_dout[3]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_13.BIT_WIDTH_0=1;
+defparam sdpb_inst_13.BIT_WIDTH_1=1;
+defparam sdpb_inst_13.BLK_SEL_0=3'b001;
+defparam sdpb_inst_13.BLK_SEL_1=3'b001;
+defparam sdpb_inst_13.READ_MODE=1'b1;
+defparam sdpb_inst_13.RESET_MODE="SYNC";
+  SDPB sdpb_inst_14 (
+    .DO({DO_13[31:1],sdpb_inst_14_dout[3]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_14.BIT_WIDTH_0=1;
+defparam sdpb_inst_14.BIT_WIDTH_1=1;
+defparam sdpb_inst_14.BLK_SEL_0=3'b010;
+defparam sdpb_inst_14.BLK_SEL_1=3'b010;
+defparam sdpb_inst_14.READ_MODE=1'b1;
+defparam sdpb_inst_14.RESET_MODE="SYNC";
+  SDPB sdpb_inst_15 (
+    .DO({DO_14[31:1],sdpb_inst_15_dout[3]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_15.BIT_WIDTH_0=1;
+defparam sdpb_inst_15.BIT_WIDTH_1=1;
+defparam sdpb_inst_15.BLK_SEL_0=3'b011;
+defparam sdpb_inst_15.BLK_SEL_1=3'b011;
+defparam sdpb_inst_15.READ_MODE=1'b1;
+defparam sdpb_inst_15.RESET_MODE="SYNC";
+  SDPB sdpb_inst_16 (
+    .DO({DO_15[31:1],sdpb_inst_16_dout[4]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_16.BIT_WIDTH_0=1;
+defparam sdpb_inst_16.BIT_WIDTH_1=1;
+defparam sdpb_inst_16.BLK_SEL_0=3'b000;
+defparam sdpb_inst_16.BLK_SEL_1=3'b000;
+defparam sdpb_inst_16.READ_MODE=1'b1;
+defparam sdpb_inst_16.RESET_MODE="SYNC";
+  SDPB sdpb_inst_17 (
+    .DO({DO_16[31:1],sdpb_inst_17_dout[4]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_17.BIT_WIDTH_0=1;
+defparam sdpb_inst_17.BIT_WIDTH_1=1;
+defparam sdpb_inst_17.BLK_SEL_0=3'b001;
+defparam sdpb_inst_17.BLK_SEL_1=3'b001;
+defparam sdpb_inst_17.READ_MODE=1'b1;
+defparam sdpb_inst_17.RESET_MODE="SYNC";
+  SDPB sdpb_inst_18 (
+    .DO({DO_17[31:1],sdpb_inst_18_dout[4]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_18.BIT_WIDTH_0=1;
+defparam sdpb_inst_18.BIT_WIDTH_1=1;
+defparam sdpb_inst_18.BLK_SEL_0=3'b010;
+defparam sdpb_inst_18.BLK_SEL_1=3'b010;
+defparam sdpb_inst_18.READ_MODE=1'b1;
+defparam sdpb_inst_18.RESET_MODE="SYNC";
+  SDPB sdpb_inst_19 (
+    .DO({DO_18[31:1],sdpb_inst_19_dout[4]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_19.BIT_WIDTH_0=1;
+defparam sdpb_inst_19.BIT_WIDTH_1=1;
+defparam sdpb_inst_19.BLK_SEL_0=3'b011;
+defparam sdpb_inst_19.BLK_SEL_1=3'b011;
+defparam sdpb_inst_19.READ_MODE=1'b1;
+defparam sdpb_inst_19.RESET_MODE="SYNC";
+  SDPB sdpb_inst_20 (
+    .DO({DO_19[31:1],sdpb_inst_20_dout[5]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_20.BIT_WIDTH_0=1;
+defparam sdpb_inst_20.BIT_WIDTH_1=1;
+defparam sdpb_inst_20.BLK_SEL_0=3'b000;
+defparam sdpb_inst_20.BLK_SEL_1=3'b000;
+defparam sdpb_inst_20.READ_MODE=1'b1;
+defparam sdpb_inst_20.RESET_MODE="SYNC";
+  SDPB sdpb_inst_21 (
+    .DO({DO_20[31:1],sdpb_inst_21_dout[5]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_21.BIT_WIDTH_0=1;
+defparam sdpb_inst_21.BIT_WIDTH_1=1;
+defparam sdpb_inst_21.BLK_SEL_0=3'b001;
+defparam sdpb_inst_21.BLK_SEL_1=3'b001;
+defparam sdpb_inst_21.READ_MODE=1'b1;
+defparam sdpb_inst_21.RESET_MODE="SYNC";
+  SDPB sdpb_inst_22 (
+    .DO({DO_21[31:1],sdpb_inst_22_dout[5]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_22.BIT_WIDTH_0=1;
+defparam sdpb_inst_22.BIT_WIDTH_1=1;
+defparam sdpb_inst_22.BLK_SEL_0=3'b010;
+defparam sdpb_inst_22.BLK_SEL_1=3'b010;
+defparam sdpb_inst_22.READ_MODE=1'b1;
+defparam sdpb_inst_22.RESET_MODE="SYNC";
+  SDPB sdpb_inst_23 (
+    .DO({DO_22[31:1],sdpb_inst_23_dout[5]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_23.BIT_WIDTH_0=1;
+defparam sdpb_inst_23.BIT_WIDTH_1=1;
+defparam sdpb_inst_23.BLK_SEL_0=3'b011;
+defparam sdpb_inst_23.BLK_SEL_1=3'b011;
+defparam sdpb_inst_23.READ_MODE=1'b1;
+defparam sdpb_inst_23.RESET_MODE="SYNC";
+  SDPB sdpb_inst_24 (
+    .DO({DO_23[31:1],sdpb_inst_24_dout[6]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_24.BIT_WIDTH_0=1;
+defparam sdpb_inst_24.BIT_WIDTH_1=1;
+defparam sdpb_inst_24.BLK_SEL_0=3'b000;
+defparam sdpb_inst_24.BLK_SEL_1=3'b000;
+defparam sdpb_inst_24.READ_MODE=1'b1;
+defparam sdpb_inst_24.RESET_MODE="SYNC";
+  SDPB sdpb_inst_25 (
+    .DO({DO_24[31:1],sdpb_inst_25_dout[6]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_25.BIT_WIDTH_0=1;
+defparam sdpb_inst_25.BIT_WIDTH_1=1;
+defparam sdpb_inst_25.BLK_SEL_0=3'b001;
+defparam sdpb_inst_25.BLK_SEL_1=3'b001;
+defparam sdpb_inst_25.READ_MODE=1'b1;
+defparam sdpb_inst_25.RESET_MODE="SYNC";
+  SDPB sdpb_inst_26 (
+    .DO({DO_25[31:1],sdpb_inst_26_dout[6]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_26.BIT_WIDTH_0=1;
+defparam sdpb_inst_26.BIT_WIDTH_1=1;
+defparam sdpb_inst_26.BLK_SEL_0=3'b010;
+defparam sdpb_inst_26.BLK_SEL_1=3'b010;
+defparam sdpb_inst_26.READ_MODE=1'b1;
+defparam sdpb_inst_26.RESET_MODE="SYNC";
+  SDPB sdpb_inst_27 (
+    .DO({DO_26[31:1],sdpb_inst_27_dout[6]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_27.BIT_WIDTH_0=1;
+defparam sdpb_inst_27.BIT_WIDTH_1=1;
+defparam sdpb_inst_27.BLK_SEL_0=3'b011;
+defparam sdpb_inst_27.BLK_SEL_1=3'b011;
+defparam sdpb_inst_27.READ_MODE=1'b1;
+defparam sdpb_inst_27.RESET_MODE="SYNC";
+  SDPB sdpb_inst_28 (
+    .DO({DO_27[31:1],sdpb_inst_28_dout[7]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_28.BIT_WIDTH_0=1;
+defparam sdpb_inst_28.BIT_WIDTH_1=1;
+defparam sdpb_inst_28.BLK_SEL_0=3'b000;
+defparam sdpb_inst_28.BLK_SEL_1=3'b000;
+defparam sdpb_inst_28.READ_MODE=1'b1;
+defparam sdpb_inst_28.RESET_MODE="SYNC";
+  SDPB sdpb_inst_29 (
+    .DO({DO_28[31:1],sdpb_inst_29_dout[7]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_29.BIT_WIDTH_0=1;
+defparam sdpb_inst_29.BIT_WIDTH_1=1;
+defparam sdpb_inst_29.BLK_SEL_0=3'b001;
+defparam sdpb_inst_29.BLK_SEL_1=3'b001;
+defparam sdpb_inst_29.READ_MODE=1'b1;
+defparam sdpb_inst_29.RESET_MODE="SYNC";
+  SDPB sdpb_inst_30 (
+    .DO({DO_29[31:1],sdpb_inst_30_dout[7]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_30.BIT_WIDTH_0=1;
+defparam sdpb_inst_30.BIT_WIDTH_1=1;
+defparam sdpb_inst_30.BLK_SEL_0=3'b010;
+defparam sdpb_inst_30.BLK_SEL_1=3'b010;
+defparam sdpb_inst_30.READ_MODE=1'b1;
+defparam sdpb_inst_30.RESET_MODE="SYNC";
+  SDPB sdpb_inst_31 (
+    .DO({DO_30[31:1],sdpb_inst_31_dout[7]}),
+    .DI({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .BLKSELA({GND,GND,GND}),
+    .BLKSELB({GND,buffer_rd_addr[15:14]}),
+    .ADA({GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND,GND}),
+    .ADB(buffer_rd_addr[13:0]),
+    .CLKA(n4_6),
+    .CLKB(n6_6),
+    .CEA(GND),
+    .CEB(buffer_rd_dv),
+    .OCE(buffer_rd_dv),
+    .RESETA(n88_6),
+    .RESETB(n88_6) 
+);
+defparam sdpb_inst_31.BIT_WIDTH_0=1;
+defparam sdpb_inst_31.BIT_WIDTH_1=1;
+defparam sdpb_inst_31.BLK_SEL_0=3'b011;
+defparam sdpb_inst_31.BLK_SEL_1=3'b011;
+defparam sdpb_inst_31.READ_MODE=1'b1;
+defparam sdpb_inst_31.RESET_MODE="SYNC";
+  MUX2 mux_inst_0 (
+    .O(mux_o_0),
+    .I0(sdpb_inst_0_dout[0]),
+    .I1(sdpb_inst_1_dout[0]),
+    .S0(dff_q_3) 
+);
+  MUX2 mux_inst_1 (
+    .O(mux_o_1),
+    .I0(sdpb_inst_2_dout[0]),
+    .I1(sdpb_inst_3_dout[0]),
+    .S0(dff_q_3) 
+);
+  MUX2 mux_inst_2 (
+    .O(dac_data_d[0]),
+    .I0(mux_o_0),
+    .I1(mux_o_1),
+    .S0(dff_q_1) 
+);
+  MUX2 mux_inst_3 (
+    .O(mux_o_3),
+    .I0(sdpb_inst_4_dout[1]),
+    .I1(sdpb_inst_5_dout[1]),
+    .S0(dff_q_3) 
+);
+  MUX2 mux_inst_4 (
+    .O(mux_o_4),
+    .I0(sdpb_inst_6_dout[1]),
+    .I1(sdpb_inst_7_dout[1]),
+    .S0(dff_q_3) 
+);
+  MUX2 mux_inst_5 (
+    .O(dac_data_d[1]),
+    .I0(mux_o_3),
+    .I1(mux_o_4),
+    .S0(dff_q_1) 
+);
+  MUX2 mux_inst_6 (
+    .O(mux_o_6),
+    .I0(sdpb_inst_8_dout[2]),
+    .I1(sdpb_inst_9_dout[2]),
+    .S0(dff_q_3) 
+);
+  MUX2 mux_inst_7 (
+    .O(mux_o_7),
+    .I0(sdpb_inst_10_dout[2]),
+    .I1(sdpb_inst_11_dout[2]),
+    .S0(dff_q_3) 
+);
+  MUX2 mux_inst_8 (
+    .O(dac_data_d[2]),
+    .I0(mux_o_6),
+    .I1(mux_o_7),
+    .S0(dff_q_1) 
+);
+  MUX2 mux_inst_9 (
+    .O(mux_o_9),
+    .I0(sdpb_inst_12_dout[3]),
+    .I1(sdpb_inst_13_dout[3]),
+    .S0(dff_q_3) 
+);
+  MUX2 mux_inst_10 (
+    .O(mux_o_10),
+    .I0(sdpb_inst_14_dout[3]),
+    .I1(sdpb_inst_15_dout[3]),
+    .S0(dff_q_3) 
+);
+  MUX2 mux_inst_11 (
+    .O(dac_data_d[3]),
+    .I0(mux_o_9),
+    .I1(mux_o_10),
+    .S0(dff_q_1) 
+);
+  MUX2 mux_inst_12 (
+    .O(mux_o_12),
+    .I0(sdpb_inst_16_dout[4]),
+    .I1(sdpb_inst_17_dout[4]),
+    .S0(dff_q_3) 
+);
+  MUX2 mux_inst_13 (
+    .O(mux_o_13),
+    .I0(sdpb_inst_18_dout[4]),
+    .I1(sdpb_inst_19_dout[4]),
+    .S0(dff_q_3) 
+);
+  MUX2 mux_inst_14 (
+    .O(dac_data_d[4]),
+    .I0(mux_o_12),
+    .I1(mux_o_13),
+    .S0(dff_q_1) 
+);
+  MUX2 mux_inst_15 (
+    .O(mux_o_15),
+    .I0(sdpb_inst_20_dout[5]),
+    .I1(sdpb_inst_21_dout[5]),
+    .S0(dff_q_3) 
+);
+  MUX2 mux_inst_16 (
+    .O(mux_o_16),
+    .I0(sdpb_inst_22_dout[5]),
+    .I1(sdpb_inst_23_dout[5]),
+    .S0(dff_q_3) 
+);
+  MUX2 mux_inst_17 (
+    .O(dac_data_d[5]),
+    .I0(mux_o_15),
+    .I1(mux_o_16),
+    .S0(dff_q_1) 
+);
+  MUX2 mux_inst_18 (
+    .O(mux_o_18),
+    .I0(sdpb_inst_24_dout[6]),
+    .I1(sdpb_inst_25_dout[6]),
+    .S0(dff_q_3) 
+);
+  MUX2 mux_inst_19 (
+    .O(mux_o_19),
+    .I0(sdpb_inst_26_dout[6]),
+    .I1(sdpb_inst_27_dout[6]),
+    .S0(dff_q_3) 
+);
+  MUX2 mux_inst_20 (
+    .O(dac_data_d[6]),
+    .I0(mux_o_18),
+    .I1(mux_o_19),
+    .S0(dff_q_1) 
+);
+  MUX2 mux_inst_21 (
+    .O(mux_o_21),
+    .I0(sdpb_inst_28_dout[7]),
+    .I1(sdpb_inst_29_dout[7]),
+    .S0(dff_q_3) 
+);
+  MUX2 mux_inst_22 (
+    .O(mux_o_22),
+    .I0(sdpb_inst_30_dout[7]),
+    .I1(sdpb_inst_31_dout[7]),
+    .S0(dff_q_3) 
+);
+  MUX2 mux_inst_23 (
+    .O(dac_data_d[7]),
+    .I0(mux_o_21),
+    .I1(mux_o_22),
+    .S0(dff_q_1) 
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+endmodule /* bram_dac */
+module dac (
+  sys_clk,
+  sys_resetn,
+  adda_clk,
+  n88_6,
+  dac_data_d
+)
+;
+input sys_clk;
+input sys_resetn;
+input adda_clk;
+output n88_6;
+output [7:0] dac_data_d;
+wire n18_4;
+wire buffer_rd_dv;
+wire n34_1;
+wire n34_2;
+wire n33_1;
+wire n33_2;
+wire n32_1;
+wire n32_2;
+wire n31_1;
+wire n31_2;
+wire n30_1;
+wire n30_2;
+wire n29_1;
+wire n29_2;
+wire n28_1;
+wire n28_2;
+wire n27_1;
+wire n27_2;
+wire n26_1;
+wire n26_2;
+wire n25_1;
+wire n25_2;
+wire n24_1;
+wire n24_2;
+wire n23_1;
+wire n23_2;
+wire n22_1;
+wire n22_2;
+wire n21_1;
+wire n21_2;
+wire n20_1;
+wire n20_0_COUT;
+wire n4_6;
+wire n6_6;
+wire n35_6;
+wire [15:0] buffer_rd_addr;
+wire [0:0] state;
+wire VCC;
+wire GND;
+  LUT2 n18_s0 (
+    .F(n18_4),
+    .I0(sys_resetn),
+    .I1(state[0]) 
+);
+defparam n18_s0.INIT=4'h7;
+  DFFRE buffer_rd_addr_15_s0 (
+    .Q(buffer_rd_addr[15]),
+    .D(n20_1),
+    .CLK(sys_clk),
+    .CE(state[0]),
+    .RESET(n18_4) 
+);
+  DFFRE buffer_rd_addr_14_s0 (
+    .Q(buffer_rd_addr[14]),
+    .D(n21_1),
+    .CLK(sys_clk),
+    .CE(state[0]),
+    .RESET(n18_4) 
+);
+  DFFRE buffer_rd_addr_13_s0 (
+    .Q(buffer_rd_addr[13]),
+    .D(n22_1),
+    .CLK(sys_clk),
+    .CE(state[0]),
+    .RESET(n18_4) 
+);
+  DFFRE buffer_rd_addr_12_s0 (
+    .Q(buffer_rd_addr[12]),
+    .D(n23_1),
+    .CLK(sys_clk),
+    .CE(state[0]),
+    .RESET(n18_4) 
+);
+  DFFRE buffer_rd_addr_11_s0 (
+    .Q(buffer_rd_addr[11]),
+    .D(n24_1),
+    .CLK(sys_clk),
+    .CE(state[0]),
+    .RESET(n18_4) 
+);
+  DFFRE buffer_rd_addr_10_s0 (
+    .Q(buffer_rd_addr[10]),
+    .D(n25_1),
+    .CLK(sys_clk),
+    .CE(state[0]),
+    .RESET(n18_4) 
+);
+  DFFRE buffer_rd_addr_9_s0 (
+    .Q(buffer_rd_addr[9]),
+    .D(n26_1),
+    .CLK(sys_clk),
+    .CE(state[0]),
+    .RESET(n18_4) 
+);
+  DFFRE buffer_rd_addr_8_s0 (
+    .Q(buffer_rd_addr[8]),
+    .D(n27_1),
+    .CLK(sys_clk),
+    .CE(state[0]),
+    .RESET(n18_4) 
+);
+  DFFRE buffer_rd_addr_7_s0 (
+    .Q(buffer_rd_addr[7]),
+    .D(n28_1),
+    .CLK(sys_clk),
+    .CE(state[0]),
+    .RESET(n18_4) 
+);
+  DFFRE buffer_rd_addr_6_s0 (
+    .Q(buffer_rd_addr[6]),
+    .D(n29_1),
+    .CLK(sys_clk),
+    .CE(state[0]),
+    .RESET(n18_4) 
+);
+  DFFRE buffer_rd_addr_5_s0 (
+    .Q(buffer_rd_addr[5]),
+    .D(n30_1),
+    .CLK(sys_clk),
+    .CE(state[0]),
+    .RESET(n18_4) 
+);
+  DFFRE buffer_rd_addr_4_s0 (
+    .Q(buffer_rd_addr[4]),
+    .D(n31_1),
+    .CLK(sys_clk),
+    .CE(state[0]),
+    .RESET(n18_4) 
+);
+  DFFRE buffer_rd_addr_3_s0 (
+    .Q(buffer_rd_addr[3]),
+    .D(n32_1),
+    .CLK(sys_clk),
+    .CE(state[0]),
+    .RESET(n18_4) 
+);
+  DFFRE buffer_rd_addr_2_s0 (
+    .Q(buffer_rd_addr[2]),
+    .D(n33_1),
+    .CLK(sys_clk),
+    .CE(state[0]),
+    .RESET(n18_4) 
+);
+  DFFRE buffer_rd_addr_1_s0 (
+    .Q(buffer_rd_addr[1]),
+    .D(n34_1),
+    .CLK(sys_clk),
+    .CE(state[0]),
+    .RESET(n18_4) 
+);
+  DFFRE buffer_rd_addr_0_s0 (
+    .Q(buffer_rd_addr[0]),
+    .D(n35_6),
+    .CLK(sys_clk),
+    .CE(state[0]),
+    .RESET(n18_4) 
+);
+  DFFR state_0_s0 (
+    .Q(state[0]),
+    .D(VCC),
+    .CLK(sys_clk),
+    .RESET(n88_6) 
+);
+  DFFR buffer_rd_dv_s0 (
+    .Q(buffer_rd_dv),
+    .D(state[0]),
+    .CLK(sys_clk),
+    .RESET(n18_4) 
+);
+  ALU n34_s (
+    .SUM(n34_1),
+    .COUT(n34_2),
+    .I0(buffer_rd_addr[1]),
+    .I1(buffer_rd_addr[0]),
+    .I3(GND),
+    .CIN(GND) 
+);
+defparam n34_s.ALU_MODE=0;
+  ALU n33_s (
+    .SUM(n33_1),
+    .COUT(n33_2),
+    .I0(buffer_rd_addr[2]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n34_2) 
+);
+defparam n33_s.ALU_MODE=0;
+  ALU n32_s (
+    .SUM(n32_1),
+    .COUT(n32_2),
+    .I0(buffer_rd_addr[3]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n33_2) 
+);
+defparam n32_s.ALU_MODE=0;
+  ALU n31_s (
+    .SUM(n31_1),
+    .COUT(n31_2),
+    .I0(buffer_rd_addr[4]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n32_2) 
+);
+defparam n31_s.ALU_MODE=0;
+  ALU n30_s (
+    .SUM(n30_1),
+    .COUT(n30_2),
+    .I0(buffer_rd_addr[5]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n31_2) 
+);
+defparam n30_s.ALU_MODE=0;
+  ALU n29_s (
+    .SUM(n29_1),
+    .COUT(n29_2),
+    .I0(buffer_rd_addr[6]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n30_2) 
+);
+defparam n29_s.ALU_MODE=0;
+  ALU n28_s (
+    .SUM(n28_1),
+    .COUT(n28_2),
+    .I0(buffer_rd_addr[7]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n29_2) 
+);
+defparam n28_s.ALU_MODE=0;
+  ALU n27_s (
+    .SUM(n27_1),
+    .COUT(n27_2),
+    .I0(buffer_rd_addr[8]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n28_2) 
+);
+defparam n27_s.ALU_MODE=0;
+  ALU n26_s (
+    .SUM(n26_1),
+    .COUT(n26_2),
+    .I0(buffer_rd_addr[9]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n27_2) 
+);
+defparam n26_s.ALU_MODE=0;
+  ALU n25_s (
+    .SUM(n25_1),
+    .COUT(n25_2),
+    .I0(buffer_rd_addr[10]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n26_2) 
+);
+defparam n25_s.ALU_MODE=0;
+  ALU n24_s (
+    .SUM(n24_1),
+    .COUT(n24_2),
+    .I0(buffer_rd_addr[11]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n25_2) 
+);
+defparam n24_s.ALU_MODE=0;
+  ALU n23_s (
+    .SUM(n23_1),
+    .COUT(n23_2),
+    .I0(buffer_rd_addr[12]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n24_2) 
+);
+defparam n23_s.ALU_MODE=0;
+  ALU n22_s (
+    .SUM(n22_1),
+    .COUT(n22_2),
+    .I0(buffer_rd_addr[13]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n23_2) 
+);
+defparam n22_s.ALU_MODE=0;
+  ALU n21_s (
+    .SUM(n21_1),
+    .COUT(n21_2),
+    .I0(buffer_rd_addr[14]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n22_2) 
+);
+defparam n21_s.ALU_MODE=0;
+  ALU n20_s (
+    .SUM(n20_1),
+    .COUT(n20_0_COUT),
+    .I0(buffer_rd_addr[15]),
+    .I1(GND),
+    .I3(GND),
+    .CIN(n21_2) 
+);
+defparam n20_s.ALU_MODE=0;
+  INV n4_s2 (
+    .O(n4_6),
+    .I(sys_clk) 
+);
+  INV n88_s2 (
+    .O(n88_6),
+    .I(sys_resetn) 
+);
+  INV n6_s2 (
+    .O(n6_6),
+    .I(adda_clk) 
+);
+  INV n35_s2 (
+    .O(n35_6),
+    .I(buffer_rd_addr[0]) 
+);
+  bram_dac bram_dac_inst (
+    .n4_6(n4_6),
+    .n6_6(n6_6),
+    .buffer_rd_dv(buffer_rd_dv),
+    .n88_6(n88_6),
+    .buffer_rd_addr(buffer_rd_addr[15:0]),
+    .dac_data_d(dac_data_d[7:0])
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+endmodule /* dac */
+`pragma protect begin_protected
+`pragma protect version="2.1"
+`pragma protect author="default"
+`pragma protect author_info="default"
+`pragma protect encrypt_agent="GOWIN"
+`pragma protect encrypt_agent_info="GOWIN Encrypt Version 2.1"
+
+`pragma protect encoding=(enctype="base64", line_length=76, bytes=256)
+`pragma protect key_keyowner="GOWIN",key_keyname="GWK2021-10",key_method="rsa"
+`pragma protect key_block
+omlC1sWbDxtSi3satuKtZk0EnSjtAemBpfGAver8XgoETpihSsjbfy+lk2ex8QWDc8zVknfez8K0
+WMy+KTl/N0Iw69U2MmGS11fIEQ6oFNlrQGzx1zPHdGER28+mCcbzetzEzHMUgylLn0YFtLBOuYv9
+8i4hRMjGgLu8f7DGlz7Yw0WopweCXLkcTZIOUyWu5EqF1ngZqVrHavzMXwUPrDjwDcky96ARUhRJ
+GYyXu5u5KIVTqmJlg0GwT6Q5sYPSLOGalpRhdujyj3oRT+W63LwaS8HzNR2IM542z2ynTxJDQRXk
+IrYbOepYArfe/5Gy7ISZBFjwaHqjBIeU3eJWSA==
+
+`pragma protect encoding=(enctype="base64", line_length=76, bytes=24000)
+`pragma protect data_keyowner="default-ip-vendor"
+`pragma protect data_keyname="default-ip-key"
+`pragma protect data_method="aes128-cbc"
+`pragma protect data_block
+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
+/kZy
+`pragma protect end_protected
+module fifo_spi_send (
+  spi_cs_d,
+  spi_clk_d,
+  sys_clk,
+  n88_6,
+  spi_miso_d
+)
+;
+input spi_cs_d;
+input spi_clk_d;
+input sys_clk;
+input n88_6;
+output spi_miso_d;
+wire VCC;
+wire GND;
+  \~fifo.fifo_spi_send  fifo_inst (
+    .spi_cs_d(spi_cs_d),
+    .spi_clk_d(spi_clk_d),
+    .sys_clk(sys_clk),
+    .n88_6(n88_6),
+    .spi_miso_d(spi_miso_d)
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+endmodule /* fifo_spi_send */
+module spi_send (
+  spi_cs_d,
+  spi_clk_d,
+  sys_clk,
+  n88_6,
+  spi_miso_d
+)
+;
+input spi_cs_d;
+input spi_clk_d;
+input sys_clk;
+input n88_6;
+output spi_miso_d;
+wire VCC;
+wire GND;
+  fifo_spi_send fifo_spi_send_inst (
+    .spi_cs_d(spi_cs_d),
+    .spi_clk_d(spi_clk_d),
+    .sys_clk(sys_clk),
+    .n88_6(n88_6),
+    .spi_miso_d(spi_miso_d)
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+endmodule /* spi_send */
+module main (
+  rst_key,
+  osc_27m,
+  adc_clk,
+  adc_data,
+  dac_clk,
+  dac_data,
+  spi_clk,
+  spi_mosi,
+  spi_miso,
+  spi_cs,
+  triggers
+)
+;
+input rst_key;
+input osc_27m;
+output adc_clk;
+input [7:0] adc_data;
+output dac_clk;
+output [7:0] dac_data;
+input spi_clk;
+input spi_mosi;
+output spi_miso;
+input spi_cs;
+input [1:0] triggers;
+wire rst_key_d;
+wire osc_27m_d;
+wire spi_clk_d;
+wire spi_cs_d;
+wire n4_6;
+wire sys_clk;
+wire sys_resetn;
+wire adda_clk;
+wire n88_6;
+wire spi_miso_d;
+wire [7:0] dac_data_d;
+wire VCC;
+wire GND;
+  IBUF rst_key_ibuf (
+    .O(rst_key_d),
+    .I(rst_key) 
+);
+  IBUF osc_27m_ibuf (
+    .O(osc_27m_d),
+    .I(osc_27m) 
+);
+  IBUF spi_clk_ibuf (
+    .O(spi_clk_d),
+    .I(spi_clk) 
+);
+  IBUF spi_cs_ibuf (
+    .O(spi_cs_d),
+    .I(spi_cs) 
+);
+  TBUF adc_clk_s0 (
+    .O(adc_clk),
+    .I(GND),
+    .OEN(VCC) 
+);
+  TBUF dac_clk_s0 (
+    .O(dac_clk),
+    .I(GND),
+    .OEN(VCC) 
+);
+  OBUF dac_data_0_obuf (
+    .O(dac_data[0]),
+    .I(dac_data_d[0]) 
+);
+  OBUF dac_data_1_obuf (
+    .O(dac_data[1]),
+    .I(dac_data_d[1]) 
+);
+  OBUF dac_data_2_obuf (
+    .O(dac_data[2]),
+    .I(dac_data_d[2]) 
+);
+  OBUF dac_data_3_obuf (
+    .O(dac_data[3]),
+    .I(dac_data_d[3]) 
+);
+  OBUF dac_data_4_obuf (
+    .O(dac_data[4]),
+    .I(dac_data_d[4]) 
+);
+  OBUF dac_data_5_obuf (
+    .O(dac_data[5]),
+    .I(dac_data_d[5]) 
+);
+  OBUF dac_data_6_obuf (
+    .O(dac_data[6]),
+    .I(dac_data_d[6]) 
+);
+  OBUF dac_data_7_obuf (
+    .O(dac_data[7]),
+    .I(dac_data_d[7]) 
+);
+  OBUF spi_miso_obuf (
+    .O(spi_miso),
+    .I(spi_miso_d) 
+);
+  INV n4_s2 (
+    .O(n4_6),
+    .I(rst_key_d) 
+);
+  pll_main pll_main_inst (
+    .osc_27m_d(osc_27m_d),
+    .n4_6(n4_6),
+    .sys_clk(sys_clk),
+    .sys_resetn(sys_resetn)
+);
+  clkdiv_adda clkdiv_adda_inst (
+    .sys_clk(sys_clk),
+    .sys_resetn(sys_resetn),
+    .adda_clk(adda_clk)
+);
+  dac dac_inst (
+    .sys_clk(sys_clk),
+    .sys_resetn(sys_resetn),
+    .adda_clk(adda_clk),
+    .n88_6(n88_6),
+    .dac_data_d(dac_data_d[7:0])
+);
+  spi_send spi_send_inst (
+    .spi_cs_d(spi_cs_d),
+    .spi_clk_d(spi_clk_d),
+    .sys_clk(sys_clk),
+    .n88_6(n88_6),
+    .spi_miso_d(spi_miso_d)
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+  GSR GSR (
+    .GSRI(VCC) 
+);
+endmodule /* main */

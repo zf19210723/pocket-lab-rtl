@@ -1,123 +1,157 @@
 GowinSynthesis start
 Running parser ...
 Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\adc.v'
-Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\dac.v'
-Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\main.v'
-Undeclared symbol 'adda_clk', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":35)
-Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\spi_recv.v'
-Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\spi_recv_pu.v'
-Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\spi_send.v'
-Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\spi_slave.v'
-Undeclared symbol 'axis_valid', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\spi_slave.v":65)
-Undeclared symbol 'axis_ready', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\spi_slave.v":66)
-Undeclared symbol 'axis_data', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\spi_slave.v":67)
-Undeclared symbol 'axis_last', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\spi_slave.v":68)
 Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\bram_dac\bram_dac.v'
+Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\ccu.v'
+Undeclared symbol 'spi_recv_axis_tready', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\ccu.v":37)
 Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\clkdiv_adda\clkdiv_adda.v'
+Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\dac.v'
 Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\fifo_adc\fifo_adc.v'
 Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\fifo_spi_recv\fifo_spi_recv.v'
-Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\fifo_spi_rx_buffer\fifo_spi_rx_buffer.v'
 Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\fifo_spi_send\fifo_spi_send.v'
+Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\main.v'
+Undeclared symbol 'adda_clk', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":35)
+Undeclared symbol 'adc_axis_valid', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":49)
+Undeclared symbol 'adc_axis_ready', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":50)
+Undeclared symbol 'adc_axis_data', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":51)
+Undeclared symbol 'adc_axis_last', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":52)
+Undeclared symbol 'dac_axi_awaddr', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":64)
+Undeclared symbol 'dac_axi_awvalid', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":65)
+Undeclared symbol 'dac_axi_awready', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":66)
+Undeclared symbol 'dac_axi_wdata', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":68)
+Undeclared symbol 'dac_axi_wvalid', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":69)
+Undeclared symbol 'dac_axi_wready', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":70)
+Undeclared symbol 'dac_axi_wlast', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":71)
+Undeclared symbol 'dac_axi_bresp', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":73)
+Undeclared symbol 'dac_axi_bvalid', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":74)
+Undeclared symbol 'dac_axi_bready', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":75)
+Undeclared symbol 'spi_recv_axis_valid', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":88)
+Undeclared symbol 'spi_recv_axis_ready', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":89)
+Undeclared symbol 'spi_recv_axis_data', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":90)
+Undeclared symbol 'spi_recv_axis_last', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":91)
+Undeclared symbol 'spi_send_axis_valid', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":104)
+Undeclared symbol 'spi_send_axis_ready', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":105)
+Undeclared symbol 'spi_send_axis_data', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":106)
+Undeclared symbol 'spi_send_axis_last', assumed default net type 'wire'("D:\Tasks\PocketLab-RTL\src\main.v":107)
 Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\pll_main\pll_main.v'
-Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_crc32.v'
-Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v'
-Analyzing included file 'C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_define.v'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":326)
-Back to file 'C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":326)
-Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v'
-Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v'
-Analyzing included file 'C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_define.v'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":2734)
-Back to file 'C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":2734)
-Analyzing included file 'D:\Tasks\PocketLab-RTL\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_top_define.v'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":2734)
-Back to file 'C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":2734)
-Analyzing included file 'D:\Tasks\PocketLab-RTL\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_expression.v'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":2734)
-Back to file 'C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":2734)
-Analyzing included file 'D:\Tasks\PocketLab-RTL\impl\gwsynthesis\RTL_GAO\ao_0\gw_ao_parameter.v'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":2734)
-Back to file 'C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":2734)
-Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v'
-Analyzing included file 'D:\Tasks\PocketLab-RTL\impl\gwsynthesis\RTL_GAO\ao_control\gw_con_top_define.v'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v":377)
-Back to file 'C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v":377)
-Analyzing included file 'D:\Tasks\PocketLab-RTL\impl\gwsynthesis\RTL_GAO\ao_control\gw_con_parameter.v'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v":377)
-Back to file 'C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v":377)
-Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\gw_jtag.v'
-Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\impl\gwsynthesis\RTL_GAO\gw_gao_top.v'
-ERROR (EX3805) : Concurrent assignment to a non-net 'fifo_rx_dv' is not permitted("D:\Tasks\PocketLab-RTL\src\spi_recv_pu.v":27)
-ERROR (EX3990) : Cannot find port 'axi_awaddr' on this module("D:\Tasks\PocketLab-RTL\src\spi_slave.v":41)
-'spi_recv' is declared here("D:\Tasks\PocketLab-RTL\src\spi_recv.v":1)
-ERROR (EX3990) : Cannot find port 'axi_awvalid' on this module("D:\Tasks\PocketLab-RTL\src\spi_slave.v":42)
-'spi_recv' is declared here("D:\Tasks\PocketLab-RTL\src\spi_recv.v":1)
-ERROR (EX3990) : Cannot find port 'axi_awready' on this module("D:\Tasks\PocketLab-RTL\src\spi_slave.v":43)
-'spi_recv' is declared here("D:\Tasks\PocketLab-RTL\src\spi_recv.v":1)
-ERROR (EX3990) : Cannot find port 'axi_wdata' on this module("D:\Tasks\PocketLab-RTL\src\spi_slave.v":45)
-'spi_recv' is declared here("D:\Tasks\PocketLab-RTL\src\spi_recv.v":1)
-ERROR (EX3990) : Cannot find port 'axi_wvalid' on this module("D:\Tasks\PocketLab-RTL\src\spi_slave.v":46)
-'spi_recv' is declared here("D:\Tasks\PocketLab-RTL\src\spi_recv.v":1)
-ERROR (EX3990) : Cannot find port 'axi_wready' on this module("D:\Tasks\PocketLab-RTL\src\spi_slave.v":47)
-'spi_recv' is declared here("D:\Tasks\PocketLab-RTL\src\spi_recv.v":1)
-ERROR (EX3990) : Cannot find port 'axi_wlast' on this module("D:\Tasks\PocketLab-RTL\src\spi_slave.v":48)
-'spi_recv' is declared here("D:\Tasks\PocketLab-RTL\src\spi_recv.v":1)
-ERROR (EX3990) : Cannot find port 'axi_bresp' on this module("D:\Tasks\PocketLab-RTL\src\spi_slave.v":50)
-'spi_recv' is declared here("D:\Tasks\PocketLab-RTL\src\spi_recv.v":1)
-ERROR (EX3990) : Cannot find port 'axi_bvalid' on this module("D:\Tasks\PocketLab-RTL\src\spi_slave.v":51)
-'spi_recv' is declared here("D:\Tasks\PocketLab-RTL\src\spi_recv.v":1)
-ERROR (EX3990) : Cannot find port 'axi_bready' on this module("D:\Tasks\PocketLab-RTL\src\spi_slave.v":52)
-'spi_recv' is declared here("D:\Tasks\PocketLab-RTL\src\spi_recv.v":1)
-WARN  (EX2565) : Port 'axis_tvalid' is not connected on this instance("D:\Tasks\PocketLab-RTL\src\spi_slave.v":53)
-WARN  (EX3073) : Port 'axis_tready' remains unconnected for this instance("D:\Tasks\PocketLab-RTL\src\spi_slave.v":53)
-WARN  (EX2565) : Port 'axis_tdata' is not connected on this instance("D:\Tasks\PocketLab-RTL\src\spi_slave.v":53)
-WARN  (EX2565) : Port 'axis_tlast' is not connected on this instance("D:\Tasks\PocketLab-RTL\src\spi_slave.v":53)
-ERROR (EX3805) : Concurrent assignment to a non-net 'spi_miso' is not permitted("D:\Tasks\PocketLab-RTL\src\spi_slave.v":61)
-ERROR (EX3990) : Cannot find port 'axis_tvalid' on this module("D:\Tasks\PocketLab-RTL\src\spi_slave.v":65)
-'spi_send' is declared here("D:\Tasks\PocketLab-RTL\src\spi_send.v":1)
-ERROR (EX3990) : Cannot find port 'axis_tready' on this module("D:\Tasks\PocketLab-RTL\src\spi_slave.v":66)
-'spi_send' is declared here("D:\Tasks\PocketLab-RTL\src\spi_send.v":1)
-ERROR (EX3990) : Cannot find port 'axis_tdata' on this module("D:\Tasks\PocketLab-RTL\src\spi_slave.v":67)
-'spi_send' is declared here("D:\Tasks\PocketLab-RTL\src\spi_send.v":1)
-ERROR (EX3990) : Cannot find port 'axis_tlast' on this module("D:\Tasks\PocketLab-RTL\src\spi_slave.v":68)
-'spi_send' is declared here("D:\Tasks\PocketLab-RTL\src\spi_send.v":1)
-WARN  (EX3073) : Port 'axi_awaddr' remains unconnected for this instance("D:\Tasks\PocketLab-RTL\src\spi_slave.v":69)
-WARN  (EX2565) : Port 'axi_awready' is not connected on this instance("D:\Tasks\PocketLab-RTL\src\spi_slave.v":69)
-WARN  (EX2565) : Port 'axi_wready' is not connected on this instance("D:\Tasks\PocketLab-RTL\src\spi_slave.v":69)
-WARN  (EX2565) : Port 'axi_bresp' is not connected on this instance("D:\Tasks\PocketLab-RTL\src\spi_slave.v":69)
-WARN  (EX2565) : Port 'axi_bvalid' is not connected on this instance("D:\Tasks\PocketLab-RTL\src\spi_slave.v":69)
+Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\spi_recv.v'
+Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\spi_send.v'
+Compiling module 'main'("D:\Tasks\PocketLab-RTL\src\main.v":1)
+Compiling module 'pll_main'("D:\Tasks\PocketLab-RTL\src\pll_main\pll_main.v":9)
+Compiling module 'clkdiv_adda'("D:\Tasks\PocketLab-RTL\src\clkdiv_adda\clkdiv_adda.v":9)
 Compiling module 'adc'("D:\Tasks\PocketLab-RTL\src\adc.v":1)
 Compiling module 'fifo_adc'("D:\Tasks\PocketLab-RTL\src\fifo_adc\fifo_adc.v":525)
 Compiling module '**'("D:\Tasks\PocketLab-RTL\src\fifo_adc\fifo_adc.v":0)
+WARN  (EX3670) : Actual bit length 1 differs from formal bit length 8 for port 'axis_tdata'("D:\Tasks\PocketLab-RTL\src\main.v":51)
 Compiling module 'dac'("D:\Tasks\PocketLab-RTL\src\dac.v":1)
 Compiling module 'bram_dac'("D:\Tasks\PocketLab-RTL\src\bram_dac\bram_dac.v":9)
 WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("D:\Tasks\PocketLab-RTL\src\dac.v":56)
 WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("D:\Tasks\PocketLab-RTL\src\dac.v":78)
-Compiling module 'main'("D:\Tasks\PocketLab-RTL\src\main.v":1)
-Compiling module 'pll_main'("D:\Tasks\PocketLab-RTL\src\pll_main\pll_main.v":9)
-Compiling module 'clkdiv_adda'("D:\Tasks\PocketLab-RTL\src\clkdiv_adda\clkdiv_adda.v":9)
-WARN  (EX3670) : Actual bit length 32 differs from formal bit length 1 for port 'axis_tready'("D:\Tasks\PocketLab-RTL\src\main.v":56)
-WARN  (EX1998) : Net 'axi_awaddr[15]' does not have a driver("D:\Tasks\PocketLab-RTL\src\main.v":61)
-WARN  (EX1998) : Net 'axi_awvalid' does not have a driver("D:\Tasks\PocketLab-RTL\src\main.v":62)
-WARN  (EX1998) : Net 'axi_wdata[7]' does not have a driver("D:\Tasks\PocketLab-RTL\src\main.v":65)
-WARN  (EX1998) : Net 'axi_wvalid' does not have a driver("D:\Tasks\PocketLab-RTL\src\main.v":66)
-WARN  (EX1998) : Net 'axi_wlast' does not have a driver("D:\Tasks\PocketLab-RTL\src\main.v":68)
-WARN  (EX1998) : Net 'axi_bready' does not have a driver("D:\Tasks\PocketLab-RTL\src\main.v":72)
+WARN  (EX3670) : Actual bit length 1 differs from formal bit length 16 for port 'axi_awaddr'("D:\Tasks\PocketLab-RTL\src\main.v":64)
+WARN  (EX3670) : Actual bit length 1 differs from formal bit length 8 for port 'axi_wdata'("D:\Tasks\PocketLab-RTL\src\main.v":68)
+WARN  (EX3670) : Actual bit length 1 differs from formal bit length 2 for port 'axi_bresp'("D:\Tasks\PocketLab-RTL\src\main.v":73)
+WARN  (EX2664) : Variable 'axis_tvalid' is used before it is assigned in an always_comb or always @* block, synthesis - simulation differences may occur("D:\Tasks\PocketLab-RTL\src\spi_recv.v":109)
 Compiling module 'spi_recv'("D:\Tasks\PocketLab-RTL\src\spi_recv.v":1)
-ERROR (EX3937) : Instantiating unknown module 'fifo_spi_rx_buffer'("D:\Tasks\PocketLab-RTL\src\spi_recv.v":36)
-Module 'spi_recv' remains a black box due to errors in its contents("D:\Tasks\PocketLab-RTL\src\spi_recv.v":1)
-Compiling module 'spi_send'("D:\Tasks\PocketLab-RTL\src\spi_send.v":1)
+Compiling module 'fifo_spi_recv'("D:\Tasks\PocketLab-RTL\src\fifo_spi_recv\fifo_spi_recv.v":393)
 Compiling module '**'("D:\Tasks\PocketLab-RTL\src\fifo_spi_recv\fifo_spi_recv.v":0)
-Compiling module 'fifo_spi_recv'("D:\Tasks\PocketLab-RTL\src\fifo_spi_recv\fifo_spi_recv.v":194)
-Compiling module '**'("D:\Tasks\PocketLab-RTL\src\fifo_spi_rx_buffer\fifo_spi_rx_buffer.v":0)
-Compiling module 'FIFO_SC_Hfifo_spi_rx_bufferS_Top'("D:\Tasks\PocketLab-RTL\src\fifo_spi_rx_buffer\fifo_spi_rx_buffer.v":833)
+WARN  (EX3670) : Actual bit length 1 differs from formal bit length 8 for port 'axis_tdata'("D:\Tasks\PocketLab-RTL\src\main.v":90)
+Compiling module 'spi_send'("D:\Tasks\PocketLab-RTL\src\spi_send.v":1)
+Compiling module 'fifo_spi_send'("D:\Tasks\PocketLab-RTL\src\fifo_spi_send\fifo_spi_send.v":450)
 Compiling module '**'("D:\Tasks\PocketLab-RTL\src\fifo_spi_send\fifo_spi_send.v":0)
-Compiling module 'fifo_spi_send'("D:\Tasks\PocketLab-RTL\src\fifo_spi_send\fifo_spi_send.v":389)
-Compiling module '**'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_crc32.v":0)
-Compiling module '**'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":0)
-Compiling module '**'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v":0)
-Extracting RAM for identifier '**'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v":0)
-Compiling module '**'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":0)
-Compiling module '**'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v":0)
-Extracting RAM for identifier '**'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v":0)
-Compiling module '**'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":0)
-WARN  (EX3791) : Expression size ** truncated to fit in target size **("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":0)
-Compiling module '**'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":0)
-Extracting RAM for identifier '**'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":0)
-Compiling module '**'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\GAO\GW_CON\gw_con_top.v":0)
-Compiling module 'GW_JTAG'("C:\Gowin\Gowin_V1.9.8.08\IDE\data\ipcores\gw_jtag.v":1)
-Compiling module 'gw_gao'("D:\Tasks\PocketLab-RTL\impl\gwsynthesis\RTL_GAO\gw_gao_top.v":1)
+WARN  (EX3670) : Actual bit length 1 differs from formal bit length 8 for port 'axis_rdata'("D:\Tasks\PocketLab-RTL\src\main.v":106)
+Compiling module 'ccu'("D:\Tasks\PocketLab-RTL\src\ccu.v":1)
+WARN  (EX3670) : Actual bit length 1 differs from formal bit length 8 for port 'adc_axis_tdata'("D:\Tasks\PocketLab-RTL\src\main.v":117)
+WARN  (EX3670) : Actual bit length 1 differs from formal bit length 16 for port 'dac_axi_awaddr'("D:\Tasks\PocketLab-RTL\src\main.v":121)
+WARN  (EX3670) : Actual bit length 1 differs from formal bit length 8 for port 'dac_axi_wdata'("D:\Tasks\PocketLab-RTL\src\main.v":125)
+WARN  (EX3670) : Actual bit length 1 differs from formal bit length 2 for port 'dac_axi_bresp'("D:\Tasks\PocketLab-RTL\src\main.v":130)
+WARN  (EX3670) : Actual bit length 1 differs from formal bit length 8 for port 'spi_recv_axis_rdata'("D:\Tasks\PocketLab-RTL\src\main.v":137)
+WARN  (EX3670) : Actual bit length 1 differs from formal bit length 8 for port 'spi_send_axis_tdata'("D:\Tasks\PocketLab-RTL\src\main.v":143)
+WARN  (EX1998) : Net 'adc_axis_ready' does not have a driver("D:\Tasks\PocketLab-RTL\src\main.v":50)
+NOTE  (EX0101) : Current top module is "main"
+WARN  (EX0211) : The output port "axis_rready" of module "spi_send" has no driver("D:\Tasks\PocketLab-RTL\src\spi_send.v":13)
+WARN  (EX0211) : The output port "spi_recv_axis_rready" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":8)
+WARN  (EX0211) : The output port "spi_send_axis_tdata[7]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":12)
+WARN  (EX0211) : The output port "spi_send_axis_tdata[6]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":12)
+WARN  (EX0211) : The output port "spi_send_axis_tdata[5]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":12)
+WARN  (EX0211) : The output port "spi_send_axis_tdata[4]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":12)
+WARN  (EX0211) : The output port "spi_send_axis_tdata[3]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":12)
+WARN  (EX0211) : The output port "spi_send_axis_tdata[2]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":12)
+WARN  (EX0211) : The output port "spi_send_axis_tdata[1]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":12)
+WARN  (EX0211) : The output port "spi_send_axis_tdata[0]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":12)
+WARN  (EX0211) : The output port "spi_send_axis_tvalid" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":13)
+WARN  (EX0211) : The output port "spi_send_axis_tlast" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":15)
+WARN  (EX0211) : The output port "dac_axi_awaddr[15]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":18)
+WARN  (EX0211) : The output port "dac_axi_awaddr[14]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":18)
+WARN  (EX0211) : The output port "dac_axi_awaddr[13]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":18)
+WARN  (EX0211) : The output port "dac_axi_awaddr[12]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":18)
+WARN  (EX0211) : The output port "dac_axi_awaddr[11]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":18)
+WARN  (EX0211) : The output port "dac_axi_awaddr[10]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":18)
+WARN  (EX0211) : The output port "dac_axi_awaddr[9]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":18)
+WARN  (EX0211) : The output port "dac_axi_awaddr[8]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":18)
+WARN  (EX0211) : The output port "dac_axi_awaddr[7]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":18)
+WARN  (EX0211) : The output port "dac_axi_awaddr[6]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":18)
+WARN  (EX0211) : The output port "dac_axi_awaddr[5]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":18)
+WARN  (EX0211) : The output port "dac_axi_awaddr[4]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":18)
+WARN  (EX0211) : The output port "dac_axi_awaddr[3]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":18)
+WARN  (EX0211) : The output port "dac_axi_awaddr[2]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":18)
+WARN  (EX0211) : The output port "dac_axi_awaddr[1]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":18)
+WARN  (EX0211) : The output port "dac_axi_awaddr[0]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":18)
+WARN  (EX0211) : The output port "dac_axi_awvalid" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":19)
+WARN  (EX0211) : The output port "dac_axi_wdata[7]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":22)
+WARN  (EX0211) : The output port "dac_axi_wdata[6]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":22)
+WARN  (EX0211) : The output port "dac_axi_wdata[5]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":22)
+WARN  (EX0211) : The output port "dac_axi_wdata[4]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":22)
+WARN  (EX0211) : The output port "dac_axi_wdata[3]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":22)
+WARN  (EX0211) : The output port "dac_axi_wdata[2]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":22)
+WARN  (EX0211) : The output port "dac_axi_wdata[1]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":22)
+WARN  (EX0211) : The output port "dac_axi_wdata[0]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":22)
+WARN  (EX0211) : The output port "dac_axi_wvalid" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":23)
+WARN  (EX0211) : The output port "dac_axi_wlast" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":25)
+WARN  (EX0211) : The output port "dac_axi_bready" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":29)
+WARN  (EX0211) : The output port "adc_axis_tdata[7]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":32)
+WARN  (EX0211) : The output port "adc_axis_tdata[6]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":32)
+WARN  (EX0211) : The output port "adc_axis_tdata[5]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":32)
+WARN  (EX0211) : The output port "adc_axis_tdata[4]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":32)
+WARN  (EX0211) : The output port "adc_axis_tdata[3]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":32)
+WARN  (EX0211) : The output port "adc_axis_tdata[2]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":32)
+WARN  (EX0211) : The output port "adc_axis_tdata[1]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":32)
+WARN  (EX0211) : The output port "adc_axis_tdata[0]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":32)
+WARN  (EX0211) : The output port "adc_axis_tvalid" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":33)
+WARN  (EX0211) : The output port "adc_axis_tlast" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":35)
+WARN  (EX0211) : The output port "adc_clk" of module "main" has no driver("D:\Tasks\PocketLab-RTL\src\main.v":6)
+WARN  (EX0211) : The output port "dac_clk" of module "main" has no driver("D:\Tasks\PocketLab-RTL\src\main.v":10)
+[5%] Running netlist conversion ...
+WARN  (CV0016) : Input adc_data is unused("D:\Tasks\PocketLab-RTL\src\main.v":7)
+WARN  (CV0016) : Input spi_mosi is unused("D:\Tasks\PocketLab-RTL\src\main.v":15)
+WARN  (CV0016) : Input triggers is unused("D:\Tasks\PocketLab-RTL\src\main.v":20)
+WARN  (CV0003) : Output "adc_clk" has undriven bits, assigning undriven bits to Z, simulation mismatch possible("D:\Tasks\PocketLab-RTL\src\main.v":6)
+WARN  (CV0003) : Output "dac_clk" has undriven bits, assigning undriven bits to Z, simulation mismatch possible("D:\Tasks\PocketLab-RTL\src\main.v":10)
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+WARN  (NL0002) : The module "adc" instantiated to "adc_inst" is swept in optimizing("D:\Tasks\PocketLab-RTL\src\main.v":53)
+WARN  (NL0002) : The module "fifo_adc" instantiated to "fifo_adc_inst" is swept in optimizing("D:\Tasks\PocketLab-RTL\src\adc.v":53)
+WARN  (NL0002) : The module "~fifo.fifo_adc" instantiated to "fifo_inst" is swept in optimizing("D:\Tasks\PocketLab-RTL\src\fifo_adc\fifo_adc.v":659)
+WARN  (NL0002) : The module "ccu" instantiated to "ccu_inst" is swept in optimizing("D:\Tasks\PocketLab-RTL\src\main.v":145)
+WARN  (NL0002) : The module "spi_recv" instantiated to "spi_recv_inst" is swept in optimizing("D:\Tasks\PocketLab-RTL\src\main.v":92)
+WARN  (NL0002) : The module "fifo_spi_recv" instantiated to "fifo_spi_recv_inst" is swept in optimizing("D:\Tasks\PocketLab-RTL\src\spi_recv.v":33)
+WARN  (NL0002) : The module "~fifo.fifo_spi_recv" instantiated to "fifo_inst" is swept in optimizing("D:\Tasks\PocketLab-RTL\src\fifo_spi_recv\fifo_spi_recv.v":426)
+[95%] Generate netlist file "D:\Tasks\PocketLab-RTL\impl\gwsynthesis\PocketLab-RTL.vg" completed
+WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "n6_6"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "wfull_val" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "wfull_val"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "spi_clk"
+[100%] Generate report file "D:\Tasks\PocketLab-RTL\impl\gwsynthesis\PocketLab-RTL_syn.rpt.html" completed
 GowinSynthesis finish

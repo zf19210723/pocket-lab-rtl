@@ -1,0 +1,138 @@
+[
+ {
+  "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
+  "InstLine" : 1,
+  "InstName" : "main",
+  "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "main",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
+    "InstLine" : 25,
+    "InstName" : "pll_main_inst",
+    "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/pll_main/pll_main.v",
+    "ModuleLine" : 9,
+    "ModuleName" : "pll_main"
+   },
+   {
+    "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
+    "InstLine" : 34,
+    "InstName" : "clkdiv_adda_inst",
+    "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/clkdiv_adda/clkdiv_adda.v",
+    "ModuleLine" : 9,
+    "ModuleName" : "clkdiv_adda"
+   },
+   {
+    "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
+    "InstLine" : 40,
+    "InstName" : "adc_inst",
+    "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/adc.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "adc",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/Tasks/PocketLab-RTL/src/adc.v",
+      "InstLine" : 40,
+      "InstName" : "fifo_adc_inst",
+      "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_adc/fifo_adc.v",
+      "ModuleLine" : 525,
+      "ModuleName" : "fifo_adc",
+      "SubInsts" : [
+       {
+        "InstFile" : "D:/Tasks/PocketLab-RTL/src/fifo_adc/fifo_adc.v",
+        "InstLine" : 649,
+        "InstName" : "fifo_inst",
+        "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_adc/fifo_adc.v",
+        "ModuleLine" : 1,
+        "ModuleName" : "~fifo.fifo_adc"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
+    "InstLine" : 55,
+    "InstName" : "dac_inst",
+    "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/dac.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "dac",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/Tasks/PocketLab-RTL/src/dac.v",
+      "InstLine" : 31,
+      "InstName" : "bram_dac_inst",
+      "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/bram_dac/bram_dac.v",
+      "ModuleLine" : 9,
+      "ModuleName" : "bram_dac"
+     }
+    ]
+   },
+   {
+    "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
+    "InstLine" : 78,
+    "InstName" : "spi_recv_inst",
+    "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/spi_recv.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "spi_recv",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/Tasks/PocketLab-RTL/src/spi_recv.v",
+      "InstLine" : 20,
+      "InstName" : "fifo_spi_recv_inst",
+      "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.v",
+      "ModuleLine" : 393,
+      "ModuleName" : "fifo_spi_recv",
+      "SubInsts" : [
+       {
+        "InstFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.v",
+        "InstLine" : 416,
+        "InstName" : "fifo_inst",
+        "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.v",
+        "ModuleLine" : 1,
+        "ModuleName" : "~fifo.fifo_spi_recv"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
+    "InstLine" : 94,
+    "InstName" : "spi_send_inst",
+    "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/spi_send.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "spi_send",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/Tasks/PocketLab-RTL/src/spi_send.v",
+      "InstLine" : 20,
+      "InstName" : "fifo_spi_send_inst",
+      "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_send/fifo_spi_send.v",
+      "ModuleLine" : 450,
+      "ModuleName" : "fifo_spi_send",
+      "SubInsts" : [
+       {
+        "InstFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_send/fifo_spi_send.v",
+        "InstLine" : 473,
+        "InstName" : "fifo_inst",
+        "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_send/fifo_spi_send.v",
+        "ModuleLine" : 1,
+        "ModuleName" : "~fifo.fifo_spi_send"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
+    "InstLine" : 110,
+    "InstName" : "ccu_inst",
+    "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/ccu.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "ccu"
+   }
+  ]
+ }
+]

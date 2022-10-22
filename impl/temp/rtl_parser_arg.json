@@ -5,35 +5,19 @@
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Tasks/PocketLab-RTL/src/dac.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "D:/Tasks/PocketLab-RTL/src/main.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "D:/Tasks/PocketLab-RTL/src/spi_recv.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "D:/Tasks/PocketLab-RTL/src/spi_recv_pu.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "D:/Tasks/PocketLab-RTL/src/spi_send.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "D:/Tasks/PocketLab-RTL/src/spi_slave.v",
-   "Type" : "verilog"
-  },
-  {
    "Path" : "D:/Tasks/PocketLab-RTL/src/bram_dac/bram_dac.v",
    "Type" : "verilog"
   },
   {
+   "Path" : "D:/Tasks/PocketLab-RTL/src/ccu.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "D:/Tasks/PocketLab-RTL/src/clkdiv_adda/clkdiv_adda.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Tasks/PocketLab-RTL/src/dac.v",
    "Type" : "verilog"
   },
   {
@@ -45,15 +29,23 @@
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_rx_buffer/fifo_spi_rx_buffer.v",
-   "Type" : "verilog"
-  },
-  {
    "Path" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_send/fifo_spi_send.v",
    "Type" : "verilog"
   },
   {
+   "Path" : "D:/Tasks/PocketLab-RTL/src/main.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "D:/Tasks/PocketLab-RTL/src/pll_main/pll_main.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Tasks/PocketLab-RTL/src/spi_recv.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Tasks/PocketLab-RTL/src/spi_send.v",
    "Type" : "verilog"
   }
  ],

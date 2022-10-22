@@ -11,7 +11,7 @@
         <Option type="disable_insert_pad" value="1"/>
         <Option type="dsp_balance" value="1"/>
         <Option type="include_path" value="C:/Gowin/Gowin_V1.9.8.08/IDE/ipcore/FIFO_HS/data"/>
-        <Option type="include_path" value="D:/Projects/GW/test-dock-2alv18/src/fifo_spi_send/temp/FIFOHS"/>
+        <Option type="include_path" value="D:/Tasks/PocketLab-RTL/src/fifo_spi_send/temp/FIFOHS"/>
         <Option type="output_file" value="fifo_spi_send.vg"/>
         <Option type="output_template" value="fifo_spi_send_tmp.v"/>
         <Option type="ram_balance" value="1"/>

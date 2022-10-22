@@ -36,93 +36,112 @@ module main (
         .hclkin(sys_clk),    //input hclkin
         .resetn(sys_resetn)  //input resetn
     );
-    assign adc_clk = adda_clk;
-    assign dac_clk = adda_clk;
 
-    wire         axis_valid;
-    wire         axis_ready;
-    wire [7 : 0] axis_data;
-    wire         axis_last;
     adc adc_inst (
         .axis_aresetn(sys_resetn),
         .axis_aclk   (sys_clk),
 
         // ADC socket, positive edge sensitive
-        .adc_clk (adc_clk),
+        .adc_clk (adda_clk),
         .adc_data(adc_data),
 
         // AXI4-Stream Transmitter interface
-        .axis_tvalid(axis_valid),
-        .axis_tready(1),
-        .axis_tdata (axis_data),
-        .axis_tlast (axis_last)
+        .axis_tvalid(adc_axis_valid),
+        .axis_tready(adc_axis_ready),
+        .axis_tdata (adc_axis_data),
+        .axis_tlast (adc_axis_last)
     );
-
-    wire [15 : 0] axi_awaddr;
-    wire          axi_awvalid;
-    wire          axi_awready;
-
-    wire [ 7 : 0] axi_wdata;
-    wire          axi_wvalid;
-    wire          axi_wready;
-    wire          axi_wlast;
-
-    wire [ 1 : 0] axi_bresp;
-    wire          axi_bvalid;
-    wire          axi_bready;
 
     dac dac_inst (
         .axi_aresetn(sys_resetn),
         .axi_aclk   (sys_clk),
 
         // ADC socket, positive edge sensitive
-        .dac_clk (dac_clk),
+        .dac_clk (adda_clk),
         .dac_data(dac_data),
 
-        // AXI4-Lite Slave interface, to write base address
-        .axi_awaddr (axi_awaddr),
-        .axi_awvalid(axi_awvalid),
-        .axi_awready(axi_awready),
+        // AXI4 Slave interface
+        .axi_awaddr (dac_axi_awaddr),
+        .axi_awvalid(dac_axi_awvalid),
+        .axi_awready(dac_axi_awready),
 
-        .axi_wdata (axi_wdata),
-        .axi_wvalid(axi_wvalid),
-        .axi_wready(axi_wready),
-        .axi_wlast (axi_wlast),
+        .axi_wdata (dac_axi_wdata),
+        .axi_wvalid(dac_axi_wvalid),
+        .axi_wready(dac_axi_wready),
+        .axi_wlast (dac_axi_wlast),
 
-        .axi_bresp (axi_bresp),
-        .axi_bvalid(axi_bvalid),
-        .axi_bready(axi_bready)
+        .axi_bresp (dac_axi_bresp),
+        .axi_bvalid(dac_axi_bvalid),
+        .axi_bready(dac_axi_bready)
     );
 
-    spi_slave spi_slave_inst (
+    spi_recv spi_recv_inst (
         .axi_aresetn(sys_resetn),
         .axi_aclk   (sys_clk),
 
         // SPI
         .spi_clk (spi_clk),
         .spi_mosi(spi_mosi),
+        .spi_cs  (spi_cs),
+
+        // AXI4-Stream
+        .axis_tvalid(spi_recv_axis_valid),
+        .axis_tready(spi_recv_axis_ready),
+        .axis_tdata (spi_recv_axis_data),
+        .axis_tlast (spi_recv_axis_last)
+    );
+
+    spi_send spi_send_inst (
+        .axi_aresetn(sys_resetn),
+        .axi_aclk   (sys_clk),
+
+        // SPI
+        .spi_clk (spi_clk),
         .spi_miso(spi_miso),
         .spi_cs  (spi_cs),
 
-        // AXI4
-        .axi_awaddr (axi_awaddr),
-        .axi_awvalid(axi_awvalid),
-        .axi_awready(axi_awready),
-
-        .axi_wdata (axi_wdata),
-        .axi_wvalid(axi_wvalid),
-        .axi_wready(axi_wready),
-        .axi_wlast (axi_wlast),
-
-        .axi_bresp (axi_bresp),
-        .axi_bvalid(axi_bvalid),
-        .axi_bready(axi_bready),
-
         // AXI4-Stream
-        .axis_tvalid(axis_valid),
-        .axis_tready(axis_ready),
-        .axis_tdata (axis_data),
-        .axis_tlast (axis_last)
+        .axis_rvalid(spi_send_axis_valid),
+        .axis_rready(spi_send_axis_ready),
+        .axis_rdata (spi_send_axis_data),
+        .axis_rlast (spi_send_axis_last)
+    );
+
+    ccu ccu_inst(
+        .axi_aresetn(sys_resetn),
+        .axi_aclk   (sys_clk),
+
+        // ADC
+        .adc_axis_tvalid(adc_axis_valid),
+        .adc_axis_tready(adc_axis_ready),
+        .adc_axis_tdata (adc_axis_data),
+        .adc_axis_tlast (adc_axis_last),
+
+        // DAC
+        .dac_axi_awaddr (dac_axi_awaddr),
+        .dac_axi_awvalid(dac_axi_awvalid),
+        .dac_axi_awready(dac_axi_awready),
+
+        .dac_axi_wdata (dac_axi_wdata),
+        .dac_axi_wvalid(dac_axi_wvalid),
+        .dac_axi_wready(dac_axi_wready),
+        .dac_axi_wlast (dac_axi_wlast),
+
+        .dac_axi_bresp (dac_axi_bresp),
+        .dac_axi_bvalid(dac_axi_bvalid),
+        .dac_axi_bready(dac_axi_bready),
+
+        // SPI Recv
+        .spi_recv_axis_rvalid(spi_recv_axis_valid),
+        .spi_recv_axis_rready(spi_recv_axis_ready),
+        .spi_recv_axis_rdata (spi_recv_axis_data),
+        .spi_recv_axis_rlast (spi_recv_axis_last),
+
+        // SPI Send
+        .spi_send_axis_tvalid(spi_send_axis_valid),
+        .spi_send_axis_tready(spi_send_axis_ready),
+        .spi_send_axis_tdata (spi_send_axis_data),
+        .spi_send_axis_tlast (spi_send_axis_last)
     );
 
 endmodule

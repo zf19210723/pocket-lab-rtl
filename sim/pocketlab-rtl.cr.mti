@@ -12,6 +12,13 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	FIFO_SC_Hfifo_spi_rx_bufferS_Top
 
+} {} {}} D:/Tasks/PocketLab-RTL/src/spi_recv.v {1 {vlog -work pocketlab-rtl -vopt -stats=none D:/Tasks/PocketLab-RTL/src/spi_recv.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module spi_recv
+
+Top level modules:
+	spi_recv
+
 } {} {}} D:/Tasks/PocketLab-RTL/src/clkdiv_adda/clkdiv_adda.v {1 {vlog -work pocketlab-rtl -vopt -stats=none D:/Tasks/PocketLab-RTL/src/clkdiv_adda/clkdiv_adda.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module clkdiv_adda
@@ -53,13 +60,6 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 
 Top level modules:
 	bram_dac
-
-} {} {}} D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.vo {1 {vlog -work pocketlab-rtl -vopt -stats=none D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.vo
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module fifo_spi_recv
-
-Top level modules:
-	fifo_spi_recv
 
 } {} {}} D:/Tasks/PocketLab-RTL/src/spi_send.v {1 {vlog -work pocketlab-rtl -vopt -stats=none D:/Tasks/PocketLab-RTL/src/spi_send.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014

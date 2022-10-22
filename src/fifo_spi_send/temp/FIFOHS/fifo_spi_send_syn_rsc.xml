@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="fifo_spi_send" Register="44" Alu="7" Lut="63" Bsram="1"/>
+<Module name="fifo_spi_send" Register="46" Alu="7" Lut="75" Bsram="1" Ssram="2"/>

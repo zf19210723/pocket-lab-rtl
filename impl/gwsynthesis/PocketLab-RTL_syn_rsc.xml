@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="main" Lut="1">
+    <SubModule name="pll_main_inst"/>
+    <SubModule name="clkdiv_adda_inst"/>
+    <SubModule name="dac_inst" Register="18" Alu="15" Lut="5">
+        <SubModule name="bram_dac_inst" Register="4" Lut="24" Bsram="32"/>
+    </SubModule>
+    <SubModule name="spi_send_inst">
+        <SubModule name="fifo_spi_send_inst" Register="46" Alu="7" Lut="75" Bsram="1" Ssram="2"/>
+    </SubModule>
+</Module>
