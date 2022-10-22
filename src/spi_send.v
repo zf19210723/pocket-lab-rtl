@@ -76,11 +76,15 @@ module spi_send (
     always @(*) begin
         case (state)
             STATE_RESET: begin
+                axis_rready  = 0;
+
                 fifo_wr_data = 8'h0;
                 fifo_wr_dv   = 0;
             end
 
             STATE_WAIT_AXI: begin
+                axis_rready = 1;
+
                 if (axis_rvalid && axis_rready) begin
                     fifo_wr_data = axis_rdata;
                     fifo_wr_dv   = 1;
@@ -91,11 +95,15 @@ module spi_send (
             end
 
             STATE_TRANS_DATA: begin
+                axis_rready  = 1;
+
                 fifo_wr_data = axis_rdata;
                 fifo_wr_dv   = 1;
             end
 
             default: begin
+                axis_rready  = 0;
+
                 fifo_wr_data = 8'h0;
                 fifo_wr_dv   = 0;
             end

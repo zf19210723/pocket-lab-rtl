@@ -29,6 +29,73 @@ module main (
         .clkout(sys_clk),
         .lock  (sys_resetn)
     );
+    assign adc_clk = adda_clk;
+    assign dac_clk = adda_clk;
+
+    wire          adc_axis_valid;
+    wire          adc_axis_ready;
+    wire [ 7 : 0] adc_axis_data;
+    wire          adc_axis_last;
+
+    wire [15 : 0] dac_axi_awaddr;
+    wire          dac_axi_awvalid;
+    wire          dac_axi_awready;
+
+    wire [ 7 : 0] dac_axi_wdata;
+    wire          dac_axi_wvalid;
+    wire          dac_axi_wready;
+    wire          dac_axi_wlast;
+
+    wire [ 1 : 0] dac_axi_bresp;
+    wire          dac_axi_bvalid;
+    wire          dac_axi_bready;
+
+    wire          spi_recv_axis_valid;
+    wire          spi_recv_axis_ready;
+    wire [ 7 : 0] spi_recv_axis_data;
+    wire          spi_recv_axis_last;
+
+    wire          spi_send_axis_valid;
+    wire          spi_send_axis_ready;
+    wire [ 7 : 0] spi_send_axis_data;
+    wire          spi_send_axis_last;
+
+    ccu ccu_inst (
+        .axi_aresetn(sys_resetn),
+        .axi_aclk   (sys_clk),
+
+        // ADC
+        .adc_axis_tvalid(adc_axis_valid),
+        .adc_axis_tready(adc_axis_ready),
+        .adc_axis_tdata (adc_axis_data),
+        .adc_axis_tlast (adc_axis_last),
+
+        // DAC
+        .dac_axi_awaddr (dac_axi_awaddr),
+        .dac_axi_awvalid(dac_axi_awvalid),
+        .dac_axi_awready(dac_axi_awready),
+
+        .dac_axi_wdata (dac_axi_wdata),
+        .dac_axi_wvalid(dac_axi_wvalid),
+        .dac_axi_wready(dac_axi_wready),
+        .dac_axi_wlast (dac_axi_wlast),
+
+        .dac_axi_bresp (dac_axi_bresp),
+        .dac_axi_bvalid(dac_axi_bvalid),
+        .dac_axi_bready(dac_axi_bready),
+
+        // SPI Recv
+        .spi_recv_axis_rvalid(spi_recv_axis_valid),
+        .spi_recv_axis_rready(spi_recv_axis_ready),
+        .spi_recv_axis_rdata (spi_recv_axis_data),
+        .spi_recv_axis_rlast (spi_recv_axis_last),
+
+        // SPI Send
+        .spi_send_axis_tvalid(spi_send_axis_valid),
+        .spi_send_axis_tready(spi_send_axis_ready),
+        .spi_send_axis_tdata (spi_send_axis_data),
+        .spi_send_axis_tlast (spi_send_axis_last)
+    );
 
     // ADC clock
     clkdiv_adda clkdiv_adda_inst (
@@ -107,41 +174,6 @@ module main (
         .axis_rlast (spi_send_axis_last)
     );
 
-    ccu ccu_inst(
-        .axi_aresetn(sys_resetn),
-        .axi_aclk   (sys_clk),
 
-        // ADC
-        .adc_axis_tvalid(adc_axis_valid),
-        .adc_axis_tready(adc_axis_ready),
-        .adc_axis_tdata (adc_axis_data),
-        .adc_axis_tlast (adc_axis_last),
-
-        // DAC
-        .dac_axi_awaddr (dac_axi_awaddr),
-        .dac_axi_awvalid(dac_axi_awvalid),
-        .dac_axi_awready(dac_axi_awready),
-
-        .dac_axi_wdata (dac_axi_wdata),
-        .dac_axi_wvalid(dac_axi_wvalid),
-        .dac_axi_wready(dac_axi_wready),
-        .dac_axi_wlast (dac_axi_wlast),
-
-        .dac_axi_bresp (dac_axi_bresp),
-        .dac_axi_bvalid(dac_axi_bvalid),
-        .dac_axi_bready(dac_axi_bready),
-
-        // SPI Recv
-        .spi_recv_axis_rvalid(spi_recv_axis_valid),
-        .spi_recv_axis_rready(spi_recv_axis_ready),
-        .spi_recv_axis_rdata (spi_recv_axis_data),
-        .spi_recv_axis_rlast (spi_recv_axis_last),
-
-        // SPI Send
-        .spi_send_axis_tvalid(spi_send_axis_valid),
-        .spi_send_axis_tready(spi_send_axis_ready),
-        .spi_send_axis_tdata (spi_send_axis_data),
-        .spi_send_axis_tlast (spi_send_axis_last)
-    );
 
 endmodule

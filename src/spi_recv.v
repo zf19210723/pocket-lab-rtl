@@ -101,12 +101,12 @@ module spi_recv (
             end
 
             STATE_WAIT_AXI: begin
+                axis_tvalid = 1;
                 if (axis_tvalid && axis_tready) begin
                     axis_tdata = fifo_rd_data;
                 end else begin
                     axis_tdata = 8'h0;
                 end
-                axis_tvalid = 1;
                 axis_tlast  = 0;
 
                 fifo_rd_dv  = 1;

@@ -17,7 +17,15 @@
    },
    {
     "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
-    "InstLine" : 34,
+    "InstLine" : 63,
+    "InstName" : "ccu_inst",
+    "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/ccu.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "ccu"
+   },
+   {
+    "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
+    "InstLine" : 101,
     "InstName" : "clkdiv_adda_inst",
     "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/clkdiv_adda/clkdiv_adda.v",
     "ModuleLine" : 9,
@@ -25,7 +33,7 @@
    },
    {
     "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
-    "InstLine" : 40,
+    "InstLine" : 107,
     "InstName" : "adc_inst",
     "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/adc.v",
     "ModuleLine" : 1,
@@ -53,7 +61,7 @@
    },
    {
     "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
-    "InstLine" : 55,
+    "InstLine" : 122,
     "InstName" : "dac_inst",
     "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/dac.v",
     "ModuleLine" : 1,
@@ -71,7 +79,7 @@
    },
    {
     "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
-    "InstLine" : 78,
+    "InstLine" : 145,
     "InstName" : "spi_recv_inst",
     "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/spi_recv.v",
     "ModuleLine" : 1,
@@ -99,7 +107,7 @@
    },
    {
     "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
-    "InstLine" : 94,
+    "InstLine" : 161,
     "InstName" : "spi_send_inst",
     "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/spi_send.v",
     "ModuleLine" : 1,
@@ -124,14 +132,6 @@
       ]
      }
     ]
-   },
-   {
-    "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
-    "InstLine" : 110,
-    "InstName" : "ccu_inst",
-    "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/ccu.v",
-    "ModuleLine" : 1,
-    "ModuleName" : "ccu"
    }
   ]
  }
