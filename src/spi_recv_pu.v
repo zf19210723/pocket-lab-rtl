@@ -19,12 +19,12 @@ module spi_recv_pu (
         .Reset(~axi_aresetn),
 
         .WrClk(spi_clk),
-        .WrEn (1),
+        .WrEn (spi_cs),
         .Data (spi_mosi),
 
         .RdClk(axi_aclk),
         .RdEn (fifo_rx_dv),
-        .Q    (fifo_rx_dv),
+        .Q    (fifo_rx_data),
 
         .Empty(fifo_rx_empty),
         .Full (fifo_rx_full)

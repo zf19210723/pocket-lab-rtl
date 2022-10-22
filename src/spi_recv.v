@@ -13,8 +13,6 @@ module spi_recv (
     input      [7 : 0] axis_tdata,
     input              axis_tlast
 );
-   
-
     reg          fifo_bf_wr_dv;
     reg  [7 : 0] fifo_bf_wdata;
     reg          fifo_bf_rd_dv;

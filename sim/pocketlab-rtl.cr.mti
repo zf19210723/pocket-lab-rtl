@@ -1,0 +1,92 @@
+D:/Tasks/PocketLab-RTL/src/dac.v {1 {vlog -work pocketlab-rtl -vopt -stats=none D:/Tasks/PocketLab-RTL/src/dac.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module dac
+
+Top level modules:
+	dac
+
+} {} {}} D:/Tasks/PocketLab-RTL/src/fifo_spi_rx_buffer/fifo_spi_rx_buffer.vo {1 {vlog -work pocketlab-rtl -vopt -stats=none D:/Tasks/PocketLab-RTL/src/fifo_spi_rx_buffer/fifo_spi_rx_buffer.vo
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module FIFO_SC_Hfifo_spi_rx_bufferS_Top
+
+Top level modules:
+	FIFO_SC_Hfifo_spi_rx_bufferS_Top
+
+} {} {}} D:/Tasks/PocketLab-RTL/src/clkdiv_adda/clkdiv_adda.v {1 {vlog -work pocketlab-rtl -vopt -stats=none D:/Tasks/PocketLab-RTL/src/clkdiv_adda/clkdiv_adda.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module clkdiv_adda
+
+Top level modules:
+	clkdiv_adda
+
+} {} {}} D:/Tasks/PocketLab-RTL/src/fifo_adc/fifo_adc.vo {1 {vlog -work pocketlab-rtl -vopt -stats=none D:/Tasks/PocketLab-RTL/src/fifo_adc/fifo_adc.vo
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module fifo_adc
+
+Top level modules:
+	fifo_adc
+
+} {} {}} D:/Tasks/PocketLab-RTL/src/main.v {1 {vlog -work pocketlab-rtl -vopt -stats=none D:/Tasks/PocketLab-RTL/src/main.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module main
+
+Top level modules:
+	main
+
+} {} {}} D:/Tasks/PocketLab-RTL/src/pll_main/pll_main.v {1 {vlog -work pocketlab-rtl -vopt -stats=none D:/Tasks/PocketLab-RTL/src/pll_main/pll_main.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module pll_main
+
+Top level modules:
+	pll_main
+
+} {} {}} D:/Tasks/PocketLab-RTL/src/adc.v {1 {vlog -work pocketlab-rtl -vopt -stats=none D:/Tasks/PocketLab-RTL/src/adc.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module adc
+
+Top level modules:
+	adc
+
+} {} {}} D:/Tasks/PocketLab-RTL/src/bram_dac/bram_dac.v {1 {vlog -work pocketlab-rtl -vopt -stats=none D:/Tasks/PocketLab-RTL/src/bram_dac/bram_dac.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module bram_dac
+
+Top level modules:
+	bram_dac
+
+} {} {}} D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.vo {1 {vlog -work pocketlab-rtl -vopt -stats=none D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.vo
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module fifo_spi_recv
+
+Top level modules:
+	fifo_spi_recv
+
+} {} {}} D:/Tasks/PocketLab-RTL/src/spi_send.v {1 {vlog -work pocketlab-rtl -vopt -stats=none D:/Tasks/PocketLab-RTL/src/spi_send.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module spi_send
+
+Top level modules:
+	spi_send
+
+} {} {}} D:/Tasks/PocketLab-RTL/bench/bench_spi_recv_pu.v {1 {vlog -work pocketlab-rtl -vopt -stats=none D:/Tasks/PocketLab-RTL/bench/bench_spi_recv_pu.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module bench_spi_recv_pu
+
+Top level modules:
+	bench_spi_recv_pu
+
+} {} {}} D:/Tasks/PocketLab-RTL/src/fifo_spi_send/fifo_spi_send.vo {1 {vlog -work pocketlab-rtl -vopt -stats=none D:/Tasks/PocketLab-RTL/src/fifo_spi_send/fifo_spi_send.vo
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module fifo_spi_send
+
+Top level modules:
+	fifo_spi_send
+
+} {} {}} D:/Tasks/PocketLab-RTL/src/spi_slave.v {1 {vlog -work pocketlab-rtl -vopt -stats=none D:/Tasks/PocketLab-RTL/src/spi_slave.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module spi_slave
+
+Top level modules:
+	spi_slave
+
+} {} {}}
