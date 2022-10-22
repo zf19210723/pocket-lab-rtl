@@ -1,9 +1,0 @@
-0.7
-2020.2
-Apr 18 2022
-15:53:03
-/data/Projects/GW/test-2av18/src/adc.v,1665489734,verilog,,,,adc,,,,,,,,
-/data/Projects/GW/test-2av18/src/dac.v,1665489731,verilog,,,,dac,,,,,,,,
-/data/Projects/GW/test-2av18/src/main.v,1665492322,verilog,,,,main,,,,,,,,
-/data/Projects/GW/test-2av18/src/pll_main/pll_main.v,1665488704,verilog,,,,pll_main,,,,,,,,
-/data/Projects/GW/test-2av18/src/pll_usb_fclk/pll_usb_fclk.v,1665488483,verilog,,,,pll_usb_fclk,,,,,,,,
