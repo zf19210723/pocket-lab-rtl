@@ -11,26 +11,28 @@
   <PnR Version>: V1.9.8.08
   <Part Number>: GW2A-LV18PG256C8/I7
   <Device>: GW2A-18C
-  <Created Time>:Sun Oct 23 07:46:32 2022
+  <Created Time>:Sun Oct 23 13:46:30 2022
 
 
 2. PnR Details
 
   Running placement:
-    Placement Phase 0: CPU time = 0h 0m 0.03s, Elapsed time = 0h 0m 0.025s
-    Placement Phase 1: CPU time = 0h 0m 0.16s, Elapsed time = 0h 0m 0.162s
-    Placement Phase 2: CPU time = 0h 0m 0.02s, Elapsed time = 0h 0m 0.022s
-    Placement Phase 3: CPU time = 0h 0m 0.582s, Elapsed time = 0h 0m 0.584s
-    Total Placement: CPU time = 0h 0m 0.792s, Elapsed time = 0h 0m 0.793s
+    Placement Phase 0: CPU time = 0h 0m 0.057s, Elapsed time = 0h 0m 0.057s
+    Placement Phase 1: CPU time = 0h 0m 0.17s, Elapsed time = 0h 0m 0.17s
+    Placement Phase 2: CPU time = 0h 0m 0.062s, Elapsed time = 0h 0m 0.062s
+    Placement Phase 3: CPU time = 0h 0m 0.626s, Elapsed time = 0h 0m 0.626s
+    Placement Phase GAO : CPU time = 0h 0m 0.027s, Elapsed time = 0h 0m 0.027s
+    Total Placement: CPU time = 0h 0m 0.942s, Elapsed time = 0h 0m 0.942s
  Running routing:
-    Routing Phase 0: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-    Routing Phase 1: CPU time = 0h 0m 0.256s, Elapsed time = 0h 0m 0.263s
-    Routing Phase 2: CPU time = 0h 0m 0.381s, Elapsed time = 0h 0m 0.381s
-    Total Routing: CPU time = 0h 0m 0.637s, Elapsed time = 0h 0m 0.644s
+    Routing Phase 0: CPU time = 0h 0m 0.001s, Elapsed time = 0h 0m 0s
+    Routing Phase 1: CPU time = 0h 0m 0.285s, Elapsed time = 0h 0m 0.286s
+    Routing Phase 2: CPU time = 0h 0m 0.833s, Elapsed time = 0h 0m 0.833s
+    Routing Phase GAO : CPU time = 0h 0m 0.575s, Elapsed time = 0h 0m 0.574s
+    Total Routing: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
  Generate output files:
-    CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
+    CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
 
- Total Time and Memory Usage: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s, Peak memory usage = 302MB
+ Total Time and Memory Usage: CPU time = 0h 0m 5s, Elapsed time = 0h 0m 5s, Peak memory usage = 348MB
 
 
 3. Resource Usage Summary
@@ -38,23 +40,23 @@
   ----------------------------------------------------------
   Resources                   | Usage
   ----------------------------------------------------------
-  Logic                       | 170/20736  1%
-    --LUT,ALU,ROM16           | 158(133 LUT, 25 ALU, 0 ROM16)
-    --SSRAM(RAM16)            | 2
-  Register                    | 100/16173  1%
-    --Logic Register as Latch | 1/15552  1%
-    --Logic Register as FF    | 99/15552  1%
+  Logic                       | 444/20736  2%
+    --LUT,ALU,ROM16           | 420(343 LUT, 77 ALU, 0 ROM16)
+    --SSRAM(RAM16)            | 4
+  Register                    | 252/16173  1%
+    --Logic Register as Latch | 40/15552  1%
+    --Logic Register as FF    | 212/15552  1%
     --I/O Register as Latch   | 0/621  0%
     --I/O Register as FF      | 0/621  0%
-  CLS                         | 136/10368  1%
+  CLS                         | 314/10368  3%
   I/O Port                    | 26
-  I/O Buf                     | 15
-    --Input Buf               | 4
+  I/O Buf                     | 16
+    --Input Buf               | 5
     --Output Buf              | 11
     --Inout Buf               | 0
   IOLOGIC                     | 0%
-  BSRAM                       | 71%
-    --SDPB                    | 33
+  BSRAM                       | 78%
+    --SDPB                    | 36
   DSP                         | 0%
   PLL                         | 1/4  25%
   DCS                         | 0/8  0%
@@ -67,15 +69,32 @@
   ==========================================================
 
 
+4. GAO Resource Usage Summary
 
-4. I/O Bank Usage Summary
+  ----------------------------------------------------------
+  Resources            | Usage
+  ----------------------------------------------------------
+  Logic                | 356
+    --LUT,ALU,ROM16    | 356(346 LUT, 10 ALU, 0 ROM16)
+    --SSRAM(RAM16)     | 0
+  Register             | 268
+  I/O Port             | 15
+  I/O Buf              | 4
+    --Input Buf        | 3
+    --Output Buf       | 1
+    --Inout Buf        | 0
+  BSRAM                | 2
+  ==========================================================
+
+
+5. I/O Bank Usage Summary
 
   -----------------------
   I/O Bank  | Usage       
   -----------------------
-  bank 0   | 10/29(34%)  
+  bank 0   | 9/29(31%)   
   bank 1   | 5/20(25%)   
-  bank 2   | 4/20(20%)   
+  bank 2   | 5/20(25%)   
   bank 3   | 0/32(0%)    
   bank 4   | 1/36(2%)    
   bank 5   | 0/36(0%)    
@@ -84,13 +103,13 @@
   =======================
 
 
-5. Global Clock Usage Summary
+6. Global Clock Usage Summary
 
   -------------------------------
   Global Clock  | Usage       
   -------------------------------
-  PRIMARY       | 4/8(50%)
-  SECONDARY     | 3/8(37%)
+  PRIMARY       | 5/8(62%)
+  SECONDARY     | 8/8(100%)
   GCLK_PIN      | 1/8(12%)
   PLL           | 1/4(25%)
   CLKDIV        | 1/8(12%)
@@ -98,24 +117,30 @@
   ===============================
 
 
-6. Global Clock Signals
+7. Global Clock Signals
 
   -------------------------------------------
   Signal         | Global Clock   | Location
   -------------------------------------------
-  spi_clk_d      | PRIMARY        |  TL BL
+  spi_clk_d      | PRIMARY        |  TR TL BR BL
   sys_clk        | PRIMARY        |  TR TL BR BL
   dac_clk_d      | PRIMARY        |  TR TL BR BL
+  wfull_val      | PRIMARY        |  BR
   wfull_val      | PRIMARY        |  BL
   sys_resetn     | SECONDARY      |  -
-  buffer_rd_dv   | SECONDARY      |  -
+  state_1[1]     | SECONDARY      |  -
+  n336_9         | SECONDARY      |  -
+  n360_9         | SECONDARY      |  -
+  n311_13        | SECONDARY      |  -
+  n118_9         | SECONDARY      |  -
+  reset_r[1]     | SECONDARY      |  -
   reset_r[1]     | SECONDARY      |  -
   osc_27m_d      | HCLK           | TOP[0]
   sys_clk        | HCLK           | RIGHT[0]
   ===========================================
 
 
-7. Pinout by Port Name
+8. Pinout by Port Name
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Port Name    | Diff Pair | Loc./Bank     | Constraint | Dir.  | Site     | IO Type    | Drive | Pull Mode | PCI Clamp | Hysteresis | Open Drain | Slew Rate | Vref       | Single Resistor | Diff Resistor | BankVccio 
@@ -130,9 +155,9 @@ adc_data[4]  |           | E15/1         | Y          | in    | IOT44[B] | LVCMO
 adc_data[5]  |           | D14/1         | Y          | in    | IOT44[A] | LVCMOS33   | NA    | NONE      | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3       
 adc_data[6]  |           | F14/0         | Y          | in    | IOT9[A]  | LVCMOS33   | NA    | NONE      | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3       
 adc_data[7]  |           | F16/0         | Y          | in    | IOT9[B]  | LVCMOS33   | NA    | NONE      | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3       
-spi_clk      |           | K15/1         | Y          | in    | IOT30[B] | LVCMOS33   | NA    | NONE      | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3       
-spi_mosi     |           | G16/0         | Y          | in    | IOT16[A] | LVCMOS33   | NA    | NONE      | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3       
-spi_cs       |           | K16/0         | Y          | in    | IOT24[B] | LVCMOS33   | NA    | NONE      | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3       
+spi_clk      |           | H16/0         | Y          | in    | IOT20[B] | LVCMOS33   | NA    | NONE      | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3       
+spi_mosi     |           | K15/1         | Y          | in    | IOT30[B] | LVCMOS33   | NA    | NONE      | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3       
+spi_cs       |           | P11/2         | Y          | in    | IOR24[B] | LVCMOS33   | NA    | NONE      | NA        | NONE       | NA         | NA        | NA         | OFF             | NA            | 3.3       
 triggers[0]  |           | D7/6          | Y          | in    | IOL53[B] | LVCMOS33   | NA    | NONE      | NA        | NONE       | NA         | NA        | NA         | OFF             | NA            | 1.2       
 triggers[1]  |           | C7/6          | Y          | in    | IOL40[B] | LVCMOS33   | NA    | NONE      | NA        | NONE       | NA         | NA        | NA         | OFF             | NA            | 1.2       
 adc_clk      |           | G14/0         | Y          | out   | IOT13[B] | LVCMOS33   | 24    | NONE      | NA        | NA         | OFF        | FAST      | NA         | NA              | NA            | 3.3       
@@ -145,13 +170,13 @@ dac_data[4]  |           | M15/1         | Y          | out   | IOT40[B] | LVCMO
 dac_data[5]  |           | M14/1         | Y          | out   | IOT40[A] | LVCMOS33   | 24    | NONE      | NA        | NA         | OFF        | FAST      | NA         | NA              | NA            | 3.3       
 dac_data[6]  |           | F13/0         | Y          | out   | IOT8[A]  | LVCMOS33   | 24    | NONE      | NA        | NA         | OFF        | FAST      | NA         | NA              | NA            | 3.3       
 dac_data[7]  |           | G12/0         | Y          | out   | IOT8[B]  | LVCMOS33   | 24    | NONE      | NA        | NA         | OFF        | FAST      | NA         | NA              | NA            | 3.3       
-spi_miso     |           | H16/0         | Y          | out   | IOT20[B] | LVCMOS33   | 24    | NONE      | NA        | NA         | OFF        | FAST      | NA         | NA              | NA            | 3.3       
+spi_miso     |           | K16/0         | Y          | out   | IOT24[B] | LVCMOS33   | 24    | NONE      | NA        | NA         | OFF        | FAST      | NA         | NA              | NA            | 3.3       
 ====================================================================================================================================================================================================================
 
 
 
 
-8. All Package Pins
+9. All Package Pins
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Loc./Bank| Signal       | Dir.  | Site     | IO Type  | Drive | Pull Mode | PCI Clamp | Hysteresis | Open Drain | Slew Rate | Vref       | Single Resistor | Diff Resistor | Bank Vccio
@@ -173,20 +198,20 @@ G15/0    | -            | in    | IOT13[A] | LVCMOS18 | NA    | UP        | NA  
 G14/0    | adc_clk      | out   | IOT13[B] | LVCMOS33 | 24    | NONE      | NA        | NA         | OFF        | FAST      | NA         | NA              | NA            | 3.3  
 G11/0    | -            | in    | IOT14[A] | LVCMOS18 | NA    | UP        | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
 H12/0    | -            | in    | IOT14[B] | LVCMOS18 | NA    | UP        | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
-G16/0    | spi_mosi     | in    | IOT16[A] | LVCMOS33 | NA    | NONE      | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
+G16/0    | -            | in    | IOT16[A] | LVCMOS18 | NA    | UP        | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
 H15/0    | -            | in    | IOT16[B] | LVCMOS18 | NA    | UP        | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
 H13/0    | -            | in    | IOT18[A] | LVCMOS18 | NA    | UP        | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
 J12/0    | -            | in    | IOT18[B] | LVCMOS18 | NA    | UP        | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
 H14/0    | -            | in    | IOT20[A] | LVCMOS18 | NA    | UP        | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
-H16/0    | spi_miso     | out   | IOT20[B] | LVCMOS33 | 24    | NONE      | NA        | NA         | OFF        | FAST      | NA         | NA              | NA            | 3.3  
+H16/0    | spi_clk      | in    | IOT20[B] | LVCMOS33 | NA    | NONE      | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
 J16/0    | dac_clk      | out   | IOT22[A] | LVCMOS33 | 24    | NONE      | NA        | NA         | OFF        | FAST      | NA         | NA              | NA            | 3.3  
 J14/0    | -            | in    | IOT22[B] | LVCMOS18 | NA    | UP        | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
 J15/0    | -            | in    | IOT24[A] | LVCMOS18 | NA    | UP        | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
-K16/0    | spi_cs       | in    | IOT24[B] | LVCMOS33 | NA    | NONE      | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
+K16/0    | spi_miso     | out   | IOT24[B] | LVCMOS33 | 24    | NONE      | NA        | NA         | OFF        | FAST      | NA         | NA              | NA            | 3.3  
 H11/0    | osc_27m      | in    | IOT27[A] | LVCMOS33 | NA    | NONE      | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
 J13/0    | -            | in    | IOT27[B] | LVCMOS18 | NA    | UP        | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
 K14/1    | -            | in    | IOT30[A] | LVCMOS18 | NA    | UP        | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
-K15/1    | spi_clk      | in    | IOT30[B] | LVCMOS33 | NA    | NONE      | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
+K15/1    | spi_mosi     | in    | IOT30[B] | LVCMOS33 | NA    | NONE      | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
 J11/1    | -            | in    | IOT32[A] | LVCMOS18 | NA    | UP        | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
 L12/1    | -            | in    | IOT32[B] | LVCMOS18 | NA    | UP        | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
 L16/1    | -            | in    | IOT34[A] | LVCMOS18 | NA    | UP        | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
@@ -327,7 +352,7 @@ T14/2    | dac_data[3]  | out   | IOR20[B] | LVCMOS33 | 24    | NONE      | NA  
 M10/2    | -            | in    | IOR22[A] | LVCMOS18 | NA    | UP        | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
 N11/2    | -            | in    | IOR22[B] | LVCMOS18 | NA    | UP        | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
 T11/2    | -            | in    | IOR24[A] | LVCMOS18 | NA    | UP        | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
-P11/2    | -            | in    | IOR24[B] | LVCMOS18 | NA    | UP        | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
+P11/2    | spi_cs       | in    | IOR24[B] | LVCMOS33 | NA    | NONE      | NA        | NONE       | NA         | NA        | NA         | OFF             | NA            | 3.3  
 C6/2     | -            | out   | IOR25[A] | LVCMOS18 | 8     | UP        | NA        | NA         | OFF        | FAST      | NA         | NA              | NA            | 3.3  
 B8/2     | -            | in    | IOR25[B] | LVCMOS18 | NA    | UP        | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  
 A7/2     | -            | in    | IOR26[A] | LVCMOS18 | NA    | UP        | NA        | NONE       | NA         | NA        | NA         | NA              | NA            | 3.3  

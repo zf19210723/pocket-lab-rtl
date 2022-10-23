@@ -13,6 +13,14 @@
    "Type" : "verilog"
   },
   {
+   "Path" : "D:/Tasks/PocketLab-RTL/src/ccu_recv_header_fsm.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Tasks/PocketLab-RTL/src/ccu_write_dac_fsm.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "D:/Tasks/PocketLab-RTL/src/clkdiv_adda/clkdiv_adda.v",
    "Type" : "verilog"
   },
@@ -22,6 +30,10 @@
   },
   {
    "Path" : "D:/Tasks/PocketLab-RTL/src/fifo_adc/fifo_adc.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Tasks/PocketLab-RTL/src/fifo_ccu_recv_buffer/fifo_ccu_recv_buffer.v",
    "Type" : "verilog"
   },
   {
@@ -54,7 +66,7 @@
  ],
  "LoopLimit" : 2000,
  "ResultFile" : "D:/Tasks/PocketLab-RTL/impl/temp/rtl_parser.result",
- "Top" : "",
+ "Top" : "main",
  "VerilogStd" : "verilog_2001",
  "VhdlStd" : "vhdl_93"
 }

@@ -29,6 +29,8 @@ module main (
         .clkout(sys_clk),
         .lock  (sys_resetn)
     );
+
+    wire adda_clk;
     assign adc_clk = adda_clk;
     assign dac_clk = adda_clk;
 

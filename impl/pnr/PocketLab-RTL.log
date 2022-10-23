@@ -1,12 +1,27 @@
 Reading netlist file: "D:\Tasks\PocketLab-RTL\impl\gwsynthesis\PocketLab-RTL.vg"
 Parsing netlist file "D:\Tasks\PocketLab-RTL\impl\gwsynthesis\PocketLab-RTL.vg" completed
 Processing netlist completed
+Parsing netlist file "D:\Tasks\PocketLab-RTL\impl\gao\gao.v" completed
+WARN  (PA1015) : Signal 'spi_clk' captured in GAO is replaced by 'spi_clk_d'
+Processing netlist completed
 Reading constraint file: "D:\Tasks\PocketLab-RTL\src\main.cst"
 Physical Constraint parsed completed
 Running placement......
 [10%] Placement Phase 0 completed
 [20%] Placement Phase 1 completed
 [30%] Placement Phase 2 completed
+WARN  (TA1117) : Can't calculate clocks' relationship between: "ccu_inst/n455_8" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "ccu_inst/n455_8"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "ccu_inst/state_1[1]" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "ccu_inst/ccu_recv_header_fsm_inst/n311_13"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "ccu_inst/ccu_recv_header_fsm_inst/n336_9"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "ccu_inst/state_1[1]"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "ccu_inst/ccu_recv_header_fsm_inst/n360_9"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "ccu_inst/ccu_write_dac_fsm_inst/n118_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "ccu_inst/ccu_write_dac_fsm_inst/n118_9"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val" and "spi_clk"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "spi_clk" and "spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "spi_clk" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
 WARN  (TA1117) : Can't calculate clocks' relationship between: "spi_send_inst/fifo_spi_send_inst/fifo_inst/wfull_val" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
 WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "spi_send_inst/fifo_spi_send_inst/fifo_inst/wfull_val"
 WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "spi_clk"
@@ -19,6 +34,7 @@ WARN  (PR1014) : Generic routing resource will be used to clock signal 'spi_clk_
 [90%] Routing Phase 3 completed
 Running timing analysis......
 [95%] Timing analysis completed
+WARN  (PR1014) : Generic routing resource will be used to clock signal 'spi_clk_d' by the specified constraint. And then it may lead to the excessive delay or skew
 Placement and routing completed
 Bitstream generation in progress......
 Bitstream generation completed
@@ -29,5 +45,5 @@ Generate file "D:\Tasks\PocketLab-RTL\impl\pnr\PocketLab-RTL.pin.html" completed
 Generate file "D:\Tasks\PocketLab-RTL\impl\pnr\PocketLab-RTL.rpt.html" completed
 Generate file "D:\Tasks\PocketLab-RTL\impl\pnr\PocketLab-RTL.rpt.txt" completed
 Generate file "D:\Tasks\PocketLab-RTL\impl\pnr\PocketLab-RTL.tr.html" completed
-Sun Oct 23 07:46:32 2022
+Sun Oct 23 13:46:30 2022
 

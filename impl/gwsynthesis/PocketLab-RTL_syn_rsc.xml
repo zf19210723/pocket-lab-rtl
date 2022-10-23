@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module name="main" Lut="1">
     <SubModule name="pll_main_inst"/>
+    <SubModule name="ccu_inst" Register="16" Lut="29">
+        <SubModule name="fifo_ccu_recv_buffer_inst" Register="40" Alu="39" Lut="30" Bsram="2"/>
+        <SubModule name="ccu_recv_header_fsm_inst" Register="26" Lut="40"/>
+        <SubModule name="ccu_write_dac_fsm_inst" Register="4" Lut="8"/>
+    </SubModule>
     <SubModule name="clkdiv_adda_inst"/>
-    <SubModule name="dac_inst" Register="18" Alu="15" Lut="5">
+    <SubModule name="dac_inst" Register="36" Alu="15" Lut="47">
         <SubModule name="bram_dac_inst" Register="4" Lut="24" Bsram="32"/>
+    </SubModule>
+    <SubModule name="spi_recv_inst" Register="2" Lut="2">
+        <SubModule name="fifo_spi_recv_inst" Register="46" Alu="7" Lut="61" Bsram="1" Ssram="2"/>
     </SubModule>
     <SubModule name="spi_send_inst">
         <SubModule name="fifo_spi_send_inst" Register="46" Alu="7" Lut="75" Bsram="1" Ssram="2"/>

@@ -1,58 +1,68 @@
 module gw_gao(
-    \dac_inst/bram_dac_inst/dout[7] ,
-    \dac_inst/bram_dac_inst/dout[6] ,
-    \dac_inst/bram_dac_inst/dout[5] ,
-    \dac_inst/bram_dac_inst/dout[4] ,
-    \dac_inst/bram_dac_inst/dout[3] ,
-    \dac_inst/bram_dac_inst/dout[2] ,
-    \dac_inst/bram_dac_inst/dout[1] ,
-    \dac_inst/bram_dac_inst/dout[0] ,
-    \dac_inst/bram_dac_inst/ada[15] ,
-    \dac_inst/bram_dac_inst/ada[14] ,
-    \dac_inst/bram_dac_inst/ada[13] ,
-    \dac_inst/bram_dac_inst/ada[12] ,
-    \dac_inst/bram_dac_inst/ada[11] ,
-    \dac_inst/bram_dac_inst/ada[10] ,
-    \dac_inst/bram_dac_inst/ada[9] ,
-    \dac_inst/bram_dac_inst/ada[8] ,
-    \dac_inst/bram_dac_inst/ada[7] ,
-    \dac_inst/bram_dac_inst/ada[6] ,
-    \dac_inst/bram_dac_inst/ada[5] ,
-    \dac_inst/bram_dac_inst/ada[4] ,
-    \dac_inst/bram_dac_inst/ada[3] ,
-    \dac_inst/bram_dac_inst/ada[2] ,
-    \dac_inst/bram_dac_inst/ada[1] ,
-    \dac_inst/bram_dac_inst/ada[0] ,
-    \dac_inst/bram_dac_inst/din[7] ,
-    \dac_inst/bram_dac_inst/din[6] ,
-    \dac_inst/bram_dac_inst/din[5] ,
-    \dac_inst/bram_dac_inst/din[4] ,
-    \dac_inst/bram_dac_inst/din[3] ,
-    \dac_inst/bram_dac_inst/din[2] ,
-    \dac_inst/bram_dac_inst/din[1] ,
-    \dac_inst/bram_dac_inst/din[0] ,
-    \dac_inst/bram_dac_inst/adb[15] ,
-    \dac_inst/bram_dac_inst/adb[14] ,
-    \dac_inst/bram_dac_inst/adb[13] ,
-    \dac_inst/bram_dac_inst/adb[12] ,
-    \dac_inst/bram_dac_inst/adb[11] ,
-    \dac_inst/bram_dac_inst/adb[10] ,
-    \dac_inst/bram_dac_inst/adb[9] ,
-    \dac_inst/bram_dac_inst/adb[8] ,
-    \dac_inst/bram_dac_inst/adb[7] ,
-    \dac_inst/bram_dac_inst/adb[6] ,
-    \dac_inst/bram_dac_inst/adb[5] ,
-    \dac_inst/bram_dac_inst/adb[4] ,
-    \dac_inst/bram_dac_inst/adb[3] ,
-    \dac_inst/bram_dac_inst/adb[2] ,
-    \dac_inst/bram_dac_inst/adb[1] ,
-    \dac_inst/bram_dac_inst/adb[0] ,
-    \dac_inst/bram_dac_inst/cea ,
-    \dac_inst/bram_dac_inst/reseta ,
-    \dac_inst/bram_dac_inst/ceb ,
-    \dac_inst/bram_dac_inst/resetb ,
-    \dac_inst/bram_dac_inst/oce ,
-    \triggers[0] ,
+    \spi_recv_axis_data[7] ,
+    \spi_recv_axis_data[6] ,
+    \spi_recv_axis_data[5] ,
+    \spi_recv_axis_data[4] ,
+    \spi_recv_axis_data[3] ,
+    \spi_recv_axis_data[2] ,
+    \spi_recv_axis_data[1] ,
+    \spi_recv_axis_data[0] ,
+    spi_recv_axis_valid,
+    spi_recv_axis_ready,
+    spi_recv_axis_last,
+    \spi_recv_inst/axis_tdata[7] ,
+    \spi_recv_inst/axis_tdata[6] ,
+    \spi_recv_inst/axis_tdata[5] ,
+    \spi_recv_inst/axis_tdata[4] ,
+    \spi_recv_inst/axis_tdata[3] ,
+    \spi_recv_inst/axis_tdata[2] ,
+    \spi_recv_inst/axis_tdata[1] ,
+    \spi_recv_inst/axis_tdata[0] ,
+    \spi_recv_inst/fifo_rd_data[7] ,
+    \spi_recv_inst/fifo_rd_data[6] ,
+    \spi_recv_inst/fifo_rd_data[5] ,
+    \spi_recv_inst/fifo_rd_data[4] ,
+    \spi_recv_inst/fifo_rd_data[3] ,
+    \spi_recv_inst/fifo_rd_data[2] ,
+    \spi_recv_inst/fifo_rd_data[1] ,
+    \spi_recv_inst/fifo_rd_data[0] ,
+    \spi_recv_inst/state[7] ,
+    \spi_recv_inst/state[6] ,
+    \spi_recv_inst/state[5] ,
+    \spi_recv_inst/state[4] ,
+    \spi_recv_inst/state[3] ,
+    \spi_recv_inst/state[2] ,
+    \spi_recv_inst/state[1] ,
+    \spi_recv_inst/state[0] ,
+    \spi_recv_inst/state_next[7] ,
+    \spi_recv_inst/state_next[6] ,
+    \spi_recv_inst/state_next[5] ,
+    \spi_recv_inst/state_next[4] ,
+    \spi_recv_inst/state_next[3] ,
+    \spi_recv_inst/state_next[2] ,
+    \spi_recv_inst/state_next[1] ,
+    \spi_recv_inst/state_next[0] ,
+    \spi_recv_inst/fifo_spi_recv_inst/Data[0] ,
+    \spi_recv_inst/fifo_spi_recv_inst/Q[7] ,
+    \spi_recv_inst/fifo_spi_recv_inst/Q[6] ,
+    \spi_recv_inst/fifo_spi_recv_inst/Q[5] ,
+    \spi_recv_inst/fifo_spi_recv_inst/Q[4] ,
+    \spi_recv_inst/fifo_spi_recv_inst/Q[3] ,
+    \spi_recv_inst/fifo_spi_recv_inst/Q[2] ,
+    \spi_recv_inst/fifo_spi_recv_inst/Q[1] ,
+    \spi_recv_inst/fifo_spi_recv_inst/Q[0] ,
+    \spi_recv_inst/axi_aresetn ,
+    \spi_recv_inst/axi_aclk ,
+    \spi_recv_inst/spi_clk ,
+    \spi_recv_inst/spi_mosi ,
+    \spi_recv_inst/spi_cs ,
+    \spi_recv_inst/axis_tvalid ,
+    \spi_recv_inst/axis_tready ,
+    \spi_recv_inst/axis_tlast ,
+    \spi_recv_inst/fifo_rd_dv ,
+    \spi_recv_inst/fifo_empty ,
+    \spi_recv_inst/fifo_full ,
+    spi_cs,
     sys_clk,
     tms_pad_i,
     tck_pad_i,
@@ -60,120 +70,140 @@ module gw_gao(
     tdo_pad_o
 );
 
-input \dac_inst/bram_dac_inst/dout[7] ;
-input \dac_inst/bram_dac_inst/dout[6] ;
-input \dac_inst/bram_dac_inst/dout[5] ;
-input \dac_inst/bram_dac_inst/dout[4] ;
-input \dac_inst/bram_dac_inst/dout[3] ;
-input \dac_inst/bram_dac_inst/dout[2] ;
-input \dac_inst/bram_dac_inst/dout[1] ;
-input \dac_inst/bram_dac_inst/dout[0] ;
-input \dac_inst/bram_dac_inst/ada[15] ;
-input \dac_inst/bram_dac_inst/ada[14] ;
-input \dac_inst/bram_dac_inst/ada[13] ;
-input \dac_inst/bram_dac_inst/ada[12] ;
-input \dac_inst/bram_dac_inst/ada[11] ;
-input \dac_inst/bram_dac_inst/ada[10] ;
-input \dac_inst/bram_dac_inst/ada[9] ;
-input \dac_inst/bram_dac_inst/ada[8] ;
-input \dac_inst/bram_dac_inst/ada[7] ;
-input \dac_inst/bram_dac_inst/ada[6] ;
-input \dac_inst/bram_dac_inst/ada[5] ;
-input \dac_inst/bram_dac_inst/ada[4] ;
-input \dac_inst/bram_dac_inst/ada[3] ;
-input \dac_inst/bram_dac_inst/ada[2] ;
-input \dac_inst/bram_dac_inst/ada[1] ;
-input \dac_inst/bram_dac_inst/ada[0] ;
-input \dac_inst/bram_dac_inst/din[7] ;
-input \dac_inst/bram_dac_inst/din[6] ;
-input \dac_inst/bram_dac_inst/din[5] ;
-input \dac_inst/bram_dac_inst/din[4] ;
-input \dac_inst/bram_dac_inst/din[3] ;
-input \dac_inst/bram_dac_inst/din[2] ;
-input \dac_inst/bram_dac_inst/din[1] ;
-input \dac_inst/bram_dac_inst/din[0] ;
-input \dac_inst/bram_dac_inst/adb[15] ;
-input \dac_inst/bram_dac_inst/adb[14] ;
-input \dac_inst/bram_dac_inst/adb[13] ;
-input \dac_inst/bram_dac_inst/adb[12] ;
-input \dac_inst/bram_dac_inst/adb[11] ;
-input \dac_inst/bram_dac_inst/adb[10] ;
-input \dac_inst/bram_dac_inst/adb[9] ;
-input \dac_inst/bram_dac_inst/adb[8] ;
-input \dac_inst/bram_dac_inst/adb[7] ;
-input \dac_inst/bram_dac_inst/adb[6] ;
-input \dac_inst/bram_dac_inst/adb[5] ;
-input \dac_inst/bram_dac_inst/adb[4] ;
-input \dac_inst/bram_dac_inst/adb[3] ;
-input \dac_inst/bram_dac_inst/adb[2] ;
-input \dac_inst/bram_dac_inst/adb[1] ;
-input \dac_inst/bram_dac_inst/adb[0] ;
-input \dac_inst/bram_dac_inst/cea ;
-input \dac_inst/bram_dac_inst/reseta ;
-input \dac_inst/bram_dac_inst/ceb ;
-input \dac_inst/bram_dac_inst/resetb ;
-input \dac_inst/bram_dac_inst/oce ;
-input \triggers[0] ;
+input \spi_recv_axis_data[7] ;
+input \spi_recv_axis_data[6] ;
+input \spi_recv_axis_data[5] ;
+input \spi_recv_axis_data[4] ;
+input \spi_recv_axis_data[3] ;
+input \spi_recv_axis_data[2] ;
+input \spi_recv_axis_data[1] ;
+input \spi_recv_axis_data[0] ;
+input spi_recv_axis_valid;
+input spi_recv_axis_ready;
+input spi_recv_axis_last;
+input \spi_recv_inst/axis_tdata[7] ;
+input \spi_recv_inst/axis_tdata[6] ;
+input \spi_recv_inst/axis_tdata[5] ;
+input \spi_recv_inst/axis_tdata[4] ;
+input \spi_recv_inst/axis_tdata[3] ;
+input \spi_recv_inst/axis_tdata[2] ;
+input \spi_recv_inst/axis_tdata[1] ;
+input \spi_recv_inst/axis_tdata[0] ;
+input \spi_recv_inst/fifo_rd_data[7] ;
+input \spi_recv_inst/fifo_rd_data[6] ;
+input \spi_recv_inst/fifo_rd_data[5] ;
+input \spi_recv_inst/fifo_rd_data[4] ;
+input \spi_recv_inst/fifo_rd_data[3] ;
+input \spi_recv_inst/fifo_rd_data[2] ;
+input \spi_recv_inst/fifo_rd_data[1] ;
+input \spi_recv_inst/fifo_rd_data[0] ;
+input \spi_recv_inst/state[7] ;
+input \spi_recv_inst/state[6] ;
+input \spi_recv_inst/state[5] ;
+input \spi_recv_inst/state[4] ;
+input \spi_recv_inst/state[3] ;
+input \spi_recv_inst/state[2] ;
+input \spi_recv_inst/state[1] ;
+input \spi_recv_inst/state[0] ;
+input \spi_recv_inst/state_next[7] ;
+input \spi_recv_inst/state_next[6] ;
+input \spi_recv_inst/state_next[5] ;
+input \spi_recv_inst/state_next[4] ;
+input \spi_recv_inst/state_next[3] ;
+input \spi_recv_inst/state_next[2] ;
+input \spi_recv_inst/state_next[1] ;
+input \spi_recv_inst/state_next[0] ;
+input \spi_recv_inst/fifo_spi_recv_inst/Data[0] ;
+input \spi_recv_inst/fifo_spi_recv_inst/Q[7] ;
+input \spi_recv_inst/fifo_spi_recv_inst/Q[6] ;
+input \spi_recv_inst/fifo_spi_recv_inst/Q[5] ;
+input \spi_recv_inst/fifo_spi_recv_inst/Q[4] ;
+input \spi_recv_inst/fifo_spi_recv_inst/Q[3] ;
+input \spi_recv_inst/fifo_spi_recv_inst/Q[2] ;
+input \spi_recv_inst/fifo_spi_recv_inst/Q[1] ;
+input \spi_recv_inst/fifo_spi_recv_inst/Q[0] ;
+input \spi_recv_inst/axi_aresetn ;
+input \spi_recv_inst/axi_aclk ;
+input \spi_recv_inst/spi_clk ;
+input \spi_recv_inst/spi_mosi ;
+input \spi_recv_inst/spi_cs ;
+input \spi_recv_inst/axis_tvalid ;
+input \spi_recv_inst/axis_tready ;
+input \spi_recv_inst/axis_tlast ;
+input \spi_recv_inst/fifo_rd_dv ;
+input \spi_recv_inst/fifo_empty ;
+input \spi_recv_inst/fifo_full ;
+input spi_cs;
 input sys_clk;
 input tms_pad_i;
 input tck_pad_i;
 input tdi_pad_i;
 output tdo_pad_o;
 
-wire \dac_inst/bram_dac_inst/dout[7] ;
-wire \dac_inst/bram_dac_inst/dout[6] ;
-wire \dac_inst/bram_dac_inst/dout[5] ;
-wire \dac_inst/bram_dac_inst/dout[4] ;
-wire \dac_inst/bram_dac_inst/dout[3] ;
-wire \dac_inst/bram_dac_inst/dout[2] ;
-wire \dac_inst/bram_dac_inst/dout[1] ;
-wire \dac_inst/bram_dac_inst/dout[0] ;
-wire \dac_inst/bram_dac_inst/ada[15] ;
-wire \dac_inst/bram_dac_inst/ada[14] ;
-wire \dac_inst/bram_dac_inst/ada[13] ;
-wire \dac_inst/bram_dac_inst/ada[12] ;
-wire \dac_inst/bram_dac_inst/ada[11] ;
-wire \dac_inst/bram_dac_inst/ada[10] ;
-wire \dac_inst/bram_dac_inst/ada[9] ;
-wire \dac_inst/bram_dac_inst/ada[8] ;
-wire \dac_inst/bram_dac_inst/ada[7] ;
-wire \dac_inst/bram_dac_inst/ada[6] ;
-wire \dac_inst/bram_dac_inst/ada[5] ;
-wire \dac_inst/bram_dac_inst/ada[4] ;
-wire \dac_inst/bram_dac_inst/ada[3] ;
-wire \dac_inst/bram_dac_inst/ada[2] ;
-wire \dac_inst/bram_dac_inst/ada[1] ;
-wire \dac_inst/bram_dac_inst/ada[0] ;
-wire \dac_inst/bram_dac_inst/din[7] ;
-wire \dac_inst/bram_dac_inst/din[6] ;
-wire \dac_inst/bram_dac_inst/din[5] ;
-wire \dac_inst/bram_dac_inst/din[4] ;
-wire \dac_inst/bram_dac_inst/din[3] ;
-wire \dac_inst/bram_dac_inst/din[2] ;
-wire \dac_inst/bram_dac_inst/din[1] ;
-wire \dac_inst/bram_dac_inst/din[0] ;
-wire \dac_inst/bram_dac_inst/adb[15] ;
-wire \dac_inst/bram_dac_inst/adb[14] ;
-wire \dac_inst/bram_dac_inst/adb[13] ;
-wire \dac_inst/bram_dac_inst/adb[12] ;
-wire \dac_inst/bram_dac_inst/adb[11] ;
-wire \dac_inst/bram_dac_inst/adb[10] ;
-wire \dac_inst/bram_dac_inst/adb[9] ;
-wire \dac_inst/bram_dac_inst/adb[8] ;
-wire \dac_inst/bram_dac_inst/adb[7] ;
-wire \dac_inst/bram_dac_inst/adb[6] ;
-wire \dac_inst/bram_dac_inst/adb[5] ;
-wire \dac_inst/bram_dac_inst/adb[4] ;
-wire \dac_inst/bram_dac_inst/adb[3] ;
-wire \dac_inst/bram_dac_inst/adb[2] ;
-wire \dac_inst/bram_dac_inst/adb[1] ;
-wire \dac_inst/bram_dac_inst/adb[0] ;
-wire \dac_inst/bram_dac_inst/cea ;
-wire \dac_inst/bram_dac_inst/reseta ;
-wire \dac_inst/bram_dac_inst/ceb ;
-wire \dac_inst/bram_dac_inst/resetb ;
-wire \dac_inst/bram_dac_inst/oce ;
-wire \triggers[0] ;
+wire \spi_recv_axis_data[7] ;
+wire \spi_recv_axis_data[6] ;
+wire \spi_recv_axis_data[5] ;
+wire \spi_recv_axis_data[4] ;
+wire \spi_recv_axis_data[3] ;
+wire \spi_recv_axis_data[2] ;
+wire \spi_recv_axis_data[1] ;
+wire \spi_recv_axis_data[0] ;
+wire spi_recv_axis_valid;
+wire spi_recv_axis_ready;
+wire spi_recv_axis_last;
+wire \spi_recv_inst/axis_tdata[7] ;
+wire \spi_recv_inst/axis_tdata[6] ;
+wire \spi_recv_inst/axis_tdata[5] ;
+wire \spi_recv_inst/axis_tdata[4] ;
+wire \spi_recv_inst/axis_tdata[3] ;
+wire \spi_recv_inst/axis_tdata[2] ;
+wire \spi_recv_inst/axis_tdata[1] ;
+wire \spi_recv_inst/axis_tdata[0] ;
+wire \spi_recv_inst/fifo_rd_data[7] ;
+wire \spi_recv_inst/fifo_rd_data[6] ;
+wire \spi_recv_inst/fifo_rd_data[5] ;
+wire \spi_recv_inst/fifo_rd_data[4] ;
+wire \spi_recv_inst/fifo_rd_data[3] ;
+wire \spi_recv_inst/fifo_rd_data[2] ;
+wire \spi_recv_inst/fifo_rd_data[1] ;
+wire \spi_recv_inst/fifo_rd_data[0] ;
+wire \spi_recv_inst/state[7] ;
+wire \spi_recv_inst/state[6] ;
+wire \spi_recv_inst/state[5] ;
+wire \spi_recv_inst/state[4] ;
+wire \spi_recv_inst/state[3] ;
+wire \spi_recv_inst/state[2] ;
+wire \spi_recv_inst/state[1] ;
+wire \spi_recv_inst/state[0] ;
+wire \spi_recv_inst/state_next[7] ;
+wire \spi_recv_inst/state_next[6] ;
+wire \spi_recv_inst/state_next[5] ;
+wire \spi_recv_inst/state_next[4] ;
+wire \spi_recv_inst/state_next[3] ;
+wire \spi_recv_inst/state_next[2] ;
+wire \spi_recv_inst/state_next[1] ;
+wire \spi_recv_inst/state_next[0] ;
+wire \spi_recv_inst/fifo_spi_recv_inst/Data[0] ;
+wire \spi_recv_inst/fifo_spi_recv_inst/Q[7] ;
+wire \spi_recv_inst/fifo_spi_recv_inst/Q[6] ;
+wire \spi_recv_inst/fifo_spi_recv_inst/Q[5] ;
+wire \spi_recv_inst/fifo_spi_recv_inst/Q[4] ;
+wire \spi_recv_inst/fifo_spi_recv_inst/Q[3] ;
+wire \spi_recv_inst/fifo_spi_recv_inst/Q[2] ;
+wire \spi_recv_inst/fifo_spi_recv_inst/Q[1] ;
+wire \spi_recv_inst/fifo_spi_recv_inst/Q[0] ;
+wire \spi_recv_inst/axi_aresetn ;
+wire \spi_recv_inst/axi_aclk ;
+wire \spi_recv_inst/spi_clk ;
+wire \spi_recv_inst/spi_mosi ;
+wire \spi_recv_inst/spi_cs ;
+wire \spi_recv_inst/axis_tvalid ;
+wire \spi_recv_inst/axis_tready ;
+wire \spi_recv_inst/axis_tlast ;
+wire \spi_recv_inst/fifo_rd_dv ;
+wire \spi_recv_inst/fifo_empty ;
+wire \spi_recv_inst/fifo_full ;
+wire spi_cs;
 wire sys_clk;
 wire tms_pad_i;
 wire tck_pad_i;
@@ -248,8 +278,8 @@ gw_con_top  u_icon_top(
 
 ao_top_0  u_la0_top(
     .control(control0[9:0]),
-    .trig0_i(\triggers[0] ),
-    .data_i({\dac_inst/bram_dac_inst/dout[7] ,\dac_inst/bram_dac_inst/dout[6] ,\dac_inst/bram_dac_inst/dout[5] ,\dac_inst/bram_dac_inst/dout[4] ,\dac_inst/bram_dac_inst/dout[3] ,\dac_inst/bram_dac_inst/dout[2] ,\dac_inst/bram_dac_inst/dout[1] ,\dac_inst/bram_dac_inst/dout[0] ,\dac_inst/bram_dac_inst/ada[15] ,\dac_inst/bram_dac_inst/ada[14] ,\dac_inst/bram_dac_inst/ada[13] ,\dac_inst/bram_dac_inst/ada[12] ,\dac_inst/bram_dac_inst/ada[11] ,\dac_inst/bram_dac_inst/ada[10] ,\dac_inst/bram_dac_inst/ada[9] ,\dac_inst/bram_dac_inst/ada[8] ,\dac_inst/bram_dac_inst/ada[7] ,\dac_inst/bram_dac_inst/ada[6] ,\dac_inst/bram_dac_inst/ada[5] ,\dac_inst/bram_dac_inst/ada[4] ,\dac_inst/bram_dac_inst/ada[3] ,\dac_inst/bram_dac_inst/ada[2] ,\dac_inst/bram_dac_inst/ada[1] ,\dac_inst/bram_dac_inst/ada[0] ,\dac_inst/bram_dac_inst/din[7] ,\dac_inst/bram_dac_inst/din[6] ,\dac_inst/bram_dac_inst/din[5] ,\dac_inst/bram_dac_inst/din[4] ,\dac_inst/bram_dac_inst/din[3] ,\dac_inst/bram_dac_inst/din[2] ,\dac_inst/bram_dac_inst/din[1] ,\dac_inst/bram_dac_inst/din[0] ,\dac_inst/bram_dac_inst/adb[15] ,\dac_inst/bram_dac_inst/adb[14] ,\dac_inst/bram_dac_inst/adb[13] ,\dac_inst/bram_dac_inst/adb[12] ,\dac_inst/bram_dac_inst/adb[11] ,\dac_inst/bram_dac_inst/adb[10] ,\dac_inst/bram_dac_inst/adb[9] ,\dac_inst/bram_dac_inst/adb[8] ,\dac_inst/bram_dac_inst/adb[7] ,\dac_inst/bram_dac_inst/adb[6] ,\dac_inst/bram_dac_inst/adb[5] ,\dac_inst/bram_dac_inst/adb[4] ,\dac_inst/bram_dac_inst/adb[3] ,\dac_inst/bram_dac_inst/adb[2] ,\dac_inst/bram_dac_inst/adb[1] ,\dac_inst/bram_dac_inst/adb[0] ,\dac_inst/bram_dac_inst/cea ,\dac_inst/bram_dac_inst/reseta ,\dac_inst/bram_dac_inst/ceb ,\dac_inst/bram_dac_inst/resetb ,\dac_inst/bram_dac_inst/oce }),
+    .trig0_i(spi_cs),
+    .data_i({\spi_recv_axis_data[7] ,\spi_recv_axis_data[6] ,\spi_recv_axis_data[5] ,\spi_recv_axis_data[4] ,\spi_recv_axis_data[3] ,\spi_recv_axis_data[2] ,\spi_recv_axis_data[1] ,\spi_recv_axis_data[0] ,spi_recv_axis_valid,spi_recv_axis_ready,spi_recv_axis_last,\spi_recv_inst/axis_tdata[7] ,\spi_recv_inst/axis_tdata[6] ,\spi_recv_inst/axis_tdata[5] ,\spi_recv_inst/axis_tdata[4] ,\spi_recv_inst/axis_tdata[3] ,\spi_recv_inst/axis_tdata[2] ,\spi_recv_inst/axis_tdata[1] ,\spi_recv_inst/axis_tdata[0] ,\spi_recv_inst/fifo_rd_data[7] ,\spi_recv_inst/fifo_rd_data[6] ,\spi_recv_inst/fifo_rd_data[5] ,\spi_recv_inst/fifo_rd_data[4] ,\spi_recv_inst/fifo_rd_data[3] ,\spi_recv_inst/fifo_rd_data[2] ,\spi_recv_inst/fifo_rd_data[1] ,\spi_recv_inst/fifo_rd_data[0] ,\spi_recv_inst/state[7] ,\spi_recv_inst/state[6] ,\spi_recv_inst/state[5] ,\spi_recv_inst/state[4] ,\spi_recv_inst/state[3] ,\spi_recv_inst/state[2] ,\spi_recv_inst/state[1] ,\spi_recv_inst/state[0] ,\spi_recv_inst/state_next[7] ,\spi_recv_inst/state_next[6] ,\spi_recv_inst/state_next[5] ,\spi_recv_inst/state_next[4] ,\spi_recv_inst/state_next[3] ,\spi_recv_inst/state_next[2] ,\spi_recv_inst/state_next[1] ,\spi_recv_inst/state_next[0] ,\spi_recv_inst/fifo_spi_recv_inst/Data[0] ,\spi_recv_inst/fifo_spi_recv_inst/Q[7] ,\spi_recv_inst/fifo_spi_recv_inst/Q[6] ,\spi_recv_inst/fifo_spi_recv_inst/Q[5] ,\spi_recv_inst/fifo_spi_recv_inst/Q[4] ,\spi_recv_inst/fifo_spi_recv_inst/Q[3] ,\spi_recv_inst/fifo_spi_recv_inst/Q[2] ,\spi_recv_inst/fifo_spi_recv_inst/Q[1] ,\spi_recv_inst/fifo_spi_recv_inst/Q[0] ,\spi_recv_inst/axi_aresetn ,\spi_recv_inst/axi_aclk ,\spi_recv_inst/spi_clk ,\spi_recv_inst/spi_mosi ,\spi_recv_inst/spi_cs ,\spi_recv_inst/axis_tvalid ,\spi_recv_inst/axis_tready ,\spi_recv_inst/axis_tlast ,\spi_recv_inst/fifo_rd_dv ,\spi_recv_inst/fifo_empty ,\spi_recv_inst/fifo_full }),
     .clk_i(sys_clk)
 );
 

@@ -1,8 +1,8 @@
 ; vsim modelsim.ini file, version 10.4
 [Version]
-INIVersion = 10.4
+INIVersion = "10.6d"
 
-; Copyright 1991-2014 Mentor Graphics Corporation
+; Copyright 1991-2018 Mentor Graphics Corporation
 ;
 ; All Rights Reserved.
 ;
@@ -11,6 +11,7 @@ INIVersion = 10.4
 ;   
 
 [Library]
+others = $MODEL_TECH/../modelsim.ini
 ;
 ; VITAL concerns:
 ;
@@ -50,7 +51,16 @@ INIVersion = 10.4
 ;verilog_psl_checkers = $MODEL_TECH/../verilog_psl_checkers // Source files only for this release
 ;mvc_lib = $MODEL_TECH/../mvc_lib
 
+; Automatically perform logical->physical mapping for physical libraries that
+; appear in -L/-Lf options with filesystem path delimiters (e.g. '.' or '/').
+; The tail of the filesystem path name is chosen as the logical library name.
+; For example, in the command "vopt -L ./path/to/lib1 -o opttop top",
+; vopt automatically performs the mapping "lib1 -> ./path/to/lib1".
+; See the User Manual for more details.
+;
+; AutoLibMapping = 0
 
+work = pocketlab-rtl
 [DefineOptionset]
 ; Define optionset entries for the various compilers, vmake, and vsim.
 ; These option sets can be used with the "-optionset <optionsetname>" syntax.
@@ -396,11 +406,11 @@ Explicit = 1
 ; Stats = time,cmd,msg
 
 ; Set the threshold for automatically identifying sparse Verilog memories.
-; A memory with depth equal to or more than the sparse memory threshold gets
-; marked as sparse automatically, unless specified otherwise in source code
-; or by +nosparse commandline option of vlog or vopt.
-; The default is 1M.  (i.e. memories with depth equal
-; to or greater than 1M are marked as sparse)
+; A memory with total size in bytes equal to or more than the sparse memory
+; threshold gets marked as sparse automatically, unless specified otherwise
+; in source code or by the +nosparse commandline option of vlog or vopt.
+; The default is 1M.  (i.e. memories with total size equal
+; to or greater than 1Mb are marked as sparse)
 ; SparseMemThreshold = 1048576 
 
 ; Set the prefix to be honored for synthesis and coverage pragma recognition.
@@ -619,10 +629,8 @@ LibrarySearchPath = mtiAvm mtiRnm mtiOvm mtiUvm mtiUPF infact
 ; WrealType = 1
 
 ; Controls SystemVerilog Language Extensions.  These options enable
-; some non-LRM compliant behavior.  Valid extensions are:
-; "acum", "atpi", "catx", "daoa", "feci", "fin0", "idcl",
-; "iddp", "pae", "sccts", "spsl", "stop0", "udm0", and "uslt".
-; SvExtensions = uslt,spsl,sccts
+; some non-LRM compliant behavior.
+; SvExtensions = [+|-]<extension>[,[+|-]<extension>*]
 
 ; Generate symbols debugging database in only some special cases to save on
 ; the number of files in the library. For other design-units, this database is
@@ -676,6 +684,9 @@ LibrarySearchPath = mtiAvm mtiRnm mtiOvm mtiUvm mtiUPF infact
 ; Default is 1 (enabled)  
 ; CreateLib = 1
 
+; Enable use of UVMC library.  Default is off.
+; UseUvmc = 1
+
 [vopt]
 ; Turn on code coverage in vopt.  Default is off. 
 ; Coverage = sbceft
@@ -683,6 +694,16 @@ LibrarySearchPath = mtiAvm mtiRnm mtiOvm mtiUvm mtiUPF infact
 ; Control compiler optimizations that are allowed when
 ; code coverage is on.  Refer to the comment for this in the [vlog] area. 
 ; CoverOpt = 3
+
+; Controls set of CoverConstructs that are being considered for Coverage 
+; Collection.
+; Some of Valid options are: default,set1,set2
+; Covermode = default
+
+; Controls set of HDL cover constructs that would be considered(or not considered)
+; for Coverage Collection. (Default corresponds to covermode default). 
+; Some of Valid options are: "ca", "citf", "cifl", "tcint", "fsmqs".
+; Coverconstruct = noca,nocitf,nofsmtf,nofsmds,noctes,nocicl,nocprc,nocfl,nofsmup,nocifl,nocpm,notcint,nocpkg,nocsva
 
 ; Increase or decrease the maximum number of rows allowed in a UDP table
 ; implementing a VHDL condition coverage or expression coverage expression.
@@ -745,9 +766,8 @@ LibrarySearchPath = mtiAvm mtiRnm mtiOvm mtiUvm mtiUPF infact
 ; ParallelJobs = 0 
 
 ; Controls SystemVerilog Language Extensions.  These options enable
-; some non-LRM compliant behavior.  Valid extensions are "feci",
-; "pae", "uslt", "spsl", "fin0" and "sccts".
-; SvExtensions = uslt,spsl,sccts
+; some non-LRM compliant behavior.
+; SvExtensions = [+|-]<extension>[,[+|-]<extension>*]
 
 ; Load the specified shared objects with the RTLD_GLOBAL flag.
 ; This gives global visibility to all symbols in the shared objects,
@@ -794,10 +814,10 @@ Resolution = ns
 UserTimeUnit = default
 
 ; Default run length
-RunLength = 100
+RunLength = 1 ms
 
 ; Maximum iterations that can be run without advancing simulation time
-IterationLimit = 20000
+IterationLimit = 10000000
 
 ; Specify libraries to be searched for precompiled modules
 ; LibrarySearchPath = <path/lib> [<path/lib> ...]
@@ -929,7 +949,7 @@ ShowFunctions = 1
 
 ; Default radix for all windows and commands.
 ; Radix may be one of: symbolic, ascii, binary, octal, decimal, hex, unsigned
-; Flags may be one of: enumnumeric, showbase
+; Flags may be one of: enumnumeric, showbase, wreal
 DefaultRadix = hexadecimal
 DefaultRadixFlags = showbase
 ; Set to 1 for make the signal_force VHDL and Verilog functions use the 
@@ -957,6 +977,17 @@ DefaultRadixFlags = showbase
 
 ; File for saving command transcript, this option is ignored when -batch option is used
 TranscriptFile = transcript
+
+; Transcript file long line wrapping mode(s)
+;   mode == 0 :: no wrapping, line recorded as is
+;   mode == 1 :: wrap at first whitespace after WSColumn
+;                or at Column.
+;   mode == 2 :: wrap as above, but add continuation 
+;                character ('\') at end of each wrapped line
+;
+; WrapMode = 0
+; WrapColumn = 30000
+; WrapWSColumn = 27000
 
 ; File for saving command history
 ; CommandHistory = cmdhist.log
@@ -1113,6 +1144,10 @@ ConcurrentFileLimit = 40
 ; Use custom gcc compiler located at this path rather than the default path.
 ; The path should point directly at a compiler executable.
 ; DpiCppPath = <your-gcc-installation>/bin/gcc
+;
+; Specify the compiler version from the list of support GNU compilers.
+; examples 4.5.0, 4.7.4
+; DpiCppInstall = 4.7.4
 
 ; Specify whether to enable SystemVerilog DPI "out-of-the-blue" calls.
 ; The term "out-of-the-blue" refers to SystemVerilog export function calls
@@ -1172,11 +1207,10 @@ ConcurrentFileLimit = 40
 
 
 ; Specify default UVM-aware debug options if the vsim -uvmcontrol switch is not used.
-; Valid options include: all, none, verbose, disable, struct, msglog, trlog, certe.
+; Valid options include: all, none, verbose, disable, struct, reseed, msglog, trlog, certe.
 ; Options can be enabled by just adding the name, or disabled by prefixing the option with a "-".
 ; The list of options must be delimited by commas, without spaces or tabs.
-; The default is UVMControl = struct
-
+;
 ; Some examples
 ; To turn on all available UVM-aware debug features:
 ; UVMControl = all
@@ -1343,6 +1377,12 @@ ScMainStackSize = 10 Mb
 ; to crash if the code in sc_main is dependent on some simulation state.
 ; Default is on.
 ScMainFinishOnQuit = 1
+
+; Enable calling of the DPI export taks/functions from the
+; SystemC start_of_simulation() callback.
+; The default is off.
+; EnableDpiSosCb = 1
+
 
 ; Set the SCV relationship name that will be used to identify phase
 ; relations.  If the name given to a transactor relation matches this
@@ -1658,9 +1698,12 @@ OnFinish = ask
 ; and report. This variable sets the default value of type_option.merge_instances.
 ; There are two vsim command line options, -cvgmergeinstances and 
 ; -nocvgmergeinstances to override this setting from vsim command line.
-; The default value of this variable is 0. This default
-; drives compliance with the clarified behavior in the IEEE 1800-2009 standard.
-; SVCovergroupMergeInstancesDefault = 0
+; The default value of this variable, -1 (don't care), allows the tool to determine
+; the effective value, based on factors related to capacity and optimization. 
+; The type_option.merge_instances appears in the GUI and coverage reports as either 
+; auto(1) or auto(0), depending on whether the effective value was determined to 
+; be a 1 or a 0.
+; SVCovergroupMergeInstancesDefault = -1
 
 ; Enable or disable generation of more detailed information about the sampling
 ; of covergroup, cross, and coverpoints. It provides the details of the number
@@ -1673,15 +1716,15 @@ OnFinish = ask
 ; all Covergroups.
 ; MaxSVCoverpointBinsDesign = 2147483648 
 
-; Specify maximum number of Coverpoint bins in any instance of a Covergroup
-; MaxSVCoverpointBinsInst = 2147483648
+; Specify maximum number of Coverpoint bins in any instance of a Covergroup, default is 2^10 bins
+; MaxSVCoverpointBinsInst = 1048576
 
 ; Specify the maximum number of Cross bins in whole design for
 ; all Covergroups.
 ; MaxSVCrossBinsDesign = 2147483648 
 
-; Specify maximum number of Cross bins in any instance of a Covergroup
-; MaxSVCrossBinsInst = 2147483648
+; Specify maximum number of Cross bins in any instance of a Covergroup, default is 2^16 bins
+; MaxSVCrossBinsInst = 67108864
 
 ; Specify whether vsim will collect the coverage data of zero-weight coverage items or not.
 ; By default, this variable is set 0, in which case option.no_collect setting will take effect.
@@ -1724,9 +1767,17 @@ OnFinish = ask
 ;     off: turn off the flow. The undefined symbols will trigger an immediate load failure.
 ;     verbose: Turn on the flow and report the undefined symbols for each shared library.
 ; NOTE: This variable can be overriden with vsim switch "-undefsyms".
-; The default is off.
+; The default is on.
 ;
-; UndefSyms = on
+; UndefSyms = off
+
+; Enable the support for checkpointing foreign C++ libraries.
+; The valid arguments are: 1 and 0. 
+;     1 : turn on the support
+;     0 : turn off the support (default)
+; This option is not supported on the Windows platforms.
+;
+; AllowCheckpointCpp = 1
 
 ; Initial seed for the random number generator of the root thread (SystemVerilog).
 ; NOTE: This variable can be overridden with the vsim "-sv_seed" command line switch.
@@ -1763,8 +1814,26 @@ OnFinish = ask
 ; The default value is 10000. A value of 0 indicates no limit.
 ; SolveArrayResizeMax = 10000
 
-; Error message severity when randomize() failure is detected (SystemVerilog).
+; Specifies the maximum size that a dynamic array may be resized to by the
+; solver. If the solver attempts to resize a dynamic array to a size greater
+; than the specified limit, the solver will abort with an error.
+; The default value is 10000. A value of 0 indicates no limit.
+; SolveArrayResizeMax = 10000
+
+; Error message severity when normal randomize() and randomize(null) failures are detected.
+; Integer value up to two digits are allowed with each digit having the following legal values: 
 ; 0 = No error  1 = Warning  2 = Error  3 = Failure  4 = Fatal
+;
+; 1) When a value with two digits is used, the digit at tenth place (leftmost digit) represents
+;    the severtity setting for normal randomize() calls. The digit at ones place (rightmost digit)
+;    represents the setting for randomize(null) calls.
+;
+; 2) When a single digit value is used, the setting is applied to both normal randomize() call 
+;    and randomize(null) call.
+;
+; Example: -solvefailseverity=40 means:
+;   fatal error for failed normal randomize() calls and NO error for failed randomize(null) calls.
+;
 ; The default is 0 (no error).
 ; SolveFailSeverity = 0
 
@@ -1775,6 +1844,14 @@ OnFinish = ask
 ; 0 = No error  1 = Warning  2 = Error  3 = Failure  4 = Fatal
 ; The default is 3 (failure).
 ; SolveBeforeErrorSeverity = 3
+
+; Error message severity for suppressible errors that are related to
+; solve engine capacity limits
+; NOTE: This variable can be overridden with the vsim "-solveengineerrorseverity"
+; command line switch.
+; 0 = No error  1 = Warning  2 = Error  3 = Failure  4 = Fatal
+; The default is 3 (failure).
+; SolveEngineErrorSeverity = 3
 
 ; Enable/disable debug information for randomize() failures.
 ; NOTE: This variable can be overridden with the vsim "-solvefaildebug" command
@@ -1794,6 +1871,11 @@ OnFinish = ask
 ; generation, uncomment this variable. To redirect testcase generation to a
 ; file, specify the name of the output file.
 ; SolveFailTestcase = 
+
+; Specify solver timeout threshold (in seconds). randomize() will fail if the
+; CPU time required to evaluate any randset exceeds the specified timeout.
+; The default value is 500. A value of 0 will disable timeout failures. 
+; SolveTimeout = 500
 
 ; Specify the maximum size of the solution graph generated by the BDD solver.
 ; This value can be used to force the BDD solver to abort the evaluation of a
@@ -1873,9 +1955,33 @@ MvcHome = $MODEL_TECH/..
 ; Suppress file type registration.  
 ; SuppressFileTypeReg = 1
 
-; Controls SystemVerilog Language Extensions.  These options enable
-; some non-LRM compliant behavior.  Valid extensions are "cfce",
-; SvExtensions = cfce
+; Enable/disable non-LRM compliant SystemVerilog language extensions.
+; Valid extensions are:
+;   cfce        - generate an error if $cast fails as a function
+;   dfsp        - sets default format specifier as %p, if no format specifier is given for unpacked array in $display and related systasks
+;   expdfmt     - enable format string extensions for $display/$sformatf
+;   extscan     - support values greater than 32 bit for string builtin methods (atohex, atobin, atooct, atoi)
+;   fmtcap      - prints capital hex digits with %X/%H in display calls
+;   iddp        - ignore DPI disable protocol check
+;   noexptc     - ignore DPI export type name overloading check
+;   lfmt        - zero-pad data if '0' prefixes width in format specifier (e.g. "%04h")
+;   realrand    - support randomize() with real variables and constraints (Default)
+; SvExtensions = [+|-]<extension>[,[+|-]<extension>*]
+
+; Enable/disable non-LRM compliant SystemVerilog constrained-random language extensions.
+; Valid extensions are:
+;   arraymode    - consider rand_mode of unpacked array field independently from its elements
+;   deepcheck    - allow randomize(null) to recursively consider constraints from member rand class handles  
+;   forkjoinstab - preserve parent thread random stability when seeding fork/join sub-threads (Default)
+;   funcback     - enable function backtracking (ACT only)
+;   nodist       - interpret 'dist' constraint as 'inside' (ACT only)
+;   nonrandstab  - disable seeding of "non-random" class instances (Default)
+;   noorder      - ignore solve/before ordering constraints (ACT only)
+;   promotedist  - promote priority of 'dist' constraint if LHS has no solve/before
+;   randindex    - allow random index in constraint (Default)
+;   randstruct   - consider all fields of unpacked structs as 'rand'
+;   skew         - skew randomize results (ACT only)
+; SvRandExtensions = [+|-]<extension>[,[+|-]<extension>*]
 
 ; Controls the formatting of '%p' and '%P' conversion specification, used in $display
 ; and similar system tasks.
@@ -1893,8 +1999,11 @@ MvcHome = $MODEL_TECH/..
 ;    (e.g. SVPrettyPrintFlags=E50 will limit the output to 50 elements of an array).
 ; 6. SVPrettyPrintFlags=D<depth> suppresses the output of sub-elements below <depth>.
 ;    (e.g. SVPrettyPrintFlags=D5 will suppresses the output of sub elements below a depth of 5).
-; 7. Items 1-6 above can be combined as a comma separated list.
-;    (e.g. SVPrettyPrintFlags=I4S,L20,C256,F4,E50,D5)
+; 7. SVPrettyPrintFlags=R<specifier> shows the output of specifier %p as per the specifed radix.
+;    It changes the output in $display and similar systasks. It does not affect formatted output functions ($displayh etc)).
+;    (e.g. SVPrettyPrintFlags=Rb will show the output of %p specifier in binary format.
+; 8. Items 1-7 above can be combined as a comma separated list.
+;    (e.g. SVPrettyPrintFlags=I4S,L20,C256,F4,E50,D5,Rb)
 ; SVPrettyPrintFlags=I4S
 
 [lmc]
@@ -2007,35 +2116,41 @@ suppress = 8780 ;an explanation can be had by running: verror 8780
 Project_Version = 6
 Project_DefaultLib = pocketlab-rtl
 Project_SortMethod = unused
-Project_Files_Count = 14
+Project_Files_Count = 17
 Project_File_0 = D:/Tasks/PocketLab-RTL/src/dac.v
-Project_File_P_0 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1666355109 cover_fsm 0 cover_branch 0 vlog_noload 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 vlog_hazard 0 vlog_showsource 0 cover_optlevel 3 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to pocketlab-rtl vlog_upper 0 cover_noshort 0 compile_order 2 dont_compile 0 cover_expr 0 cover_stmt 0
-Project_File_1 = D:/Tasks/PocketLab-RTL/src/fifo_spi_rx_buffer/fifo_spi_rx_buffer.vo
-Project_File_P_1 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 vlog_noload 0 cover_branch 0 folder {Top Level} last_compile 1666422637 cover_fsm 0 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 cover_optlevel 3 vlog_showsource 0 vlog_hazard 0 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to pocketlab-rtl vlog_options {} compile_order 10 cover_expr 0 dont_compile 0 cover_stmt 0
-Project_File_2 = D:/Tasks/PocketLab-RTL/src/spi_recv.v
-Project_File_P_2 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 vlog_noload 0 cover_branch 0 folder {Top Level} last_compile 1666435267 cover_fsm 0 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 cover_optlevel 3 vlog_showsource 0 vlog_hazard 0 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to pocketlab-rtl vlog_options {} compile_order 4 cover_expr 0 dont_compile 0 cover_stmt 0
-Project_File_3 = D:/Tasks/PocketLab-RTL/src/clkdiv_adda/clkdiv_adda.v
-Project_File_P_3 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 vlog_noload 0 last_compile 1666352292 folder {Top Level} cover_branch 0 cover_fsm 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 vlog_hazard 0 vlog_showsource 0 cover_optlevel 3 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to pocketlab-rtl vlog_upper 0 cover_noshort 0 compile_order 8 dont_compile 0 cover_expr 0 cover_stmt 0
-Project_File_4 = D:/Tasks/PocketLab-RTL/src/fifo_adc/fifo_adc.vo
-Project_File_P_4 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} cover_branch 0 cover_fsm 0 last_compile 1666233734 vlog_noload 0 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 cover_optlevel 3 vlog_showsource 0 vlog_hazard 0 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to pocketlab-rtl vlog_options {} compile_order 9 cover_expr 0 dont_compile 0 cover_stmt 0
-Project_File_5 = D:/Tasks/PocketLab-RTL/src/main.v
-Project_File_P_5 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1666356599 cover_fsm 0 cover_branch 0 vlog_noload 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 vlog_hazard 0 vlog_showsource 0 cover_optlevel 3 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to pocketlab-rtl vlog_upper 0 cover_noshort 0 compile_order 3 dont_compile 0 cover_expr 0 cover_stmt 0
-Project_File_6 = D:/Tasks/PocketLab-RTL/src/pll_main/pll_main.v
-Project_File_P_6 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 cover_fsm 0 cover_branch 0 vlog_noload 0 last_compile 1666352228 folder {Top Level} cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 cover_optlevel 3 vlog_showsource 0 vlog_hazard 0 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to pocketlab-rtl vlog_options {} compile_order 12 cover_expr 0 dont_compile 0 cover_stmt 0
-Project_File_7 = D:/Tasks/PocketLab-RTL/src/adc.v
-Project_File_P_7 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1666234212 cover_fsm 0 cover_branch 0 vlog_noload 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 vlog_hazard 0 vlog_showsource 0 cover_optlevel 3 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to pocketlab-rtl vlog_upper 0 cover_noshort 0 compile_order 1 dont_compile 0 cover_expr 0 cover_stmt 0
-Project_File_8 = D:/Tasks/PocketLab-RTL/src/bram_dac/bram_dac.v
-Project_File_P_8 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 cover_fsm 0 cover_branch 0 vlog_noload 0 last_compile 1666249749 folder {Top Level} cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 cover_optlevel 3 vlog_showsource 0 vlog_hazard 0 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to pocketlab-rtl vlog_options {} compile_order 7 cover_expr 0 dont_compile 0 cover_stmt 0
-Project_File_9 = D:/Tasks/PocketLab-RTL/src/spi_send.v
-Project_File_P_9 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1666421212 cover_fsm 0 cover_branch 0 vlog_noload 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 vlog_hazard 0 vlog_showsource 0 cover_optlevel 3 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to pocketlab-rtl vlog_upper 0 cover_noshort 0 compile_order 6 dont_compile 0 cover_expr 0 cover_stmt 0
-Project_File_10 = D:/Tasks/PocketLab-RTL/bench/bench_spi_recv_pu.v
-Project_File_P_10 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1666435142 cover_fsm 0 cover_branch 0 vlog_noload 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 vlog_hazard 0 vlog_showsource 0 cover_optlevel 3 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to pocketlab-rtl vlog_upper 0 cover_noshort 0 compile_order 13 dont_compile 0 cover_expr 0 cover_stmt 0
-Project_File_11 = D:/Tasks/PocketLab-RTL/src/fifo_spi_send/fifo_spi_send.vo
-Project_File_P_11 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1666421491 cover_fsm 0 cover_branch 0 vlog_noload 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 vlog_hazard 0 vlog_showsource 0 cover_optlevel 3 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to pocketlab-rtl vlog_upper 0 cover_noshort 0 compile_order 11 dont_compile 0 cover_expr 0 cover_stmt 0
-Project_File_12 = D:/Tasks/PocketLab-RTL/src/spi_slave.v
-Project_File_P_12 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1666421351 cover_fsm 0 cover_branch 0 vlog_noload 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 vlog_hazard 0 vlog_showsource 0 cover_optlevel 3 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to pocketlab-rtl vlog_upper 0 cover_noshort 0 compile_order 0 dont_compile 0 cover_expr 0 cover_stmt 0
-Project_File_13 = D:/Tasks/PocketLab-RTL/src/spi_recv_pu.v
-Project_File_P_13 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 vlog_noload 0 cover_branch 0 folder {Top Level} last_compile 1666435743 cover_fsm 0 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 cover_optlevel 3 vlog_showsource 0 vlog_hazard 0 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to pocketlab-rtl vlog_options {} compile_order 5 cover_expr 0 dont_compile 0 cover_stmt 0
+Project_File_P_0 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 vlog_noload 0 cover_branch 0 folder {Top Level} last_compile 1666355109 cover_fsm 0 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 cover_optlevel 3 vlog_showsource 0 vlog_hazard 0 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to pocketlab-rtl vlog_options {} compile_order 4 cover_expr 0 dont_compile 0 cover_stmt 0
+Project_File_1 = D:/Tasks/PocketLab-RTL/src/ccu_write_dac_fsm.v
+Project_File_P_1 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 vlog_noload 0 cover_branch 0 folder {Top Level} last_compile 1666490283 cover_fsm 0 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 cover_optlevel 3 vlog_showsource 0 vlog_hazard 0 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to pocketlab-rtl vlog_options {} compile_order 3 cover_expr 0 dont_compile 0 cover_stmt 0
+Project_File_2 = D:/Tasks/PocketLab-RTL/src/fifo_ccu_recv_buffer/fifo_ccu_recv_buffer.vo
+Project_File_P_2 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} cover_branch 0 cover_fsm 0 last_compile 1666490686 vlog_noload 0 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 cover_optlevel 3 vlog_showsource 0 vlog_hazard 0 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to pocketlab-rtl vlog_options {} compile_order 11 cover_expr 0 dont_compile 0 cover_stmt 0
+Project_File_3 = D:/Tasks/PocketLab-RTL/src/ccu.v
+Project_File_P_3 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 vlog_noload 0 cover_branch 0 folder {Top Level} last_compile 1666504604 cover_fsm 0 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 cover_optlevel 3 vlog_showsource 0 vlog_hazard 0 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to pocketlab-rtl vlog_options {} compile_order 1 cover_expr 0 dont_compile 0 cover_stmt 0
+Project_File_4 = D:/Tasks/PocketLab-RTL/src/spi_recv.v
+Project_File_P_4 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 vlog_noload 0 last_compile 1666511306 folder {Top Level} cover_branch 0 cover_fsm 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 vlog_hazard 0 vlog_showsource 0 cover_optlevel 3 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to pocketlab-rtl vlog_upper 0 cover_noshort 0 compile_order 6 dont_compile 0 cover_expr 0 cover_stmt 0
+Project_File_5 = D:/Tasks/PocketLab-RTL/src/clkdiv_adda/clkdiv_adda.v
+Project_File_P_5 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 cover_fsm 0 cover_branch 0 vlog_noload 0 last_compile 1666352292 folder {Top Level} cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 cover_optlevel 3 vlog_showsource 0 vlog_hazard 0 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to pocketlab-rtl vlog_options {} compile_order 9 cover_expr 0 dont_compile 0 cover_stmt 0
+Project_File_6 = D:/Tasks/PocketLab-RTL/bench/bench_spi_send.v
+Project_File_P_6 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} cover_branch 0 cover_fsm 0 last_compile 1666513367 vlog_noload 0 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 cover_optlevel 3 vlog_showsource 0 vlog_hazard 0 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to pocketlab-rtl vlog_options {} compile_order 16 cover_expr 0 dont_compile 0 cover_stmt 0
+Project_File_7 = D:/Tasks/PocketLab-RTL/src/fifo_adc/fifo_adc.vo
+Project_File_P_7 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 vlog_noload 0 last_compile 1666233734 folder {Top Level} cover_branch 0 cover_fsm 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 vlog_hazard 0 vlog_showsource 0 cover_optlevel 3 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to pocketlab-rtl vlog_upper 0 cover_noshort 0 compile_order 10 dont_compile 0 cover_expr 0 cover_stmt 0
+Project_File_8 = D:/Tasks/PocketLab-RTL/src/main.v
+Project_File_P_8 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 cover_fsm 0 cover_branch 0 vlog_noload 0 last_compile 1666506261 folder {Top Level} cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 cover_optlevel 3 vlog_showsource 0 vlog_hazard 0 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to pocketlab-rtl vlog_options {} compile_order 5 cover_expr 0 dont_compile 0 cover_stmt 0
+Project_File_9 = C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_sim.v
+Project_File_P_9 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1663556462 cover_fsm 0 cover_branch 0 vlog_noload 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 vlog_hazard 0 vlog_showsource 0 cover_optlevel 3 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to pocketlab-rtl vlog_upper 0 cover_noshort 0 compile_order 13 dont_compile 0 cover_expr 0 cover_stmt 0
+Project_File_10 = D:/Tasks/PocketLab-RTL/src/pll_main/pll_main.v
+Project_File_P_10 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 vlog_noload 0 cover_branch 0 folder {Top Level} last_compile 1666352228 cover_fsm 0 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 cover_optlevel 3 vlog_showsource 0 vlog_hazard 0 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to pocketlab-rtl vlog_options {} compile_order 12 cover_expr 0 dont_compile 0 cover_stmt 0
+Project_File_11 = D:/Tasks/PocketLab-RTL/bench/bench.v
+Project_File_P_11 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 vlog_noload 0 last_compile 1666509400 folder {Top Level} cover_branch 0 cover_fsm 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 vlog_hazard 0 vlog_showsource 0 cover_optlevel 3 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to pocketlab-rtl vlog_upper 0 cover_noshort 0 compile_order 14 dont_compile 0 cover_expr 0 cover_stmt 0
+Project_File_12 = D:/Tasks/PocketLab-RTL/src/adc.v
+Project_File_P_12 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 vlog_noload 0 cover_branch 0 folder {Top Level} last_compile 1666234212 cover_fsm 0 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 cover_optlevel 3 vlog_showsource 0 vlog_hazard 0 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to pocketlab-rtl vlog_options {} compile_order 0 cover_expr 0 dont_compile 0 cover_stmt 0
+Project_File_13 = D:/Tasks/PocketLab-RTL/src/bram_dac/bram_dac.v
+Project_File_P_13 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} last_compile 1666249749 cover_fsm 0 cover_branch 0 vlog_noload 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 vlog_hazard 0 vlog_showsource 0 cover_optlevel 3 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to pocketlab-rtl vlog_upper 0 cover_noshort 0 compile_order 8 dont_compile 0 cover_expr 0 cover_stmt 0
+Project_File_14 = C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v
+Project_File_P_14 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 folder {Top Level} cover_branch 0 cover_fsm 0 last_compile 1663556462 vlog_noload 0 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 cover_optlevel 3 vlog_showsource 0 vlog_hazard 0 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to pocketlab-rtl vlog_options {} compile_order 15 cover_expr 0 dont_compile 0 cover_stmt 0
+Project_File_15 = D:/Tasks/PocketLab-RTL/src/spi_send.v
+Project_File_P_15 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 vlog_noload 0 last_compile 1666513119 folder {Top Level} cover_branch 0 cover_fsm 0 vlog_enable0In 0 cover_excludedefault 0 vlog_disableopt 0 cover_covercells 0 vlog_hazard 0 vlog_showsource 0 cover_optlevel 3 voptflow 1 ood 0 vlog_0InOptions {} toggle - vlog_options {} compile_to pocketlab-rtl vlog_upper 0 cover_noshort 0 compile_order 7 dont_compile 0 cover_expr 0 cover_stmt 0
+Project_File_16 = D:/Tasks/PocketLab-RTL/src/ccu_recv_header_fsm.v
+Project_File_P_16 = cover_toggle 0 vlog_protect 0 file_type verilog group_id 0 cover_exttoggle 0 cover_nofec 0 cover_cond 0 vlog_1995compat 0 vlog_nodebug 0 vlog_noload 0 cover_branch 0 folder {Top Level} last_compile 1666486720 cover_fsm 0 cover_excludedefault 0 vlog_enable0In 0 vlog_disableopt 0 cover_covercells 0 voptflow 1 cover_optlevel 3 vlog_showsource 0 vlog_hazard 0 toggle - vlog_0InOptions {} ood 0 cover_noshort 0 vlog_upper 0 compile_to pocketlab-rtl vlog_options {} compile_order 2 cover_expr 0 dont_compile 0 cover_stmt 0
 Project_Sim_Count = 0
 Project_Folder_Count = 0
 Echo_Compile_Output = 0
@@ -2084,4 +2199,4 @@ DEBUGDATABASE_CustomDoubleClick =
 DEBUGARCHIVE_DoubleClick = Edit
 DEBUGARCHIVE_CustomDoubleClick = 
 Project_Major_Version = 10
-Project_Minor_Version = 4
+Project_Minor_Version = 6

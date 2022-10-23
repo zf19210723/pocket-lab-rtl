@@ -4,6 +4,8 @@
 -cst D:\Tasks\PocketLab-RTL\src\main.cst
 -cfg D:\Tasks\PocketLab-RTL\impl\pnr\device.cfg
 -sdc D:\Tasks\PocketLab-RTL\src\main.sdc
+-gao D:\Tasks\PocketLab-RTL\impl\gao\gao.v
+-gao_crc 0010101000011100
 -bit
 -tr
 -ph

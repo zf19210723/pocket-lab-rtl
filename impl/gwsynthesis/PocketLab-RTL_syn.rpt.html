@@ -58,9 +58,12 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>D:\Tasks\PocketLab-RTL\src\adc.v<br>
 D:\Tasks\PocketLab-RTL\src\bram_dac\bram_dac.v<br>
 D:\Tasks\PocketLab-RTL\src\ccu.v<br>
+D:\Tasks\PocketLab-RTL\src\ccu_recv_header_fsm.v<br>
+D:\Tasks\PocketLab-RTL\src\ccu_write_dac_fsm.v<br>
 D:\Tasks\PocketLab-RTL\src\clkdiv_adda\clkdiv_adda.v<br>
 D:\Tasks\PocketLab-RTL\src\dac.v<br>
 D:\Tasks\PocketLab-RTL\src\fifo_adc\fifo_adc.v<br>
+D:\Tasks\PocketLab-RTL\src\fifo_ccu_recv_buffer\fifo_ccu_recv_buffer.v<br>
 D:\Tasks\PocketLab-RTL\src\fifo_spi_recv\fifo_spi_recv.v<br>
 D:\Tasks\PocketLab-RTL\src\fifo_spi_send\fifo_spi_send.v<br>
 D:\Tasks\PocketLab-RTL\src\main.v<br>
@@ -87,7 +90,7 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Sun Oct 23 07:48:58 2022
+<td>Sun Oct 23 13:43:35 2022
 </td>
 </tr>
 <tr>
@@ -103,11 +106,11 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 </tr>
 <tr>
 <td class="label">Synthesis Process</td>
-<td>Running parser:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0.156s, Elapsed time = 0h 0m 0.209s, Peak memory usage = 303.660MB<br/>Running netlist conversion:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s, Peak memory usage = 0MB<br/>Running device independent optimization:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 0: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0.009s, Peak memory usage = 303.660MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 1: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0.002s, Peak memory usage = 303.660MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 2: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0.007s, Peak memory usage = 303.660MB<br/>Running inference:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 0: CPU time = 0h 0m 0.015s, Elapsed time = 0h 0m 0.001s, Peak memory usage = 303.660MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 1: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s, Peak memory usage = 303.660MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 2: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s, Peak memory usage = 303.660MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s, Peak memory usage = 303.660MB<br/>Running technical mapping:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 0: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0.003s, Peak memory usage = 303.660MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 1: CPU time = 0h 0m 0.015s, Elapsed time = 0h 0m 0.001s, Peak memory usage = 303.660MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 2: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0.001s, Peak memory usage = 303.660MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 3: CPU time = 0h 0m 0.015s, Elapsed time = 0h 0m 0.054s, Peak memory usage = 303.660MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 4: CPU time = 0h 0m 0.015s, Elapsed time = 0h 0m 0.002s, Peak memory usage = 303.660MB<br/>Generate output files:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0.015s, Elapsed time = 0h 0m 0.053s, Peak memory usage = 303.660MB<br/></td>
+<td>Running parser:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0.109s, Elapsed time = 0h 0m 0.333s, Peak memory usage = 339.992MB<br/>Running netlist conversion:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s, Peak memory usage = 0MB<br/>Running device independent optimization:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 0: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0.022s, Peak memory usage = 339.992MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 1: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0.008s, Peak memory usage = 339.992MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 2: CPU time = 0h 0m 0.015s, Elapsed time = 0h 0m 0.02s, Peak memory usage = 339.992MB<br/>Running inference:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 0: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0.003s, Peak memory usage = 339.992MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 1: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s, Peak memory usage = 339.992MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 2: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0.001s, Peak memory usage = 339.992MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s, Peak memory usage = 339.992MB<br/>Running technical mapping:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 0: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0.013s, Peak memory usage = 339.992MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 1: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0.007s, Peak memory usage = 339.992MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 2: CPU time = 0h 0m 0.015s, Elapsed time = 0h 0m 0.003s, Peak memory usage = 339.992MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 3: CPU time = 0h 0m 0.156s, Elapsed time = 0h 0m 0.316s, Peak memory usage = 339.992MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 4: CPU time = 0h 0m 0.015s, Elapsed time = 0h 0m 0.029s, Peak memory usage = 339.992MB<br/>Generate output files:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0.031s, Elapsed time = 0h 0m 0.099s, Peak memory usage = 339.992MB<br/></td>
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 0m 0.231s, Elapsed time = 0h 0m 0.342s, Peak memory usage = 303.660MB</td>
+<td>CPU time = 0h 0m 0.341s, Elapsed time = 0h 0m 0.854s, Peak memory usage = 339.992MB</td>
 </tr>
 </table>
 <h1><a name="resource">Resource</a></h1>
@@ -123,11 +126,11 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 </tr>
 <tr>
 <td class="label"><b>I/O Buf </b></td>
-<td>15</td>
+<td>16</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspIBUF</td>
-<td>4</td>
+<td>5</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspOBUF</td>
@@ -135,11 +138,11 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 </tr>
 <tr>
 <td class="label"><b>Register </b></td>
-<td>68</td>
+<td>220</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFF</td>
-<td>1</td>
+<td>2</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFE</td>
@@ -147,47 +150,51 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFR</td>
-<td>2</td>
+<td>18</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFRE</td>
-<td>16</td>
-</tr>
-<tr>
-<td class="label">&nbsp&nbsp&nbsp&nbspDFFP</td>
-<td>3</td>
-</tr>
-<tr>
-<td class="label">&nbsp&nbsp&nbsp&nbspDFFC</td>
-<td>35</td>
-</tr>
-<tr>
-<td class="label">&nbsp&nbsp&nbsp&nbspDFFCE</td>
-<td>2</td>
-</tr>
-<tr>
-<td class="label">&nbsp&nbsp&nbsp&nbspDFFNP</td>
-<td>4</td>
-</tr>
-<tr>
-<td class="label">&nbsp&nbsp&nbsp&nbspDLCE</td>
-<td>1</td>
-</tr>
-<tr>
-<td class="label"><b>LUT </b></td>
-<td>74</td>
-</tr>
-<tr>
-<td class="label">&nbsp&nbsp&nbsp&nbspLUT2</td>
-<td>10</td>
-</tr>
-<tr>
-<td class="label">&nbsp&nbsp&nbsp&nbspLUT3</td>
 <td>28</td>
 </tr>
 <tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspDFFP</td>
+<td>7</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspDFFC</td>
+<td>96</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspDFFCE</td>
+<td>17</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspDFFNP</td>
+<td>8</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspDL</td>
+<td>38</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspDLCE</td>
+<td>2</td>
+</tr>
+<tr>
+<td class="label"><b>LUT </b></td>
+<td>283</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspLUT2</td>
+<td>43</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspLUT3</td>
+<td>102</td>
+</tr>
+<tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspLUT4</td>
-<td>36</td>
+<td>138</td>
 </tr>
 <tr>
 <td class="label"><b>MUX </b></td>
@@ -199,35 +206,35 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 </tr>
 <tr>
 <td class="label"><b>ALU </b></td>
-<td>22</td>
+<td>68</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspALU</td>
-<td>22</td>
+<td>68</td>
 </tr>
 <tr>
 <td class="label"><b>SSRAM </b></td>
-<td>2</td>
+<td>4</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspRAM16S4</td>
-<td>2</td>
+<td>4</td>
 </tr>
 <tr>
 <td class="label"><b>INV </b></td>
-<td>7</td>
+<td>10</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspINV</td>
-<td>7</td>
+<td>10</td>
 </tr>
 <tr>
 <td class="label"><b>BSRAM </b></td>
-<td>33</td>
+<td>36</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspSDPB</td>
-<td>33</td>
+<td>36</td>
 </tr>
 <tr>
 <td class="label"><b>CLOCK </b></td>
@@ -251,28 +258,28 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 </tr>
 <tr>
 <td class="label">Logic</td>
-<td>139(105 LUTs, 22 ALUs, 2 SSRAMs) / 20736</td>
-<td>1%</td>
+<td>409(317 LUTs, 68 ALUs, 4 SSRAMs) / 20736</td>
+<td>2%</td>
 </tr>
 <tr>
 <td class="label">Register</td>
-<td>68 / 16173</td>
+<td>220 / 16173</td>
 <td>1%</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp--Register as Latch</td>
-<td>1 / 16173</td>
+<td>40 / 16173</td>
 <td>1%</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp--Register as FF</td>
-<td>67 / 16173</td>
+<td>180 / 16173</td>
 <td>1%</td>
 </tr>
 <tr>
 <td class="label">BSRAM</td>
-<td>33 / 46</td>
-<td>72%</td>
+<td>36 / 46</td>
+<td>78%</td>
 </tr>
 </table>
 <h1><a name="timing">Timing</a></h1>
@@ -342,7 +349,84 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <td>5.000</td>
 <td> </td>
 <td> </td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val_s0/F </td>
+</tr>
+<tr>
+<td>wfull_val_gowin</td>
+<td>Base</td>
+<td>10.000</td>
+<td>100.0</td>
+<td>0.000</td>
+<td>5.000</td>
+<td> </td>
+<td> </td>
 <td>spi_send_inst/fifo_spi_send_inst/fifo_inst/wfull_val_s0/F </td>
+</tr>
+<tr>
+<td>n455_8</td>
+<td>Base</td>
+<td>10.000</td>
+<td>100.0</td>
+<td>0.000</td>
+<td>5.000</td>
+<td> </td>
+<td> </td>
+<td>ccu_inst/n235_s6/F </td>
+</tr>
+<tr>
+<td>n311_13</td>
+<td>Base</td>
+<td>10.000</td>
+<td>100.0</td>
+<td>0.000</td>
+<td>5.000</td>
+<td> </td>
+<td> </td>
+<td>ccu_inst/ccu_recv_header_fsm_inst/n311_s8/F </td>
+</tr>
+<tr>
+<td>n336_9</td>
+<td>Base</td>
+<td>10.000</td>
+<td>100.0</td>
+<td>0.000</td>
+<td>5.000</td>
+<td> </td>
+<td> </td>
+<td>ccu_inst/ccu_recv_header_fsm_inst/n336_s5/F </td>
+</tr>
+<tr>
+<td>n357_11</td>
+<td>Base</td>
+<td>10.000</td>
+<td>100.0</td>
+<td>0.000</td>
+<td>5.000</td>
+<td> </td>
+<td> </td>
+<td>ccu_inst/ccu_recv_header_fsm_inst/n357_s7/O </td>
+</tr>
+<tr>
+<td>n360_9</td>
+<td>Base</td>
+<td>10.000</td>
+<td>100.0</td>
+<td>0.000</td>
+<td>5.000</td>
+<td> </td>
+<td> </td>
+<td>ccu_inst/ccu_recv_header_fsm_inst/n360_s5/F </td>
+</tr>
+<tr>
+<td>n118_9</td>
+<td>Base</td>
+<td>10.000</td>
+<td>100.0</td>
+<td>0.000</td>
+<td>5.000</td>
+<td> </td>
+<td> </td>
+<td>ccu_inst/ccu_write_dac_fsm_inst/n118_s5/F </td>
 </tr>
 <tr>
 <td>pll_main_inst/rpll_inst/CLKOUT.default_gen_clk</td>
@@ -436,10 +520,26 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 </tr>
 <tr>
 <td>4</td>
+<td>wfull_val_gowin</td>
+<td>100.0(MHz)</td>
+<td>649.4(MHz)</td>
+<td>2</td>
+<td>TOP</td>
+</tr>
+<tr>
+<td>5</td>
+<td>n455_8</td>
+<td>100.0(MHz)</td>
+<td>837.5(MHz)</td>
+<td>2</td>
+<td>TOP</td>
+</tr>
+<tr>
+<td>6</td>
 <td>pll_main_inst/rpll_inst/CLKOUT.default_gen_clk</td>
 <td>50.1(MHz)</td>
-<td>351.9(MHz)</td>
-<td>4</td>
+<td>170.1(MHz)</td>
+<td>9</td>
 <td>TOP</td>
 </tr>
 </table>
@@ -449,31 +549,31 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>4.230</td>
+<td>2.851</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>0.972</td>
+<td>7.942</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
-<td>5.202</td>
+<td>10.793</td>
 </tr>
 <tr>
 <td class="label">From</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/n582_s0</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val1_s4</td>
 </tr>
 <tr>
 <td class="label">To</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/wfull_val1_s4</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wptr_4_s0</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
-<td>wfull_val[F]</td>
+<td>wfull_val[R]</td>
 </tr>
 <tr>
 <td class="label">Latch Clk</td>
-<td>wfull_val[R]</td>
+<td>spi_clk[F]</td>
 </tr>
 </table>
 <b>Data Arrival Path:</b>
@@ -487,57 +587,6 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <th>NODE</th>
 </tr>
 <tr>
-<td>0.000</td>
-<td>0.000</td>
-<td> </td>
-<td> </td>
-<td> </td>
-<td>wfull_val</td>
-</tr>
-<tr>
-<td>0.000</td>
-<td>0.000</td>
-<td>tCL</td>
-<td>RR</td>
-<td>4</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/wfull_val_s0/F</td>
-</tr>
-<tr>
-<td>0.180</td>
-<td>0.180</td>
-<td>tNET</td>
-<td>RR</td>
-<td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/n582_s0/I1</td>
-</tr>
-<tr>
-<td>0.735</td>
-<td>0.555</td>
-<td>tINS</td>
-<td>RF</td>
-<td>3</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/n582_s0/F</td>
-</tr>
-<tr>
-<td>0.972</td>
-<td>0.237</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/wfull_val1_s4/D</td>
-</tr>
-</table>
-<b>Data Required Path:</b>
-<table class="summary_table">
-<tr>
-<th>AT</th>
-<th>DELAY</th>
-<th>TYPE</th>
-<th>RF</th>
-<th>FANOUT</th>
-<th>NODE</th>
-</tr>
-<tr>
 <td>5.000</td>
 <td>0.000</td>
 <td> </td>
@@ -551,7 +600,7 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <td>tCL</td>
 <td>FF</td>
 <td>4</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/wfull_val_s0/F</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val_s0/F</td>
 </tr>
 <tr>
 <td>5.237</td>
@@ -559,22 +608,137 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/wfull_val1_s4/G</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val1_s4/G</td>
 </tr>
 <tr>
-<td>5.202</td>
+<td>5.469</td>
+<td>0.232</td>
+<td>tC2Q</td>
+<td>FF</td>
+<td>2</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val1_s4/Q</td>
+</tr>
+<tr>
+<td>5.706</td>
+<td>0.237</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/n26_s1/I2</td>
+</tr>
+<tr>
+<td>6.159</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>7</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/n26_s1/F</td>
+</tr>
+<tr>
+<td>6.396</td>
+<td>0.237</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_num_next_7_s3/I0</td>
+</tr>
+<tr>
+<td>6.913</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_num_next_7_s3/F</td>
+</tr>
+<tr>
+<td>7.150</td>
+<td>0.237</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wgraynext_4_s0/I1</td>
+</tr>
+<tr>
+<td>7.705</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wgraynext_4_s0/F</td>
+</tr>
+<tr>
+<td>7.942</td>
+<td>0.237</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wptr_4_s0/D</td>
+</tr>
+</table>
+<b>Data Required Path:</b>
+<table class="summary_table">
+<tr>
+<th>AT</th>
+<th>DELAY</th>
+<th>TYPE</th>
+<th>RF</th>
+<th>FANOUT</th>
+<th>NODE</th>
+</tr>
+<tr>
+<td>10.000</td>
+<td>0.000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>spi_clk</td>
+</tr>
+<tr>
+<td>10.000</td>
+<td>0.000</td>
+<td>tCL</td>
+<td>RR</td>
+<td>1</td>
+<td>spi_clk_ibuf/I</td>
+</tr>
+<tr>
+<td>10.682</td>
+<td>0.683</td>
+<td>tINS</td>
+<td>RR</td>
+<td>52</td>
+<td>spi_clk_ibuf/O</td>
+</tr>
+<tr>
+<td>10.863</td>
+<td>0.180</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wptr_4_s0/CLK</td>
+</tr>
+<tr>
+<td>10.828</td>
+<td>-0.035</td>
+<td>tUnc</td>
+<td> </td>
+<td> </td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wptr_4_s0</td>
+</tr>
+<tr>
+<td>10.793</td>
 <td>-0.035</td>
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/wfull_val1_s4</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wptr_4_s0</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
 <table class="summary_table">
 <tr>
 <td class="label">Clock Skew:</td>
-<td>0.237</td>
+<td>0.626</td>
 </tr>
 <tr>
 <td class="label">Setup Relationship:</td>
@@ -582,14 +746,14 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 </tr>
 <tr>
 <td class="label">Logic Level:</td>
-<td>2</td>
+<td>4</td>
 </tr>
 <tr>
-<td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 100.000%; route: 0.000, 0.000%</td></tr>
+<td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.237, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 0.555, 57.098%; route: 0.237, 24.383%; tC2Q: 0.180, 18.519%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 1.525, 56.377%; route: 0.948, 35.046%; tC2Q: 0.232, 8.577%</td></tr>
 <tr>
-<td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 100.000%; route: 0.000, 0.000%</td></tr>
+<td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.237, 100.000%</td></tr>
 </table>
 <br/>
 <h3>Path&nbsp2</h3>
@@ -597,31 +761,31 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>4.880</td>
+<td>2.889</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>5.896</td>
+<td>7.904</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
-<td>10.776</td>
+<td>10.793</td>
 </tr>
 <tr>
 <td class="label">From</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/rbin_num_3_s0</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val1_s4</td>
 </tr>
 <tr>
 <td class="label">To</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.mem_Small.mem_0_0_s</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_3_s0</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
-<td>spi_clk[R]</td>
+<td>wfull_val[R]</td>
 </tr>
 <tr>
 <td class="label">Latch Clk</td>
-<td>spi_clk[R]</td>
+<td>spi_clk[F]</td>
 </tr>
 </table>
 <b>Data Arrival Path:</b>
@@ -635,180 +799,92 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <th>NODE</th>
 </tr>
 <tr>
+<td>5.000</td>
 <td>0.000</td>
-<td>0.000</td>
 <td> </td>
 <td> </td>
 <td> </td>
-<td>spi_clk</td>
+<td>wfull_val</td>
 </tr>
 <tr>
-<td>0.000</td>
+<td>5.000</td>
 <td>0.000</td>
 <td>tCL</td>
-<td>RR</td>
-<td>1</td>
-<td>spi_clk_ibuf/I</td>
+<td>FF</td>
+<td>4</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val_s0/F</td>
 </tr>
 <tr>
-<td>0.683</td>
-<td>0.683</td>
-<td>tINS</td>
-<td>RR</td>
-<td>27</td>
-<td>spi_clk_ibuf/O</td>
-</tr>
-<tr>
-<td>0.863</td>
-<td>0.180</td>
+<td>5.237</td>
+<td>0.237</td>
 <td>tNET</td>
-<td>RR</td>
+<td>FF</td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/rbin_num_3_s0/CLK</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val1_s4/G</td>
 </tr>
 <tr>
-<td>1.095</td>
+<td>5.469</td>
 <td>0.232</td>
 <td>tC2Q</td>
-<td>RF</td>
-<td>5</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/rbin_num_3_s0/Q</td>
-</tr>
-<tr>
-<td>1.332</td>
-<td>0.237</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_3_s2/I1</td>
-</tr>
-<tr>
-<td>1.887</td>
-<td>0.555</td>
-<td>tINS</td>
-<td>FF</td>
-<td>5</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_3_s2/F</td>
-</tr>
-<tr>
-<td>2.124</td>
-<td>0.237</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_3_s1/I1</td>
-</tr>
-<tr>
-<td>2.679</td>
-<td>0.555</td>
-<td>tINS</td>
-<td>FF</td>
-<td>3</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_3_s1/F</td>
-</tr>
-<tr>
-<td>2.916</td>
-<td>0.237</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_4_s0/I1</td>
-</tr>
-<tr>
-<td>3.471</td>
-<td>0.555</td>
-<td>tINS</td>
 <td>FF</td>
 <td>2</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_4_s0/F</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val1_s4/Q</td>
 </tr>
 <tr>
-<td>3.708</td>
-<td>0.237</td>
-<td>tNET</td>
-<td>FF</td>
-<td>2</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/n185_s0/I0</td>
-</tr>
-<tr>
-<td>4.257</td>
-<td>0.549</td>
-<td>tINS</td>
-<td>FR</td>
-<td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/n185_s0/COUT</td>
-</tr>
-<tr>
-<td>4.257</td>
-<td>0.000</td>
-<td>tNET</td>
-<td>RR</td>
-<td>2</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/n186_s0/CIN</td>
-</tr>
-<tr>
-<td>4.292</td>
-<td>0.035</td>
-<td>tINS</td>
-<td>RF</td>
-<td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/n186_s0/COUT</td>
-</tr>
-<tr>
-<td>4.292</td>
-<td>0.000</td>
-<td>tNET</td>
-<td>FF</td>
-<td>2</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/n187_s0/CIN</td>
-</tr>
-<tr>
-<td>4.327</td>
-<td>0.035</td>
-<td>tINS</td>
-<td>FF</td>
-<td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/n187_s0/COUT</td>
-</tr>
-<tr>
-<td>4.564</td>
+<td>5.706</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/rempty_val_s2/I2</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/n26_s1/I2</td>
 </tr>
 <tr>
-<td>5.017</td>
+<td>6.159</td>
 <td>0.453</td>
 <td>tINS</td>
 <td>FF</td>
-<td>2</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/rempty_val_s2/F</td>
+<td>7</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/n26_s1/F</td>
 </tr>
 <tr>
-<td>5.254</td>
+<td>6.396</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/n35_s0/I2</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wgraynext_0_s2/I0</td>
 </tr>
 <tr>
-<td>5.716</td>
-<td>0.462</td>
+<td>6.913</td>
+<td>0.517</td>
 <td>tINS</td>
-<td>FR</td>
-<td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/n35_s0/F</td>
+<td>FF</td>
+<td>8</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wgraynext_0_s2/F</td>
 </tr>
 <tr>
-<td>5.896</td>
-<td>0.180</td>
+<td>7.150</td>
+<td>0.237</td>
 <td>tNET</td>
-<td>RR</td>
+<td>FF</td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.mem_Small.mem_0_0_s/CEB</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_num_next_3_s3/I0</td>
+</tr>
+<tr>
+<td>7.667</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_num_next_3_s3/F</td>
+</tr>
+<tr>
+<td>7.904</td>
+<td>0.237</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_3_s0/D</td>
 </tr>
 </table>
 <b>Data Required Path:</b>
@@ -842,7 +918,7 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <td>0.683</td>
 <td>tINS</td>
 <td>RR</td>
-<td>27</td>
+<td>52</td>
 <td>spi_clk_ibuf/O</td>
 </tr>
 <tr>
@@ -851,37 +927,45 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.mem_Small.mem_0_0_s/CLKB</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_3_s0/CLK</td>
 </tr>
 <tr>
-<td>10.776</td>
-<td>-0.087</td>
+<td>10.828</td>
+<td>-0.035</td>
+<td>tUnc</td>
+<td> </td>
+<td> </td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_3_s0</td>
+</tr>
+<tr>
+<td>10.793</td>
+<td>-0.035</td>
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.mem_Small.mem_0_0_s</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_3_s0</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
 <table class="summary_table">
 <tr>
 <td class="label">Clock Skew:</td>
-<td>0.000</td>
+<td>0.626</td>
 </tr>
 <tr>
 <td class="label">Setup Relationship:</td>
-<td>10.000</td>
+<td>5.000</td>
 </tr>
 <tr>
 <td class="label">Logic Level:</td>
-<td>8</td>
+<td>4</td>
 </tr>
 <tr>
-<td class="label">Arrival Clock Path Delay:</td><td> cell: 0.683, 79.130%; route: 0.180, 20.870%</td></tr>
+<td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.237, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 3.199, 63.564%; route: 1.602, 31.827%; tC2Q: 0.232, 4.609%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 1.487, 55.755%; route: 0.948, 35.546%; tC2Q: 0.232, 8.699%</td></tr>
 <tr>
-<td class="label">Required Clock Path Delay:</td><td> cell: 0.683, 79.130%; route: 0.180, 20.870%</td></tr>
+<td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.237, 100.000%</td></tr>
 </table>
 <br/>
 <h3>Path&nbsp3</h3>
@@ -889,31 +973,31 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>5.574</td>
+<td>2.889</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>5.254</td>
+<td>7.904</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
-<td>10.828</td>
+<td>10.793</td>
 </tr>
 <tr>
 <td class="label">From</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/rbin_num_3_s0</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val1_s4</td>
 </tr>
 <tr>
 <td class="label">To</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Empty_s0</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_4_s0</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
-<td>spi_clk[R]</td>
+<td>wfull_val[R]</td>
 </tr>
 <tr>
 <td class="label">Latch Clk</td>
-<td>spi_clk[R]</td>
+<td>spi_clk[F]</td>
 </tr>
 </table>
 <b>Data Arrival Path:</b>
@@ -927,164 +1011,92 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <th>NODE</th>
 </tr>
 <tr>
+<td>5.000</td>
 <td>0.000</td>
-<td>0.000</td>
 <td> </td>
 <td> </td>
 <td> </td>
-<td>spi_clk</td>
+<td>wfull_val</td>
 </tr>
 <tr>
-<td>0.000</td>
+<td>5.000</td>
 <td>0.000</td>
 <td>tCL</td>
-<td>RR</td>
-<td>1</td>
-<td>spi_clk_ibuf/I</td>
+<td>FF</td>
+<td>4</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val_s0/F</td>
 </tr>
 <tr>
-<td>0.683</td>
-<td>0.683</td>
-<td>tINS</td>
-<td>RR</td>
-<td>27</td>
-<td>spi_clk_ibuf/O</td>
-</tr>
-<tr>
-<td>0.863</td>
-<td>0.180</td>
+<td>5.237</td>
+<td>0.237</td>
 <td>tNET</td>
-<td>RR</td>
+<td>FF</td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/rbin_num_3_s0/CLK</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val1_s4/G</td>
 </tr>
 <tr>
-<td>1.095</td>
+<td>5.469</td>
 <td>0.232</td>
 <td>tC2Q</td>
-<td>RF</td>
-<td>5</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/rbin_num_3_s0/Q</td>
-</tr>
-<tr>
-<td>1.332</td>
-<td>0.237</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_3_s2/I1</td>
-</tr>
-<tr>
-<td>1.887</td>
-<td>0.555</td>
-<td>tINS</td>
-<td>FF</td>
-<td>5</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_3_s2/F</td>
-</tr>
-<tr>
-<td>2.124</td>
-<td>0.237</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_3_s1/I1</td>
-</tr>
-<tr>
-<td>2.679</td>
-<td>0.555</td>
-<td>tINS</td>
-<td>FF</td>
-<td>3</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_3_s1/F</td>
-</tr>
-<tr>
-<td>2.916</td>
-<td>0.237</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_4_s0/I1</td>
-</tr>
-<tr>
-<td>3.471</td>
-<td>0.555</td>
-<td>tINS</td>
 <td>FF</td>
 <td>2</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_4_s0/F</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val1_s4/Q</td>
 </tr>
 <tr>
-<td>3.708</td>
-<td>0.237</td>
-<td>tNET</td>
-<td>FF</td>
-<td>2</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/n185_s0/I0</td>
-</tr>
-<tr>
-<td>4.257</td>
-<td>0.549</td>
-<td>tINS</td>
-<td>FR</td>
-<td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/n185_s0/COUT</td>
-</tr>
-<tr>
-<td>4.257</td>
-<td>0.000</td>
-<td>tNET</td>
-<td>RR</td>
-<td>2</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/n186_s0/CIN</td>
-</tr>
-<tr>
-<td>4.292</td>
-<td>0.035</td>
-<td>tINS</td>
-<td>RF</td>
-<td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/n186_s0/COUT</td>
-</tr>
-<tr>
-<td>4.292</td>
-<td>0.000</td>
-<td>tNET</td>
-<td>FF</td>
-<td>2</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/n187_s0/CIN</td>
-</tr>
-<tr>
-<td>4.327</td>
-<td>0.035</td>
-<td>tINS</td>
-<td>FF</td>
-<td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/n187_s0/COUT</td>
-</tr>
-<tr>
-<td>4.564</td>
+<td>5.706</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/rempty_val_s2/I2</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/n26_s1/I2</td>
 </tr>
 <tr>
-<td>5.017</td>
+<td>6.159</td>
 <td>0.453</td>
 <td>tINS</td>
 <td>FF</td>
-<td>2</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/rempty_val_s2/F</td>
+<td>7</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/n26_s1/F</td>
 </tr>
 <tr>
-<td>5.254</td>
+<td>6.396</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Empty_s0/D</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wgraynext_0_s2/I0</td>
+</tr>
+<tr>
+<td>6.913</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>8</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wgraynext_0_s2/F</td>
+</tr>
+<tr>
+<td>7.150</td>
+<td>0.237</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_num_next_4_s3/I0</td>
+</tr>
+<tr>
+<td>7.667</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_num_next_4_s3/F</td>
+</tr>
+<tr>
+<td>7.904</td>
+<td>0.237</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_4_s0/D</td>
 </tr>
 </table>
 <b>Data Required Path:</b>
@@ -1118,7 +1130,7 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <td>0.683</td>
 <td>tINS</td>
 <td>RR</td>
-<td>27</td>
+<td>52</td>
 <td>spi_clk_ibuf/O</td>
 </tr>
 <tr>
@@ -1127,37 +1139,45 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Empty_s0/CLK</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_4_s0/CLK</td>
 </tr>
 <tr>
 <td>10.828</td>
 <td>-0.035</td>
+<td>tUnc</td>
+<td> </td>
+<td> </td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_4_s0</td>
+</tr>
+<tr>
+<td>10.793</td>
+<td>-0.035</td>
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Empty_s0</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_4_s0</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
 <table class="summary_table">
 <tr>
 <td class="label">Clock Skew:</td>
-<td>0.000</td>
+<td>0.626</td>
 </tr>
 <tr>
 <td class="label">Setup Relationship:</td>
-<td>10.000</td>
+<td>5.000</td>
 </tr>
 <tr>
 <td class="label">Logic Level:</td>
-<td>7</td>
+<td>4</td>
 </tr>
 <tr>
-<td class="label">Arrival Clock Path Delay:</td><td> cell: 0.683, 79.130%; route: 0.180, 20.870%</td></tr>
+<td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.237, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 2.737, 62.336%; route: 1.422, 32.381%; tC2Q: 0.232, 5.283%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 1.487, 55.755%; route: 0.948, 35.546%; tC2Q: 0.232, 8.699%</td></tr>
 <tr>
-<td class="label">Required Clock Path Delay:</td><td> cell: 0.683, 79.130%; route: 0.180, 20.870%</td></tr>
+<td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.237, 100.000%</td></tr>
 </table>
 <br/>
 <h3>Path&nbsp4</h3>
@@ -1165,31 +1185,31 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>7.120</td>
+<td>2.889</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>3.708</td>
+<td>7.904</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
-<td>10.828</td>
+<td>10.793</td>
 </tr>
 <tr>
 <td class="label">From</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/rbin_num_3_s0</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val1_s4</td>
 </tr>
 <tr>
 <td class="label">To</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rptr_4_s0</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_5_s0</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
-<td>spi_clk[R]</td>
+<td>wfull_val[R]</td>
 </tr>
 <tr>
 <td class="label">Latch Clk</td>
-<td>spi_clk[R]</td>
+<td>spi_clk[F]</td>
 </tr>
 </table>
 <b>Data Arrival Path:</b>
@@ -1203,100 +1223,92 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <th>NODE</th>
 </tr>
 <tr>
+<td>5.000</td>
 <td>0.000</td>
-<td>0.000</td>
 <td> </td>
 <td> </td>
 <td> </td>
-<td>spi_clk</td>
+<td>wfull_val</td>
 </tr>
 <tr>
-<td>0.000</td>
+<td>5.000</td>
 <td>0.000</td>
 <td>tCL</td>
-<td>RR</td>
-<td>1</td>
-<td>spi_clk_ibuf/I</td>
+<td>FF</td>
+<td>4</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val_s0/F</td>
 </tr>
 <tr>
-<td>0.683</td>
-<td>0.683</td>
-<td>tINS</td>
-<td>RR</td>
-<td>27</td>
-<td>spi_clk_ibuf/O</td>
-</tr>
-<tr>
-<td>0.863</td>
-<td>0.180</td>
+<td>5.237</td>
+<td>0.237</td>
 <td>tNET</td>
-<td>RR</td>
+<td>FF</td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/rbin_num_3_s0/CLK</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val1_s4/G</td>
 </tr>
 <tr>
-<td>1.095</td>
+<td>5.469</td>
 <td>0.232</td>
 <td>tC2Q</td>
-<td>RF</td>
-<td>5</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/rbin_num_3_s0/Q</td>
-</tr>
-<tr>
-<td>1.332</td>
-<td>0.237</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_3_s2/I1</td>
-</tr>
-<tr>
-<td>1.887</td>
-<td>0.555</td>
-<td>tINS</td>
-<td>FF</td>
-<td>5</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_3_s2/F</td>
-</tr>
-<tr>
-<td>2.124</td>
-<td>0.237</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_3_s1/I1</td>
-</tr>
-<tr>
-<td>2.679</td>
-<td>0.555</td>
-<td>tINS</td>
-<td>FF</td>
-<td>3</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_3_s1/F</td>
-</tr>
-<tr>
-<td>2.916</td>
-<td>0.237</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_4_s0/I1</td>
-</tr>
-<tr>
-<td>3.471</td>
-<td>0.555</td>
-<td>tINS</td>
 <td>FF</td>
 <td>2</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_4_s0/F</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val1_s4/Q</td>
 </tr>
 <tr>
-<td>3.708</td>
+<td>5.706</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rptr_4_s0/D</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/n26_s1/I2</td>
+</tr>
+<tr>
+<td>6.159</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>7</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/n26_s1/F</td>
+</tr>
+<tr>
+<td>6.396</td>
+<td>0.237</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wgraynext_0_s2/I0</td>
+</tr>
+<tr>
+<td>6.913</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>8</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wgraynext_0_s2/F</td>
+</tr>
+<tr>
+<td>7.150</td>
+<td>0.237</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_num_next_5_s4/I0</td>
+</tr>
+<tr>
+<td>7.667</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_num_next_5_s4/F</td>
+</tr>
+<tr>
+<td>7.904</td>
+<td>0.237</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_5_s0/D</td>
 </tr>
 </table>
 <b>Data Required Path:</b>
@@ -1330,7 +1342,7 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <td>0.683</td>
 <td>tINS</td>
 <td>RR</td>
-<td>27</td>
+<td>52</td>
 <td>spi_clk_ibuf/O</td>
 </tr>
 <tr>
@@ -1339,37 +1351,45 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rptr_4_s0/CLK</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_5_s0/CLK</td>
 </tr>
 <tr>
 <td>10.828</td>
 <td>-0.035</td>
+<td>tUnc</td>
+<td> </td>
+<td> </td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_5_s0</td>
+</tr>
+<tr>
+<td>10.793</td>
+<td>-0.035</td>
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rptr_4_s0</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_5_s0</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
 <table class="summary_table">
 <tr>
 <td class="label">Clock Skew:</td>
-<td>0.000</td>
+<td>0.626</td>
 </tr>
 <tr>
 <td class="label">Setup Relationship:</td>
-<td>10.000</td>
+<td>5.000</td>
 </tr>
 <tr>
 <td class="label">Logic Level:</td>
 <td>4</td>
 </tr>
 <tr>
-<td class="label">Arrival Clock Path Delay:</td><td> cell: 0.683, 79.130%; route: 0.180, 20.870%</td></tr>
+<td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.237, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 1.665, 58.523%; route: 0.948, 33.322%; tC2Q: 0.232, 8.155%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 1.487, 55.755%; route: 0.948, 35.546%; tC2Q: 0.232, 8.699%</td></tr>
 <tr>
-<td class="label">Required Clock Path Delay:</td><td> cell: 0.683, 79.130%; route: 0.180, 20.870%</td></tr>
+<td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.237, 100.000%</td></tr>
 </table>
 <br/>
 <h3>Path&nbsp5</h3>
@@ -1377,31 +1397,31 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>7.158</td>
+<td>2.889</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>3.670</td>
+<td>7.904</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
-<td>10.828</td>
+<td>10.793</td>
 </tr>
 <tr>
 <td class="label">From</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/rbin_num_3_s0</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val1_s4</td>
 </tr>
 <tr>
 <td class="label">To</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rptr_5_s0</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_6_s0</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
-<td>spi_clk[R]</td>
+<td>wfull_val[R]</td>
 </tr>
 <tr>
 <td class="label">Latch Clk</td>
-<td>spi_clk[R]</td>
+<td>spi_clk[F]</td>
 </tr>
 </table>
 <b>Data Arrival Path:</b>
@@ -1415,100 +1435,92 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <th>NODE</th>
 </tr>
 <tr>
+<td>5.000</td>
 <td>0.000</td>
-<td>0.000</td>
 <td> </td>
 <td> </td>
 <td> </td>
-<td>spi_clk</td>
+<td>wfull_val</td>
 </tr>
 <tr>
-<td>0.000</td>
+<td>5.000</td>
 <td>0.000</td>
 <td>tCL</td>
-<td>RR</td>
-<td>1</td>
-<td>spi_clk_ibuf/I</td>
+<td>FF</td>
+<td>4</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val_s0/F</td>
 </tr>
 <tr>
-<td>0.683</td>
-<td>0.683</td>
-<td>tINS</td>
-<td>RR</td>
-<td>27</td>
-<td>spi_clk_ibuf/O</td>
-</tr>
-<tr>
-<td>0.863</td>
-<td>0.180</td>
+<td>5.237</td>
+<td>0.237</td>
 <td>tNET</td>
-<td>RR</td>
+<td>FF</td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/rbin_num_3_s0/CLK</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val1_s4/G</td>
 </tr>
 <tr>
-<td>1.095</td>
+<td>5.469</td>
 <td>0.232</td>
 <td>tC2Q</td>
-<td>RF</td>
-<td>5</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/rbin_num_3_s0/Q</td>
+<td>FF</td>
+<td>2</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val1_s4/Q</td>
 </tr>
 <tr>
-<td>1.332</td>
+<td>5.706</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_3_s2/I1</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/n26_s1/I2</td>
 </tr>
 <tr>
-<td>1.887</td>
-<td>0.555</td>
+<td>6.159</td>
+<td>0.453</td>
 <td>tINS</td>
 <td>FF</td>
-<td>5</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_3_s2/F</td>
+<td>7</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/n26_s1/F</td>
 </tr>
 <tr>
-<td>2.124</td>
+<td>6.396</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_3_s1/I1</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wgraynext_0_s2/I0</td>
 </tr>
 <tr>
-<td>2.679</td>
-<td>0.555</td>
-<td>tINS</td>
-<td>FF</td>
-<td>3</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_3_s1/F</td>
-</tr>
-<tr>
-<td>2.916</td>
-<td>0.237</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_5_s0/I0</td>
-</tr>
-<tr>
-<td>3.433</td>
+<td>6.913</td>
 <td>0.517</td>
 <td>tINS</td>
 <td>FF</td>
-<td>2</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rgraynext_5_s0/F</td>
+<td>8</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wgraynext_0_s2/F</td>
 </tr>
 <tr>
-<td>3.670</td>
+<td>7.150</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rptr_5_s0/D</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_num_next_6_s3/I0</td>
+</tr>
+<tr>
+<td>7.667</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_num_next_6_s3/F</td>
+</tr>
+<tr>
+<td>7.904</td>
+<td>0.237</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_6_s0/D</td>
 </tr>
 </table>
 <b>Data Required Path:</b>
@@ -1542,7 +1554,7 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <td>0.683</td>
 <td>tINS</td>
 <td>RR</td>
-<td>27</td>
+<td>52</td>
 <td>spi_clk_ibuf/O</td>
 </tr>
 <tr>
@@ -1551,37 +1563,45 @@ D:\Tasks\PocketLab-RTL\src\spi_send.v<br>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rptr_5_s0/CLK</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_6_s0/CLK</td>
 </tr>
 <tr>
 <td>10.828</td>
 <td>-0.035</td>
+<td>tUnc</td>
+<td> </td>
+<td> </td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_6_s0</td>
+</tr>
+<tr>
+<td>10.793</td>
+<td>-0.035</td>
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>spi_send_inst/fifo_spi_send_inst/fifo_inst/Small.rptr_5_s0</td>
+<td>spi_recv_inst/fifo_spi_recv_inst/fifo_inst/Big.wbin_6_s0</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
 <table class="summary_table">
 <tr>
 <td class="label">Clock Skew:</td>
-<td>0.000</td>
+<td>0.626</td>
 </tr>
 <tr>
 <td class="label">Setup Relationship:</td>
-<td>10.000</td>
+<td>5.000</td>
 </tr>
 <tr>
 <td class="label">Logic Level:</td>
 <td>4</td>
 </tr>
 <tr>
-<td class="label">Arrival Clock Path Delay:</td><td> cell: 0.683, 79.130%; route: 0.180, 20.870%</td></tr>
+<td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.237, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 1.627, 57.962%; route: 0.948, 33.773%; tC2Q: 0.232, 8.265%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 1.487, 55.755%; route: 0.948, 35.546%; tC2Q: 0.232, 8.699%</td></tr>
 <tr>
-<td class="label">Required Clock Path Delay:</td><td> cell: 0.683, 79.130%; route: 0.180, 20.870%</td></tr>
+<td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.237, 100.000%</td></tr>
 </table>
 <br/>
 </div><!-- content -->

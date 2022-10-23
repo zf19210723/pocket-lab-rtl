@@ -1,5 +1,23 @@
 [
  {
+  "InstFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.v",
+  "InstLine" : 353,
+  "InstName" : "fifo_spi_recv",
+  "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.v",
+  "ModuleLine" : 353,
+  "ModuleName" : "fifo_spi_recv",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.v",
+    "InstLine" : 376,
+    "InstName" : "fifo_inst",
+    "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "~fifo.fifo_spi_recv"
+   }
+  ]
+ },
+ {
   "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
   "InstLine" : 1,
   "InstName" : "main",
@@ -17,15 +35,51 @@
    },
    {
     "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
-    "InstLine" : 63,
+    "InstLine" : 65,
     "InstName" : "ccu_inst",
     "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/ccu.v",
-    "ModuleLine" : 1,
-    "ModuleName" : "ccu"
+    "ModuleLine" : 7,
+    "ModuleName" : "ccu",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/Tasks/PocketLab-RTL/src/ccu.v",
+      "InstLine" : 62,
+      "InstName" : "fifo_ccu_recv_buffer_inst",
+      "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_ccu_recv_buffer/fifo_ccu_recv_buffer.v",
+      "ModuleLine" : 358,
+      "ModuleName" : "fifo_ccu_recv_buffer",
+      "SubInsts" : [
+       {
+        "InstFile" : "D:/Tasks/PocketLab-RTL/src/fifo_ccu_recv_buffer/fifo_ccu_recv_buffer.v",
+        "InstLine" : 381,
+        "InstName" : "fifo_sc_hs_inst",
+        "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_ccu_recv_buffer/fifo_ccu_recv_buffer.v",
+        "ModuleLine" : 1,
+        "ModuleName" : "~fifo_sc_hs.fifo_ccu_recv_buffer"
+       }
+      ]
+     },
+     {
+      "InstFile" : "D:/Tasks/PocketLab-RTL/src/ccu.v",
+      "InstLine" : 101,
+      "InstName" : "ccu_recv_header_fsm_inst",
+      "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/ccu_recv_header_fsm.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "ccu_recv_header_fsm"
+     },
+     {
+      "InstFile" : "D:/Tasks/PocketLab-RTL/src/ccu.v",
+      "InstLine" : 119,
+      "InstName" : "ccu_write_dac_fsm_inst",
+      "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/ccu_write_dac_fsm.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "ccu_write_dac_fsm"
+     }
+    ]
    },
    {
     "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
-    "InstLine" : 101,
+    "InstLine" : 103,
     "InstName" : "clkdiv_adda_inst",
     "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/clkdiv_adda/clkdiv_adda.v",
     "ModuleLine" : 9,
@@ -33,7 +87,7 @@
    },
    {
     "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
-    "InstLine" : 107,
+    "InstLine" : 109,
     "InstName" : "adc_inst",
     "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/adc.v",
     "ModuleLine" : 1,
@@ -61,7 +115,7 @@
    },
    {
     "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
-    "InstLine" : 122,
+    "InstLine" : 124,
     "InstName" : "dac_inst",
     "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/dac.v",
     "ModuleLine" : 1,
@@ -79,35 +133,15 @@
    },
    {
     "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
-    "InstLine" : 145,
+    "InstLine" : 147,
     "InstName" : "spi_recv_inst",
     "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/spi_recv.v",
     "ModuleLine" : 1,
-    "ModuleName" : "spi_recv",
-    "SubInsts" : [
-     {
-      "InstFile" : "D:/Tasks/PocketLab-RTL/src/spi_recv.v",
-      "InstLine" : 20,
-      "InstName" : "fifo_spi_recv_inst",
-      "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.v",
-      "ModuleLine" : 393,
-      "ModuleName" : "fifo_spi_recv",
-      "SubInsts" : [
-       {
-        "InstFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.v",
-        "InstLine" : 416,
-        "InstName" : "fifo_inst",
-        "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.v",
-        "ModuleLine" : 1,
-        "ModuleName" : "~fifo.fifo_spi_recv"
-       }
-      ]
-     }
-    ]
+    "ModuleName" : "spi_recv"
    },
    {
     "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
-    "InstLine" : 161,
+    "InstLine" : 163,
     "InstName" : "spi_send_inst",
     "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/spi_send.v",
     "ModuleLine" : 1,
