@@ -8,13 +8,15 @@
         <File path="src/adc.v" type="file.verilog" enable="1"/>
         <File path="src/bram_dac/bram_dac.v" type="file.verilog" enable="1"/>
         <File path="src/ccu.v" type="file.verilog" enable="1"/>
-        <File path="src/ccu_recv_header_fsm.v" type="file.verilog" enable="1"/>
-        <File path="src/ccu_write_dac_fsm.v" type="file.verilog" enable="1"/>
+        <File path="src/ccu_pack.v" type="file.verilog" enable="1"/>
+        <File path="src/ccu_unpack.v" type="file.verilog" enable="1"/>
         <File path="src/clkdiv_adda/clkdiv_adda.v" type="file.verilog" enable="1"/>
         <File path="src/dac.v" type="file.verilog" enable="1"/>
         <File path="src/fifo_adc/fifo_adc.v" type="file.verilog" enable="1"/>
-        <File path="src/fifo_ccu_recv_buffer/fifo_ccu_recv_buffer.v" type="file.verilog" enable="1"/>
+        <File path="src/fifo_ccu_pack_data_buffer/fifo_ccu_pack_data_buffer.v" type="file.verilog" enable="1"/>
         <File path="src/fifo_ccu_unpack_data_buffer/fifo_ccu_unpack_data_buffer.v" type="file.verilog" enable="1"/>
+        <File path="src/fifo_spi_recv/fifo_spi_recv.v" type="file.verilog" enable="1"/>
+        <File path="src/fifo_spi_send/fifo_spi_send.v" type="file.verilog" enable="1"/>
         <File path="src/main.v" type="file.verilog" enable="1"/>
         <File path="src/pll_main/pll_main.v" type="file.verilog" enable="1"/>
         <File path="src/spi_recv.v" type="file.verilog" enable="1"/>

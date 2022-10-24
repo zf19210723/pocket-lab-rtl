@@ -15,10 +15,10 @@ module ccu (
     input          spi_recv_axis_rlast,
 
     // SPI TX AXI4S
-    output reg [7 : 0] spi_send_axis_tdata,
-    output reg         spi_send_axis_tvalid,
-    input              spi_send_axis_tready,
-    output reg         spi_send_axis_tlast,
+    output [7 : 0] spi_send_axis_tdata,
+    output         spi_send_axis_tvalid,
+    input          spi_send_axis_tready,
+    output         spi_send_axis_tlast,
 
     // DAC AXI4
     output [15 : 0] dac_axi_awaddr,
@@ -62,12 +62,30 @@ module ccu (
         .axis_rdata (spi_recv_axis_rdata),
         .axis_rlast (spi_recv_axis_rlast),
 
-        .dac_fsm_busy(0),
+        .dac_fsm_busy(dac_fsm_busy),
         .dac_fsm_dv  (dac_fsm_dv),
         .sys_fsm_busy(0),
         .sys_fsm_dv  (sys_fsm_dv),
         .adc_fsm_busy(0),
         .adc_fsm_dv  (adc_fsm_dv),
+
+        .pack_id    (pack_id),
+        .pack_length(pack_length),
+        .pack_data  (pack_data),
+        .pack_type  (pack_type)
+    );
+
+    ccu_pack ccu_pack_inst (
+        .axi_aclk   (axi_aclk),
+        .axi_aresetn(axi_aresetn),
+
+        .axis_tvalid(spi_send_axis_tvalid),
+        .axis_tready(spi_send_axis_tready),
+        .axis_tdata (spi_send_axis_tdata),
+        .axis_tlast (spi_send_axis_tlast),
+
+        .pack_en  (dac_fsm_dv),
+        .pack_busy(dac_fsm_busy),
 
         .pack_id    (pack_id),
         .pack_length(pack_length),

@@ -19,10 +19,10 @@ n@_opt
 Z3 OL;O;10.6d;65
 R0
 T_opt1
-!s110 1666595815
-VBF8e]bcCIm6c[SJjFGNIX0
+!s110 1666603363
+VdaR<>FQdY]1=k=OJFoPD?0
 04 5 4 work bench fast 0
-=1-04bf1b1caf05-63563be7-d0-d0
+=1-04bf1b1caf05-63565963-95-2644
 Z4 o-quiet -auto_acc_if_foreign -work work +acc
 R2
 n@_opt1
@@ -38,7 +38,7 @@ n@_opt2
 R3
 R0
 vadc
-Z5 !s110 1666534920
+Z5 !s110 1666599047
 !i10b 1
 !s100 MmS;o?i;7gBQCIfP65e=43
 I932nmJQT_mjVRooeTA;b=2
@@ -52,14 +52,14 @@ Z8 OL;L;10.6d;65
 r1
 !s85 0
 31
-Z9 !s108 1666534920.000000
+Z9 !s108 1666599047.000000
 !s107 D:/Tasks/PocketLab-RTL/src/adc.v|
 !s90 -reportprogress|300|-work|pocketlab-rtl|-vopt|-stats=none|D:/Tasks/PocketLab-RTL/src/adc.v|
 !i113 0
 Z10 o-work pocketlab-rtl -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
 vALU
-Z11 !s110 1666534921
+Z11 !s110 1666599048
 !i10b 1
 !s100 DIAk_iei]=o?j@GWDCdjj2
 IF`^k;PjWTQI45=[Gkj9An0
@@ -73,7 +73,7 @@ R8
 r1
 !s85 0
 31
-Z15 !s108 1666534921.000000
+Z15 !s108 1666599048.000000
 Z16 !s107 C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v|
 Z17 !s90 -reportprogress|300|-work|pocketlab-rtl|-vopt|-stats=none|C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v|
 !i113 0
@@ -81,7 +81,7 @@ R10
 R2
 n@a@l@u
 vALU54D
-Z18 !s110 1666534922
+Z18 !s110 1666599049
 !i10b 1
 !s100 EX3?=79AkJoh6bj9mcGSB2
 IYZ_@agiS7DGkloUm8KW`S3
@@ -103,13 +103,13 @@ R10
 R2
 n@a@l@u54@d
 vbench
-!s110 1666595811
+!s110 1666599400
 !i10b 1
-!s100 Qe<<DY8c:PhU_WmlKI;^o3
-I@nUB>Enmo1_Xe:<]eb3@V1
+!s100 @YO[hhVEQd<de[ZJ^5:2;1
+I35LT2MY;VhJH2D2i6]5RI2
 R6
 R7
-w1666595804
+w1666599391
 8D:/Tasks/PocketLab-RTL/bench/bench.v
 FD:/Tasks/PocketLab-RTL/bench/bench.v
 L0 3
@@ -117,14 +117,14 @@ R8
 r1
 !s85 0
 31
-!s108 1666595811.000000
+!s108 1666599400.000000
 !s107 D:/Tasks/PocketLab-RTL/bench/bench.v|
 !s90 -reportprogress|300|-work|pocketlab-rtl|-vopt|-stats=none|D:/Tasks/PocketLab-RTL/bench/bench.v|
 !i113 0
 R10
 R2
 vbench_spi_send
-R18
+!s110 1666598318
 !i10b 1
 !s100 VboJcH5`Vg7RT@QoTJ5fZ3
 InUSTE:Jza^;@FnM^Y3?J]3
@@ -138,7 +138,7 @@ R8
 r1
 !s85 0
 31
-!s108 1666534922.000000
+!s108 1666598318.000000
 !s107 D:/Tasks/PocketLab-RTL/bench/bench_spi_send.v|
 !s90 -reportprogress|300|-work|pocketlab-rtl|-vopt|-stats=none|D:/Tasks/PocketLab-RTL/bench/bench_spi_send.v|
 !i113 0
@@ -210,13 +210,13 @@ R10
 R2
 n@b@u@f@s
 vccu
-!s110 1666595629
+R5
 !i10b 1
-!s100 Y_3cTF0hi_ITzcWJ=cEoJ3
-I`zdnWlKcVj?Ho>3@JlO;e3
+!s100 zVan>]>Abh;fB;C5Ko3IY1
+IbLKH2IYje3Y>=eY2GcTIF0
 R6
 R7
-w1666595623
+w1666598441
 8D:/Tasks/PocketLab-RTL/src/ccu.v
 FD:/Tasks/PocketLab-RTL/src/ccu.v
 L0 7
@@ -224,11 +224,32 @@ R8
 r1
 !s85 0
 31
-!s108 1666595629.000000
+R9
 !s107 D:/Tasks/PocketLab-RTL/src/ccu.v|
 !s90 -reportprogress|300|-work|pocketlab-rtl|-vopt|-stats=none|D:/Tasks/PocketLab-RTL/src/ccu.v|
 !i113 0
 R10
+R2
+vccu_pack
+R18
+!i10b 1
+!s100 Zi8gVXdLEi6k;SGadB=`21
+I8<[nK^8IzQiI0NF;W`]oL2
+R6
+R7
+w1666598889
+8D:/Tasks/PocketLab-RTL/src/ccu_pack.v
+FD:/Tasks/PocketLab-RTL/src/ccu_pack.v
+L0 1
+R8
+r1
+!s85 0
+31
+Z19 !s108 1666599049.000000
+!s107 D:/Tasks/PocketLab-RTL/src/ccu_pack.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Tasks/PocketLab-RTL/src/ccu_pack.v|
+!i113 0
+Z20 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R2
 vccu_recv_header_fsm
 R6
@@ -244,20 +265,20 @@ w1666486720
 FD:/Tasks/PocketLab-RTL/src/ccu_recv_header_fsm.v
 L0 1
 R8
-Z19 !s108 1666529297.000000
+Z21 !s108 1666529297.000000
 !s107 D:/Tasks/PocketLab-RTL/src/ccu_recv_header_fsm.v|
 !s90 -reportprogress|300|-work|pocketlab-rtl|-vopt|-stats=none|D:/Tasks/PocketLab-RTL/src/ccu_recv_header_fsm.v|
 !i113 0
 R10
 R2
 vccu_unpack
-Z20 !s110 1666595565
+R18
 !i10b 1
-!s100 DB<@MW::BZ;Q]F^8AXf<N1
-II[P2MXmgOc]F05E>o2FSk3
+!s100 Yz^DHh:g:1?N1G7UO=`4>0
+IGaQT=Vm=:NGcJ5MV7=oCL1
 R6
 R7
-w1666595559
+w1666595915
 8D:/Tasks/PocketLab-RTL/src/ccu_unpack.v
 FD:/Tasks/PocketLab-RTL/src/ccu_unpack.v
 L0 7
@@ -265,11 +286,11 @@ R8
 r1
 !s85 0
 31
-Z21 !s108 1666595565.000000
+R19
 !s107 D:/Tasks/PocketLab-RTL/src/ccu_unpack.v|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Tasks/PocketLab-RTL/src/ccu_unpack.v|
 !i113 0
-Z22 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R20
 R2
 vccu_write_dac_fsm
 R6
@@ -285,7 +306,7 @@ w1666490283
 FD:/Tasks/PocketLab-RTL/src/ccu_write_dac_fsm.v
 L0 1
 R8
-R19
+R21
 !s107 D:/Tasks/PocketLab-RTL/src/ccu_write_dac_fsm.v|
 !s90 -reportprogress|300|-work|pocketlab-rtl|-vopt|-stats=none|D:/Tasks/PocketLab-RTL/src/ccu_write_dac_fsm.v|
 !i113 0
@@ -1498,7 +1519,7 @@ R17
 R10
 R2
 vfifo_adc
-R5
+R11
 !i10b 1
 !s100 bI8eEQl0nKe;9k>j>;WoS2
 IlVG@L7h1B>[jBjRM@Z[ag0
@@ -1512,11 +1533,32 @@ R8
 r1
 !s85 0
 31
-R9
+R15
 !s107 D:/Tasks/PocketLab-RTL/src/fifo_adc/fifo_adc.vo|
 !s90 -reportprogress|300|-work|pocketlab-rtl|-vopt|-stats=none|D:/Tasks/PocketLab-RTL/src/fifo_adc/fifo_adc.vo|
 !i113 0
 R10
+R2
+vfifo_ccu_pack_data_buffer
+R18
+!i10b 1
+!s100 XT1gRGUUG:V=7mHk]4UPP3
+IfG0mN?afl8h1G0`213]0[3
+R6
+R7
+w1666597752
+8D:/Tasks/PocketLab-RTL/src/fifo_ccu_pack_data_buffer/fifo_ccu_pack_data_buffer.vo
+FD:/Tasks/PocketLab-RTL/src/fifo_ccu_pack_data_buffer/fifo_ccu_pack_data_buffer.vo
+L0 8
+R8
+r1
+!s85 0
+31
+R19
+!s107 D:/Tasks/PocketLab-RTL/src/fifo_ccu_pack_data_buffer/fifo_ccu_pack_data_buffer.vo|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Tasks/PocketLab-RTL/src/fifo_ccu_pack_data_buffer/fifo_ccu_pack_data_buffer.vo|
+!i113 0
+R20
 R2
 vfifo_ccu_recv_buffer
 R6
@@ -1532,14 +1574,14 @@ w1666490686
 FD:/Tasks/PocketLab-RTL/src/fifo_ccu_recv_buffer/fifo_ccu_recv_buffer.vo
 L0 8
 R8
-R19
+R21
 !s107 D:/Tasks/PocketLab-RTL/src/fifo_ccu_recv_buffer/fifo_ccu_recv_buffer.vo|
 !s90 -reportprogress|300|-work|pocketlab-rtl|-vopt|-stats=none|D:/Tasks/PocketLab-RTL/src/fifo_ccu_recv_buffer/fifo_ccu_recv_buffer.vo|
 !i113 0
 R10
 R2
 vfifo_ccu_unpack_data_buffer
-R20
+R18
 !i10b 1
 !s100 <FRHzo<XdP94edFiCZ3DH2
 INh<oVQ]i4kjO:Da4WKzJG3
@@ -1553,11 +1595,11 @@ R8
 r1
 !s85 0
 31
-R21
+R19
 !s107 D:/Tasks/PocketLab-RTL/src/fifo_ccu_unpack_data_buffer/fifo_ccu_unpack_data_buffer.vo|
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/Tasks/PocketLab-RTL/src/fifo_ccu_unpack_data_buffer/fifo_ccu_unpack_data_buffer.vo|
 !i113 0
-R22
+R20
 R2
 vFIFO_SC_Hfifo_spi_rx_bufferS_Top
 !s110 1666435912
@@ -1570,7 +1612,7 @@ w1666422637
 8D:/Tasks/PocketLab-RTL/src/fifo_spi_rx_buffer/fifo_spi_rx_buffer.vo
 FD:/Tasks/PocketLab-RTL/src/fifo_spi_rx_buffer/fifo_spi_rx_buffer.vo
 L0 8
-Z23 OL;L;10.4;61
+Z22 OL;L;10.4;61
 r1
 !s85 0
 31
@@ -2237,13 +2279,13 @@ R10
 R2
 n@l@u@t8
 vmain
-R5
+Z23 !s110 1666603273
 !i10b 1
-!s100 CePgk^bXaRV>iKf@FL]U60
-IM[1o1CnbXIh0lXVbKGN9L1
+!s100 ]IOEPmW`1==eU4XbNL>XW3
+Ig6M_0h6XZRL_2eh]Ez]kn1
 R6
 R7
-w1666506261
+w1666603268
 8D:/Tasks/PocketLab-RTL/src/main.v
 FD:/Tasks/PocketLab-RTL/src/main.v
 L0 1
@@ -2251,7 +2293,7 @@ R8
 r1
 !s85 0
 31
-R9
+Z24 !s108 1666603273.000000
 !s107 D:/Tasks/PocketLab-RTL/src/main.v|
 !s90 -reportprogress|300|-work|pocketlab-rtl|-vopt|-stats=none|D:/Tasks/PocketLab-RTL/src/main.v|
 !i113 0
@@ -2346,7 +2388,7 @@ R10
 R2
 n@m@u@l@t9@x9
 vMULTADDALU18X18
-R11
+R18
 !i10b 1
 !s100 8aOK]AW7SiZ^CazPkVVT@2
 I[^bfhGzR0anOfhTi8HM4;3
@@ -3049,7 +3091,7 @@ R10
 R2
 n@p@l@l
 vpll_main
-R5
+R11
 !i10b 1
 !s100 BSX^[TmNZXQC=3oI^QgnM2
 IaCkE4CbMaG7kZXLd@`gAI3
@@ -3063,7 +3105,7 @@ R8
 r1
 !s85 0
 31
-R9
+R15
 !s107 D:/Tasks/PocketLab-RTL/src/pll_main/pll_main.v|
 !s90 -reportprogress|300|-work|pocketlab-rtl|-vopt|-stats=none|D:/Tasks/PocketLab-RTL/src/pll_main/pll_main.v|
 !i113 0
@@ -3458,7 +3500,7 @@ R8
 r1
 !s85 0
 31
-R9
+R15
 !s107 C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_sim.v|
 !s90 -reportprogress|300|-work|pocketlab-rtl|-vopt|-stats=none|C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_sim.v|
 !i113 0
@@ -3576,13 +3618,13 @@ R10
 R2
 n@s@p
 vspi_recv
-R5
+!s110 1666603360
 !i10b 1
-!s100 c`anbUjPKN^d5e20bcg9j3
-Ii?S78:RIlTn^40YdE=WYY2
+!s100 W?k@nG_?Km2^NXCK1IlGN0
+IUYT=a[iSE6d7AFHWWCI5`2
 R6
 R7
-w1666530207
+w1666603356
 8D:/Tasks/PocketLab-RTL/src/spi_recv.v
 FD:/Tasks/PocketLab-RTL/src/spi_recv.v
 L0 1
@@ -3590,14 +3632,14 @@ R8
 r1
 !s85 0
 31
-R9
+!s108 1666603360.000000
 !s107 D:/Tasks/PocketLab-RTL/src/spi_recv.v|
 !s90 -reportprogress|300|-work|pocketlab-rtl|-vopt|-stats=none|D:/Tasks/PocketLab-RTL/src/spi_recv.v|
 !i113 0
 R10
 R2
 vspi_recv_pu
-Z24 !s110 1666435911
+Z25 !s110 1666435911
 !i10b 1
 !s100 <X7ToEbm:WXo?n89[aHA20
 I5LK7i710h:G9YeXmKzbVA0
@@ -3607,7 +3649,7 @@ w1666435743
 8D:/Tasks/PocketLab-RTL/src/spi_recv_pu.v
 FD:/Tasks/PocketLab-RTL/src/spi_recv_pu.v
 L0 1
-R23
+R22
 r1
 !s85 0
 31
@@ -3617,13 +3659,13 @@ r1
 !i113 0
 R10
 vspi_send
-R5
+R23
 !i10b 1
-!s100 hfFR2^_dDJYETbS_FM3mD0
-IKge:67FfNJikZ6;YWPo>V0
+!s100 ]IlzX>ZIfCUO]4cm>gc2U2
+IAI4zIQ8^IPcOXJIhS[QGJ0
 R6
 R7
-w1666513119
+w1666603254
 8D:/Tasks/PocketLab-RTL/src/spi_send.v
 FD:/Tasks/PocketLab-RTL/src/spi_send.v
 L0 1
@@ -3631,14 +3673,14 @@ R8
 r1
 !s85 0
 31
-R9
+R24
 !s107 D:/Tasks/PocketLab-RTL/src/spi_send.v|
 !s90 -reportprogress|300|-work|pocketlab-rtl|-vopt|-stats=none|D:/Tasks/PocketLab-RTL/src/spi_send.v|
 !i113 0
 R10
 R2
 vspi_slave
-R24
+R25
 !i10b 1
 !s100 PUcJ7SM[LXa4m3Q^il<iP1
 I<28X79fSz^G=4ndZ;<;d;2
@@ -3648,7 +3690,7 @@ w1666421351
 8D:/Tasks/PocketLab-RTL/src/spi_slave.v
 FD:/Tasks/PocketLab-RTL/src/spi_slave.v
 L0 1
-R23
+R22
 r1
 !s85 0
 31

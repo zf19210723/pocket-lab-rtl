@@ -1,23 +1,5 @@
 [
  {
-  "InstFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.v",
-  "InstLine" : 353,
-  "InstName" : "fifo_spi_recv",
-  "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.v",
-  "ModuleLine" : 353,
-  "ModuleName" : "fifo_spi_recv",
-  "SubInsts" : [
-   {
-    "InstFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.v",
-    "InstLine" : 376,
-    "InstName" : "fifo_inst",
-    "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.v",
-    "ModuleLine" : 1,
-    "ModuleName" : "~fifo.fifo_spi_recv"
-   }
-  ]
- },
- {
   "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
   "InstLine" : 1,
   "InstName" : "main",
@@ -43,37 +25,59 @@
     "SubInsts" : [
      {
       "InstFile" : "D:/Tasks/PocketLab-RTL/src/ccu.v",
-      "InstLine" : 62,
-      "InstName" : "fifo_ccu_recv_buffer_inst",
-      "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_ccu_recv_buffer/fifo_ccu_recv_buffer.v",
-      "ModuleLine" : 358,
-      "ModuleName" : "fifo_ccu_recv_buffer",
+      "InstLine" : 56,
+      "InstName" : "ccu_unpack_inst",
+      "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/ccu_unpack.v",
+      "ModuleLine" : 7,
+      "ModuleName" : "ccu_unpack",
       "SubInsts" : [
        {
-        "InstFile" : "D:/Tasks/PocketLab-RTL/src/fifo_ccu_recv_buffer/fifo_ccu_recv_buffer.v",
-        "InstLine" : 381,
-        "InstName" : "fifo_sc_hs_inst",
-        "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_ccu_recv_buffer/fifo_ccu_recv_buffer.v",
-        "ModuleLine" : 1,
-        "ModuleName" : "~fifo_sc_hs.fifo_ccu_recv_buffer"
+        "InstFile" : "D:/Tasks/PocketLab-RTL/src/ccu_unpack.v",
+        "InstLine" : 37,
+        "InstName" : "fifo_ccu_unpack_data_buffer_inst",
+        "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_ccu_unpack_data_buffer/fifo_ccu_unpack_data_buffer.v",
+        "ModuleLine" : 334,
+        "ModuleName" : "fifo_ccu_unpack_data_buffer",
+        "SubInsts" : [
+         {
+          "InstFile" : "D:/Tasks/PocketLab-RTL/src/fifo_ccu_unpack_data_buffer/fifo_ccu_unpack_data_buffer.v",
+          "InstLine" : 355,
+          "InstName" : "fifo_sc_hs_inst",
+          "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_ccu_unpack_data_buffer/fifo_ccu_unpack_data_buffer.v",
+          "ModuleLine" : 1,
+          "ModuleName" : "~fifo_sc_hs.fifo_ccu_unpack_data_buffer"
+         }
+        ]
        }
       ]
      },
      {
       "InstFile" : "D:/Tasks/PocketLab-RTL/src/ccu.v",
-      "InstLine" : 101,
-      "InstName" : "ccu_recv_header_fsm_inst",
-      "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/ccu_recv_header_fsm.v",
+      "InstLine" : 78,
+      "InstName" : "ccu_pack_inst",
+      "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/ccu_pack.v",
       "ModuleLine" : 1,
-      "ModuleName" : "ccu_recv_header_fsm"
-     },
-     {
-      "InstFile" : "D:/Tasks/PocketLab-RTL/src/ccu.v",
-      "InstLine" : 119,
-      "InstName" : "ccu_write_dac_fsm_inst",
-      "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/ccu_write_dac_fsm.v",
-      "ModuleLine" : 1,
-      "ModuleName" : "ccu_write_dac_fsm"
+      "ModuleName" : "ccu_pack",
+      "SubInsts" : [
+       {
+        "InstFile" : "D:/Tasks/PocketLab-RTL/src/ccu_pack.v",
+        "InstLine" : 27,
+        "InstName" : "fifo_ccu_pack_data_buffer_inst",
+        "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_ccu_pack_data_buffer/fifo_ccu_pack_data_buffer.v",
+        "ModuleLine" : 405,
+        "ModuleName" : "fifo_ccu_pack_data_buffer",
+        "SubInsts" : [
+         {
+          "InstFile" : "D:/Tasks/PocketLab-RTL/src/fifo_ccu_pack_data_buffer/fifo_ccu_pack_data_buffer.v",
+          "InstLine" : 426,
+          "InstName" : "fifo_sc_hs_inst",
+          "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_ccu_pack_data_buffer/fifo_ccu_pack_data_buffer.v",
+          "ModuleLine" : 1,
+          "ModuleName" : "~fifo_sc_hs.fifo_ccu_pack_data_buffer"
+         }
+        ]
+       }
+      ]
      }
     ]
    },
@@ -137,7 +141,27 @@
     "InstName" : "spi_recv_inst",
     "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/spi_recv.v",
     "ModuleLine" : 1,
-    "ModuleName" : "spi_recv"
+    "ModuleName" : "spi_recv",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/Tasks/PocketLab-RTL/src/spi_recv.v",
+      "InstLine" : 20,
+      "InstName" : "fifo_spi_recv_inst",
+      "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.v",
+      "ModuleLine" : 270,
+      "ModuleName" : "fifo_spi_recv",
+      "SubInsts" : [
+       {
+        "InstFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.v",
+        "InstLine" : 293,
+        "InstName" : "fifo_inst",
+        "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_recv/fifo_spi_recv.v",
+        "ModuleLine" : 1,
+        "ModuleName" : "~fifo.fifo_spi_recv"
+       }
+      ]
+     }
+    ]
    },
    {
     "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
@@ -152,12 +176,12 @@
       "InstLine" : 20,
       "InstName" : "fifo_spi_send_inst",
       "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_send/fifo_spi_send.v",
-      "ModuleLine" : 450,
+      "ModuleLine" : 327,
       "ModuleName" : "fifo_spi_send",
       "SubInsts" : [
        {
         "InstFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_send/fifo_spi_send.v",
-        "InstLine" : 473,
+        "InstLine" : 350,
         "InstName" : "fifo_inst",
         "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_spi_send/fifo_spi_send.v",
         "ModuleLine" : 1,

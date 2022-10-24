@@ -1,6 +1,6 @@
 module spi_recv (
-    input axi_aresetn,
-    input axi_aclk,
+    input axis_aresetn,
+    input axis_aclk,
 
     // SPI-Slave Interface
     input spi_clk,
@@ -13,51 +13,32 @@ module spi_recv (
     input              axis_tready,
     output reg         axis_tlast
 );
-    reg spi_clk_r0, spi_clk_r1;
-    wire spi_sample_int;
-    assign spi_sample_int = spi_cs && spi_clk_r0 && (~spi_clk_r1);
-    always @(posedge axi_aclk) begin
-        spi_clk_r0 <= spi_clk;
-        spi_clk_r1 <= spi_clk_r0;
-    end
+    wire [7 : 0] fifo_spi_recv_rdata;
+    reg          fifo_spi_recv_rdv;
+    wire         fifo_spi_recv_empty;
+    wire         fifo_spi_recv_full;
+    fifo_spi_recv fifo_spi_recv_inst (
+        .WrClk(~spi_clk),  //input WrClk
+        .WrEn (spi_cs),   //input WrEn
+        .Data (spi_mosi), //input [7:0] Data
 
-    reg [2 : 0] spi_recv_ct;
-    reg [7 : 0] spi_recv_buffer;
-    always @(posedge axi_aclk) begin
-        if (!axi_aresetn) begin
-            spi_recv_ct     <= 3'b0;
-            spi_recv_buffer <= 8'h0;
-        end else begin
-            if (spi_sample_int) begin
-                spi_recv_ct                  <= spi_recv_ct + 1;
-                spi_recv_buffer[spi_recv_ct] <= spi_mosi;
-            end else begin
-                spi_recv_ct                  <= spi_recv_ct;
-                spi_recv_buffer[spi_recv_ct] <= spi_recv_buffer[spi_recv_ct];
-            end
-        end
-    end
+        .RdClk(axis_aclk),           //input RdClk
+        .RdEn (fifo_spi_recv_rdv),   //input RdEn
+        .Q    (fifo_spi_recv_rdata), //output [0:0] Q
 
-    reg spi_byte_recv_int;
-    always @(posedge axi_aclk) begin
-        if (!axi_aresetn) begin
-            spi_byte_recv_int <= 0;
-        end else begin
-            if ((spi_recv_ct == 3'b111) && (spi_sample_int)) begin
-                spi_byte_recv_int <= 1;
-            end else begin
-                spi_byte_recv_int <= 0;
-            end
-        end
-    end
+        .Empty(fifo_spi_recv_empty),  //output Empty
+        .Full (fifo_spi_recv_full),   //output Full
+        .Reset(~axis_aresetn)         //input Reset
+    );
 
     reg [7 : 0] state;
     reg [7 : 0] state_next;
     localparam STATE_RESET = 8'h0;
-    localparam STATE_WAIT_SPI_BYTE = 8'h1;
-    localparam STATE_TRANS_DATA = 8'h2;
-    always @(posedge axi_aclk) begin
-        if (!axi_aresetn) begin
+    localparam STATE_WAIT_SPI = 8'h1;
+    localparam STATE_WAIT_AXI = 8'h2;
+    localparam STATE_TRANS_DATA = 8'h3;
+    always @(posedge axis_aclk) begin
+        if (!axis_aresetn) begin
             state <= STATE_RESET;
         end else begin
             state <= state_next;
@@ -67,20 +48,28 @@ module spi_recv (
     always @(*) begin
         case (state)
             STATE_RESET: begin
-                state_next = STATE_WAIT_SPI_BYTE;
+                state_next = STATE_WAIT_SPI;
             end
 
-            STATE_WAIT_SPI_BYTE: begin
-                if (spi_byte_recv_int) begin
+            STATE_WAIT_SPI: begin
+                if (fifo_spi_recv_empty) begin
+                    state_next = STATE_WAIT_SPI;
+                end else begin
+                    state_next = STATE_WAIT_AXI;
+                end
+            end
+
+            STATE_WAIT_AXI: begin
+                if (axis_tvalid && axis_tready) begin
                     state_next = STATE_TRANS_DATA;
                 end else begin
-                    state_next = STATE_WAIT_SPI_BYTE;
+                    state_next = STATE_WAIT_AXI;
                 end
             end
 
             STATE_TRANS_DATA: begin
-                if (axis_tvalid && axis_tready) begin
-                    state_next = STATE_WAIT_SPI_BYTE;
+                if (!(axis_tvalid && axis_tready) || fifo_spi_recv_empty) begin
+                    state_next = STATE_WAIT_SPI;
                 end else begin
                     state_next = STATE_TRANS_DATA;
                 end
@@ -95,32 +84,52 @@ module spi_recv (
     always @(*) begin
         case (state)
             STATE_RESET: begin
-                axis_tdata  = 8'h0;
-                axis_tvalid = 0;
-                axis_tlast  = 0;
+                axis_tdata        = 8'h0;
+                axis_tvalid       = 0;
+                axis_tlast        = 0;
+
+                fifo_spi_recv_rdv = 0;
             end
 
-            STATE_WAIT_SPI_BYTE: begin
-                axis_tdata  = 8'h0;
-                axis_tvalid = 0;
+            STATE_WAIT_SPI: begin
+                axis_tdata        = 8'h0;
+                axis_tvalid       = 0;
+                axis_tlast        = 0;
+
+                fifo_spi_recv_rdv = 0;
+            end
+
+            STATE_WAIT_AXI: begin
+                axis_tvalid = 1;
                 axis_tlast  = 0;
+
+                if (axis_tvalid && axis_tready) begin
+                    axis_tdata        = fifo_spi_recv_rdata;
+                    fifo_spi_recv_rdv = 1;
+                end else begin
+                    axis_tdata        = 8'h0;
+                    fifo_spi_recv_rdv = 0;
+                end
             end
 
             STATE_TRANS_DATA: begin
-                axis_tvalid = 1;
-                if (axis_tvalid && axis_tready) begin
-                    axis_tdata = spi_recv_buffer;
+                axis_tvalid       = 1;
+                axis_tdata        = fifo_spi_recv_rdata;
+                fifo_spi_recv_rdv = 1;
+
+                if (!(axis_tvalid && axis_tready) || fifo_spi_recv_empty) begin
                     axis_tlast = 1;
                 end else begin
-                    axis_tdata = 8'h0;
                     axis_tlast = 0;
                 end
             end
 
             default: begin
-                axis_tdata  = 8'h0;
-                axis_tvalid = 0;
-                axis_tlast  = 0;
+                axis_tdata        = 8'h0;
+                axis_tvalid       = 0;
+                axis_tlast        = 0;
+
+                fifo_spi_recv_rdv = 0;
             end
         endcase
     end

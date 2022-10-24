@@ -52,15 +52,15 @@ module main (
     wire          dac_axi_bvalid;
     wire          dac_axi_bready;
 
-    wire          spi_recv_axis_valid;
-    wire          spi_recv_axis_ready;
-    wire [ 7 : 0] spi_recv_axis_data;
-    wire          spi_recv_axis_last;
+    wire          spi_recv_axis_tvalid;
+    wire          spi_recv_axis_tready;
+    wire [ 7 : 0] spi_recv_axis_tdata;
+    wire          spi_recv_axis_tlast;
 
-    wire          spi_send_axis_valid;
-    wire          spi_send_axis_ready;
-    wire [ 7 : 0] spi_send_axis_data;
-    wire          spi_send_axis_last;
+    wire          spi_send_axis_rvalid;
+    wire          spi_send_axis_rready;
+    wire [ 7 : 0] spi_send_axis_rdata;
+    wire          spi_send_axis_rlast;
 
     ccu ccu_inst (
         .axi_aresetn(sys_resetn),
@@ -87,16 +87,16 @@ module main (
         .dac_axi_bready(dac_axi_bready),
 
         // SPI Recv
-        .spi_recv_axis_rvalid(spi_recv_axis_valid),
-        .spi_recv_axis_rready(spi_recv_axis_ready),
-        .spi_recv_axis_rdata (spi_recv_axis_data),
-        .spi_recv_axis_rlast (spi_recv_axis_last),
+        .spi_recv_axis_rvalid(spi_recv_axis_tvalid),
+        .spi_recv_axis_rready(spi_recv_axis_tready),
+        .spi_recv_axis_rdata (spi_recv_axis_tdata),
+        .spi_recv_axis_rlast (spi_recv_axis_tlast),
 
         // SPI Send
-        .spi_send_axis_tvalid(spi_send_axis_valid),
-        .spi_send_axis_tready(spi_send_axis_ready),
-        .spi_send_axis_tdata (spi_send_axis_data),
-        .spi_send_axis_tlast (spi_send_axis_last)
+        .spi_send_axis_tvalid(spi_send_axis_rvalid),
+        .spi_send_axis_tready(spi_send_axis_rready),
+        .spi_send_axis_tdata (spi_send_axis_rdata),
+        .spi_send_axis_tlast (spi_send_axis_rlast)
     );
 
     // ADC clock
@@ -145,8 +145,8 @@ module main (
     );
 
     spi_recv spi_recv_inst (
-        .axi_aresetn(sys_resetn),
-        .axi_aclk   (sys_clk),
+        .axis_aresetn(sys_resetn),
+        .axis_aclk   (sys_clk),
 
         // SPI
         .spi_clk (spi_clk),
@@ -154,15 +154,15 @@ module main (
         .spi_cs  (spi_cs),
 
         // AXI4-Stream
-        .axis_tvalid(spi_recv_axis_valid),
-        .axis_tready(spi_recv_axis_ready),
-        .axis_tdata (spi_recv_axis_data),
-        .axis_tlast (spi_recv_axis_last)
+        .axis_tvalid(spi_recv_axis_tvalid),
+        .axis_tready(spi_recv_axis_tready),
+        .axis_tdata (spi_recv_axis_tdata),
+        .axis_tlast (spi_recv_axis_tlast)
     );
 
     spi_send spi_send_inst (
-        .axi_aresetn(sys_resetn),
-        .axi_aclk   (sys_clk),
+        .axis_aresetn(sys_resetn),
+        .axis_aclk   (sys_clk),
 
         // SPI
         .spi_clk (spi_clk),
@@ -170,10 +170,10 @@ module main (
         .spi_cs  (spi_cs),
 
         // AXI4-Stream
-        .axis_rvalid(spi_send_axis_valid),
-        .axis_rready(spi_send_axis_ready),
-        .axis_rdata (spi_send_axis_data),
-        .axis_rlast (spi_send_axis_last)
+        .axis_rvalid(spi_send_axis_rvalid),
+        .axis_rready(spi_send_axis_rready),
+        .axis_rdata (spi_send_axis_rdata),
+        .axis_rlast (spi_send_axis_rlast)
     );
 
 

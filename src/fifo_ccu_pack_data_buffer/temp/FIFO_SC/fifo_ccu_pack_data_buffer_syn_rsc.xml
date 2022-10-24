@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="fifo_ccu_pack_data_buffer" Register="43" Alu="42" Lut="32" Bsram="4"/>
