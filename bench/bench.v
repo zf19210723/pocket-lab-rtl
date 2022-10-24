@@ -83,16 +83,19 @@ module bench ();
         #(20 * `SPIPERIOD) spi_send_byte = 8'hff;
         ->e_spi_send_byte;
 
-        #(20 * `SPIPERIOD) spi_send_byte = 8'h00;
-        ->e_spi_send_byte;
-
-        #(20 * `SPIPERIOD) spi_send_byte = 8'h04;
-        ->e_spi_send_byte;
-
-        #(20 * `SPIPERIOD) spi_send_byte = 8'h10;
+        #(20 * `SPIPERIOD) spi_send_byte = 8'h05;
         ->e_spi_send_byte;
 
         #(20 * `SPIPERIOD) spi_send_byte = 8'h00;
+        ->e_spi_send_byte;
+
+        #(20 * `SPIPERIOD) spi_send_byte = 8'h11;
+        ->e_spi_send_byte;
+
+        #(20 * `SPIPERIOD) spi_send_byte = 8'h00;
+        ->e_spi_send_byte;
+
+        #(20 * `SPIPERIOD) spi_send_byte = 8'hdf;
         ->e_spi_send_byte;
 
         #(20 * `SPIPERIOD) spi_send_byte = 8'h01;

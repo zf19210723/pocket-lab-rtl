@@ -115,7 +115,6 @@ module spi_recv (
                     axis_tdata = 8'h0;
                     axis_tlast = 0;
                 end
-
             end
 
             default: begin

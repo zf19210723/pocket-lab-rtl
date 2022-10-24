@@ -14,8 +14,7 @@
         <File path="src/dac.v" type="file.verilog" enable="1"/>
         <File path="src/fifo_adc/fifo_adc.v" type="file.verilog" enable="1"/>
         <File path="src/fifo_ccu_recv_buffer/fifo_ccu_recv_buffer.v" type="file.verilog" enable="1"/>
-        <File path="src/fifo_spi_recv/fifo_spi_recv.v" type="file.verilog" enable="1"/>
-        <File path="src/fifo_spi_send/fifo_spi_send.v" type="file.verilog" enable="1"/>
+        <File path="src/fifo_ccu_unpack_data_buffer/fifo_ccu_unpack_data_buffer.v" type="file.verilog" enable="1"/>
         <File path="src/main.v" type="file.verilog" enable="1"/>
         <File path="src/pll_main/pll_main.v" type="file.verilog" enable="1"/>
         <File path="src/spi_recv.v" type="file.verilog" enable="1"/>
