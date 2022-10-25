@@ -79,7 +79,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Mon Oct 24 17:23:26 2022
+<td>Tue Oct 25 19:48:45 2022
 </td>
 </tr>
 <tr>
@@ -93,23 +93,23 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <tr>
 <td class="label">Place & Route Process</td>
 <td>Running placement:
-   Placement Phase 0: CPU time = 0h 0m 0.075s, Elapsed time = 0h 0m 0.076s
-   Placement Phase 1: CPU time = 0h 0m 0.18s, Elapsed time = 0h 0m 0.178s
-   Placement Phase 2: CPU time = 0h 0m 0.096s, Elapsed time = 0h 0m 0.095s
-   Placement Phase 3: CPU time = 0h 0m 0.685s, Elapsed time = 0h 0m 0.691s
-   Total Placement: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
+   Placement Phase 0: CPU time = 0h 0m 0.062s, Elapsed time = 0h 0m 0.062s
+   Placement Phase 1: CPU time = 0h 0m 0.175s, Elapsed time = 0h 0m 0.175s
+   Placement Phase 2: CPU time = 0h 0m 0.071s, Elapsed time = 0h 0m 0.07s
+   Placement Phase 3: CPU time = 0h 0m 0.632s, Elapsed time = 0h 0m 0.633s
+   Total Placement: CPU time = 0h 0m 0.94s, Elapsed time = 0h 0m 0.94s
 Running routing:
-   Routing Phase 0: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Routing Phase 1: CPU time = 0h 0m 0.29s, Elapsed time = 0h 0m 0.293s
-   Routing Phase 2: CPU time = 0h 0m 0.784s, Elapsed time = 0h 0m 0.782s
-   Total Routing: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
+   Routing Phase 0: CPU time = 0h 0m 0.001s, Elapsed time = 0h 0m 0s
+   Routing Phase 1: CPU time = 0h 0m 0.296s, Elapsed time = 0h 0m 0.297s
+   Routing Phase 2: CPU time = 0h 0m 0.508s, Elapsed time = 0h 0m 0.508s
+   Total Routing: CPU time = 0h 0m 0.805s, Elapsed time = 0h 0m 0.805s
 Generate output files:
    CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
 </td>
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s, Peak memory usage = 363MB</td>
+<td>CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s, Peak memory usage = 353MB</td>
 </tr>
 </table>
 <br/>
@@ -124,12 +124,12 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Logic</td>
-<td>573/20736</td>
-<td>2%</td>
+<td>405/20736</td>
+<td>1%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --LUT,ALU,ROM16</td>
-<td>573(413 LUT, 160 ALU, 0 ROM16)</td>
+<td>405(260 LUT, 145 ALU, 0 ROM16)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -139,17 +139,17 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Register</td>
-<td>341/16173</td>
-<td>2%</td>
+<td>275/16173</td>
+<td>1%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --Logic Register as Latch</td>
-<td>87/15552</td>
+<td>55/15552</td>
 <td>1%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --Logic Register as FF</td>
-<td>254/15552</td>
+<td>218/15552</td>
 <td>1%</td>
 </tr>
 <tr>
@@ -159,13 +159,13 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --I/O Register as FF</td>
-<td>0/621</td>
-<td>0%</td>
+<td>2/621</td>
+<td>1%</td>
 </tr>
 <tr>
 <td class="label">CLS</td>
-<td>379/10368</td>
-<td>3%</td>
+<td>282/10368</td>
+<td>2%</td>
 </tr>
 <tr>
 <td class="label">I/O Port</td>
@@ -199,8 +199,8 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">BSRAM</td>
-<td>42 SDPB<br/></td>
-<td>91%</td>
+<td>38 SDPB<br/></td>
+<td>82%</td>
 </tr>
 <tr>
 <td class="label">DSP</td>
@@ -295,11 +295,11 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">PRIMARY</td>
-<td>5/8(62%)</td>
+<td>4/8(50%)</td>
 </tr>
 <tr>
 <td class="label">SECONDARY</td>
-<td>8/8(100%)</td>
+<td>7/8(87%)</td>
 </tr>
 <tr>
 <td class="label">GCLK_PIN</td>
@@ -327,11 +327,6 @@ Generate output files:
 <td><b>Location</b></td>
 </tr>
 <tr>
-<td class="label">spi_clk_d</td>
-<td>PRIMARY</td>
-<td> TR BR</td>
-</tr>
-<tr>
 <td class="label">sys_clk</td>
 <td>PRIMARY</td>
 <td> TR TL BR BL</td>
@@ -342,14 +337,14 @@ Generate output files:
 <td> TR TL BR BL</td>
 </tr>
 <tr>
-<td class="label">wfull_val</td>
+<td class="label">n574_9</td>
 <td>PRIMARY</td>
-<td> BR</td>
+<td> TL</td>
 </tr>
 <tr>
-<td class="label">wfull_val</td>
+<td class="label">n625_9</td>
 <td>PRIMARY</td>
-<td> TR</td>
+<td> TR TL</td>
 </tr>
 <tr>
 <td class="label">sys_resetn</td>
@@ -357,37 +352,32 @@ Generate output files:
 <td> -</td>
 </tr>
 <tr>
-<td class="label">n464_9</td>
+<td class="label">n463_9</td>
 <td>SECONDARY</td>
 <td> -</td>
 </tr>
 <tr>
-<td class="label">n575_9</td>
+<td class="label">n487_9</td>
 <td>SECONDARY</td>
 <td> -</td>
 </tr>
 <tr>
-<td class="label">n517_9</td>
+<td class="label">n511_9</td>
 <td>SECONDARY</td>
 <td> -</td>
 </tr>
 <tr>
-<td class="label">n541_9</td>
+<td class="label">n526_9</td>
 <td>SECONDARY</td>
 <td> -</td>
 </tr>
 <tr>
-<td class="label">n592_11</td>
+<td class="label">n550_9</td>
 <td>SECONDARY</td>
 <td> -</td>
 </tr>
 <tr>
-<td class="label">reset_r[1]</td>
-<td>SECONDARY</td>
-<td> -</td>
-</tr>
-<tr>
-<td class="label">reset_r[1]</td>
+<td class="label">buffer_rd_dv</td>
 <td>SECONDARY</td>
 <td> -</td>
 </tr>

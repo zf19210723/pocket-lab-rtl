@@ -8,17 +8,10 @@ module ccu (
     input axi_aclk,
     input axi_aresetn,
 
-    // SPI RX AXI4S
-    input  [7 : 0] spi_recv_axis_rdata,
-    input          spi_recv_axis_rvalid,
-    output         spi_recv_axis_rready,
-    input          spi_recv_axis_rlast,
-
-    // SPI TX AXI4S
-    output [7 : 0] spi_send_axis_tdata,
-    output         spi_send_axis_tvalid,
-    input          spi_send_axis_tready,
-    output         spi_send_axis_tlast,
+    // SPI
+    input  [7 : 0] rxd_out,
+    output [7 : 0] txd_data,
+    input          rxd_flag,
 
     // DAC AXI4
     output [15 : 0] dac_axi_awaddr,
@@ -54,13 +47,11 @@ module ccu (
     wire [ 7 : 0] pack_type;
 
     ccu_unpack ccu_unpack_inst (
-        .axi_aclk   (axi_aclk),
-        .axi_aresetn(axi_aresetn),
+        .clk (axi_aclk),
+        .rstn(axi_aresetn),
 
-        .axis_rvalid(spi_recv_axis_rvalid),
-        .axis_rready(spi_recv_axis_rready),
-        .axis_rdata (spi_recv_axis_rdata),
-        .axis_rlast (spi_recv_axis_rlast),
+        .rxd_out (rxd_out),
+        .rxd_flag(rxd_flag),
 
         .dac_fsm_busy(dac_fsm_busy),
         .dac_fsm_dv  (dac_fsm_dv),
@@ -76,13 +67,11 @@ module ccu (
     );
 
     ccu_pack ccu_pack_inst (
-        .axi_aclk   (axi_aclk),
-        .axi_aresetn(axi_aresetn),
+        .clk (axi_aclk),
+        .rstn(axi_aresetn),
 
-        .axis_tvalid(spi_send_axis_tvalid),
-        .axis_tready(spi_send_axis_tready),
-        .axis_tdata (spi_send_axis_tdata),
-        .axis_tlast (spi_send_axis_tlast),
+        .txd_data(txd_data),
+        .rxd_flag(rxd_flag),
 
         .pack_en  (dac_fsm_dv),
         .pack_busy(dac_fsm_busy),

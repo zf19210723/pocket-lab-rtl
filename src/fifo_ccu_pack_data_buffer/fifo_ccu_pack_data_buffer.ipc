@@ -9,8 +9,8 @@ version=1.0
 [Config]
 ALEMPTY=0
 ALFULL=0
-COUNT_W=false
-DEPTH_W=12
+COUNT_W=true
+DEPTH_W=11
 ECC=false
 EN_ALEMPTY=false
 EN_ALFULL=false

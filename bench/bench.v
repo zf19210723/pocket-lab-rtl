@@ -33,27 +33,7 @@ module bench ();
         spi_mosi = 0;
 
         #(`SPIPERIOD / 2) spi_clk = 0;
-        spi_mosi = spi_send_byte[0];
-        #(`SPIPERIOD / 2) spi_clk = 1;
-
-        #(`SPIPERIOD / 2) spi_clk = 0;
-        spi_mosi = spi_send_byte[1];
-        #(`SPIPERIOD / 2) spi_clk = 1;
-
-        #(`SPIPERIOD / 2) spi_clk = 0;
-        spi_mosi = spi_send_byte[2];
-        #(`SPIPERIOD / 2) spi_clk = 1;
-
-        #(`SPIPERIOD / 2) spi_clk = 0;
-        spi_mosi = spi_send_byte[3];
-        #(`SPIPERIOD / 2) spi_clk = 1;
-
-        #(`SPIPERIOD / 2) spi_clk = 0;
-        spi_mosi = spi_send_byte[4];
-        #(`SPIPERIOD / 2) spi_clk = 1;
-
-        #(`SPIPERIOD / 2) spi_clk = 0;
-        spi_mosi = spi_send_byte[5];
+        spi_mosi = spi_send_byte[7];
         #(`SPIPERIOD / 2) spi_clk = 1;
 
         #(`SPIPERIOD / 2) spi_clk = 0;
@@ -61,7 +41,27 @@ module bench ();
         #(`SPIPERIOD / 2) spi_clk = 1;
 
         #(`SPIPERIOD / 2) spi_clk = 0;
-        spi_mosi = spi_send_byte[7];
+        spi_mosi = spi_send_byte[5];
+        #(`SPIPERIOD / 2) spi_clk = 1;
+
+        #(`SPIPERIOD / 2) spi_clk = 0;
+        spi_mosi = spi_send_byte[4];
+        #(`SPIPERIOD / 2) spi_clk = 1;
+
+        #(`SPIPERIOD / 2) spi_clk = 0;
+        spi_mosi = spi_send_byte[3];
+        #(`SPIPERIOD / 2) spi_clk = 1;
+
+        #(`SPIPERIOD / 2) spi_clk = 0;
+        spi_mosi = spi_send_byte[2];
+        #(`SPIPERIOD / 2) spi_clk = 1;
+
+        #(`SPIPERIOD / 2) spi_clk = 0;
+        spi_mosi = spi_send_byte[1];
+        #(`SPIPERIOD / 2) spi_clk = 1;
+
+        #(`SPIPERIOD / 2) spi_clk = 0;
+        spi_mosi = spi_send_byte[0];
         #(`SPIPERIOD / 2) spi_clk = 1;
 
         #(`SPIPERIOD);
@@ -154,7 +154,7 @@ module bench ();
         .dac_data(),
 
         // SPI Interface
-        .spi_clk (~spi_clk),
+        .spi_clk (spi_clk),
         .spi_mosi(spi_mosi),
         .spi_miso(spi_miso),
         .spi_cs  (1'b1),

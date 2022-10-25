@@ -7,19 +7,16 @@
         <File path="D:\Tasks\PocketLab-RTL\src\adc.v" type="verilog"/>
         <File path="D:\Tasks\PocketLab-RTL\src\bram_dac\bram_dac.v" type="verilog"/>
         <File path="D:\Tasks\PocketLab-RTL\src\ccu.v" type="verilog"/>
+        <File path="D:\Tasks\PocketLab-RTL\src\ccu_pack.v" type="verilog"/>
+        <File path="D:\Tasks\PocketLab-RTL\src\ccu_unpack.v" type="verilog"/>
         <File path="D:\Tasks\PocketLab-RTL\src\clkdiv_adda\clkdiv_adda.v" type="verilog"/>
         <File path="D:\Tasks\PocketLab-RTL\src\dac.v" type="verilog"/>
         <File path="D:\Tasks\PocketLab-RTL\src\fifo_adc\fifo_adc.v" type="verilog"/>
+        <File path="D:\Tasks\PocketLab-RTL\src\fifo_ccu_pack_data_buffer\fifo_ccu_pack_data_buffer.v" type="verilog"/>
         <File path="D:\Tasks\PocketLab-RTL\src\fifo_ccu_unpack_data_buffer\fifo_ccu_unpack_data_buffer.v" type="verilog"/>
         <File path="D:\Tasks\PocketLab-RTL\src\main.v" type="verilog"/>
         <File path="D:\Tasks\PocketLab-RTL\src\pll_main\pll_main.v" type="verilog"/>
-        <File path="D:\Tasks\PocketLab-RTL\src\spi_recv.v" type="verilog"/>
-        <File path="D:\Tasks\PocketLab-RTL\src\spi_send.v" type="verilog"/>
-        <File path="D:\Tasks\PocketLab-RTL\src\ccu_pack.v" type="verilog"/>
-        <File path="D:\Tasks\PocketLab-RTL\src\fifo_ccu_pack_data_buffer\fifo_ccu_pack_data_buffer.v" type="verilog"/>
-        <File path="D:\Tasks\PocketLab-RTL\src\ccu_unpack.v" type="verilog"/>
-        <File path="D:\Tasks\PocketLab-RTL\src\fifo_spi_send\fifo_spi_send.v" type="verilog"/>
-        <File path="D:\Tasks\PocketLab-RTL\src\fifo_spi_recv\fifo_spi_recv.v" type="verilog"/>
+        <File path="D:\Tasks\PocketLab-RTL\src\spi_slaver.v" type="verilog"/>
     </FileList>
     <OptionList>
         <Option type="disable_insert_pad" value="0"/>

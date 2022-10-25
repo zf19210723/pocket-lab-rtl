@@ -52,15 +52,9 @@ module main (
     wire          dac_axi_bvalid;
     wire          dac_axi_bready;
 
-    wire          spi_recv_axis_tvalid;
-    wire          spi_recv_axis_tready;
-    wire [ 7 : 0] spi_recv_axis_tdata;
-    wire          spi_recv_axis_tlast;
-
-    wire          spi_send_axis_rvalid;
-    wire          spi_send_axis_rready;
-    wire [ 7 : 0] spi_send_axis_rdata;
-    wire          spi_send_axis_rlast;
+    wire [ 7 : 0] spi_rxd_out;
+    wire [ 7 : 0] spi_txd_data;
+    wire          spi_rxd_flag;
 
     ccu ccu_inst (
         .axi_aresetn(sys_resetn),
@@ -86,17 +80,10 @@ module main (
         .dac_axi_bvalid(dac_axi_bvalid),
         .dac_axi_bready(dac_axi_bready),
 
-        // SPI Recv
-        .spi_recv_axis_rvalid(spi_recv_axis_tvalid),
-        .spi_recv_axis_rready(spi_recv_axis_tready),
-        .spi_recv_axis_rdata (spi_recv_axis_tdata),
-        .spi_recv_axis_rlast (spi_recv_axis_tlast),
-
-        // SPI Send
-        .spi_send_axis_tvalid(spi_send_axis_rvalid),
-        .spi_send_axis_tready(spi_send_axis_rready),
-        .spi_send_axis_tdata (spi_send_axis_rdata),
-        .spi_send_axis_tlast (spi_send_axis_rlast)
+        // SPI
+        .rxd_out (spi_rxd_out),
+        .txd_data(spi_txd_data),
+        .rxd_flag(spi_rxd_flag)
     );
 
     // ADC clock
@@ -144,38 +131,19 @@ module main (
         .axi_bready(dac_axi_bready)
     );
 
-    spi_recv spi_recv_inst (
-        .axis_aresetn(sys_resetn),
-        .axis_aclk   (sys_clk),
+    spi_slaver spi_slaver_inst (
+        .rstn(sys_resetn),
+        .clk (sys_clk),
 
         // SPI
-        .spi_clk (spi_clk),
-        .spi_mosi(spi_mosi),
-        .spi_cs  (spi_cs),
+        .sck (spi_clk),
+        .MOSI(spi_mosi),
+        .MISO(spi_miso),
+        .cs  (~spi_cs),
 
-        // AXI4-Stream
-        .axis_tvalid(spi_recv_axis_tvalid),
-        .axis_tready(spi_recv_axis_tready),
-        .axis_tdata (spi_recv_axis_tdata),
-        .axis_tlast (spi_recv_axis_tlast)
+        .rxd_out (spi_rxd_out),
+        .txd_data(spi_txd_data),
+        .rxd_flag(spi_rxd_flag)
     );
-
-    spi_send spi_send_inst (
-        .axis_aresetn(sys_resetn),
-        .axis_aclk   (sys_clk),
-
-        // SPI
-        .spi_clk (spi_clk),
-        .spi_miso(spi_miso),
-        .spi_cs  (spi_cs),
-
-        // AXI4-Stream
-        .axis_rvalid(spi_send_axis_rvalid),
-        .axis_rready(spi_send_axis_rready),
-        .axis_rdata (spi_send_axis_rdata),
-        .axis_rlast (spi_send_axis_rlast)
-    );
-
-
 
 endmodule

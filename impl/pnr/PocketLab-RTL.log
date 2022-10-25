@@ -7,33 +7,26 @@ Running placement......
 [10%] Placement Phase 0 completed
 [20%] Placement Phase 1 completed
 [30%] Placement Phase 2 completed
-WARN  (TA1117) : Can't calculate clocks' relationship between: "ccu_inst/ccu_unpack_inst/n502_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "ccu_inst/ccu_unpack_inst/n517_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "ccu_inst/ccu_unpack_inst/n454_9"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "ccu_inst/ccu_unpack_inst/n478_9"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "ccu_inst/ccu_unpack_inst/n502_9"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "ccu_inst/ccu_unpack_inst/n517_9"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "ccu_inst/ccu_unpack_inst/n541_9"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "ccu_inst/ccu_unpack_inst/n592_11"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "ccu_inst/ccu_unpack_inst/n592_11" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "n575_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "ccu_inst/ccu_unpack_inst/n541_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "n464_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "n464_9"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "n575_9"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "ccu_inst/ccu_unpack_inst/n511_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "ccu_inst/ccu_unpack_inst/n526_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "ccu_inst/ccu_unpack_inst/n550_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "ccu_inst/ccu_unpack_inst/n463_9"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "ccu_inst/ccu_unpack_inst/n487_9"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "ccu_inst/ccu_unpack_inst/n511_9"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "ccu_inst/ccu_unpack_inst/n526_9"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "ccu_inst/ccu_unpack_inst/n550_9"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "ccu_inst/ccu_unpack_inst/n574_9"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "ccu_inst/ccu_unpack_inst/n625_9"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "ccu_inst/ccu_unpack_inst/n625_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "ccu_inst/ccu_unpack_inst/n574_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "ccu_inst/ccu_unpack_inst/n463_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "ccu_inst/ccu_unpack_inst/n487_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
 WARN  (TA1117) : Can't calculate clocks' relationship between: "spi_clk" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val" and "spi_clk"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "spi_clk" and "spi_recv_inst/fifo_spi_recv_inst/fifo_inst/wfull_val"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "spi_clk"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "spi_send_inst/fifo_spi_send_inst/fifo_inst/wfull_val" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "spi_send_inst/fifo_spi_send_inst/fifo_inst/wfull_val"
-WARN  (TA1117) : Can't calculate clocks' relationship between: "spi_clk" and "spi_send_inst/fifo_spi_send_inst/fifo_inst/wfull_val"
 [50%] Placement Phase 3 completed
 Running routing......
 [60%] Routing Phase 0 completed
 [70%] Routing Phase 1 completed
 [80%] Routing Phase 2 completed
-WARN  (PR1014) : Generic routing resource will be used to clock signal 'spi_clk_d' by the specified constraint. And then it may lead to the excessive delay or skew
 [90%] Routing Phase 3 completed
 Running timing analysis......
 [95%] Timing analysis completed
@@ -47,5 +40,5 @@ Generate file "D:\Tasks\PocketLab-RTL\impl\pnr\PocketLab-RTL.pin.html" completed
 Generate file "D:\Tasks\PocketLab-RTL\impl\pnr\PocketLab-RTL.rpt.html" completed
 Generate file "D:\Tasks\PocketLab-RTL\impl\pnr\PocketLab-RTL.rpt.txt" completed
 Generate file "D:\Tasks\PocketLab-RTL\impl\pnr\PocketLab-RTL.tr.html" completed
-Mon Oct 24 17:23:26 2022
+Tue Oct 25 19:48:45 2022
 

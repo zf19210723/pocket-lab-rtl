@@ -3,38 +3,29 @@ Running parser ...
 Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\adc.v'
 Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\bram_dac\bram_dac.v'
 Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\ccu.v'
+Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\ccu_pack.v'
+Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\ccu_unpack.v'
 Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\clkdiv_adda\clkdiv_adda.v'
 Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\dac.v'
 Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\fifo_adc\fifo_adc.v'
+Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\fifo_ccu_pack_data_buffer\fifo_ccu_pack_data_buffer.v'
 Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\fifo_ccu_unpack_data_buffer\fifo_ccu_unpack_data_buffer.v'
 Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\main.v'
 Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\pll_main\pll_main.v'
-Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\spi_recv.v'
-Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\spi_send.v'
-Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\ccu_pack.v'
-Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\fifo_ccu_pack_data_buffer\fifo_ccu_pack_data_buffer.v'
-Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\ccu_unpack.v'
-Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\fifo_spi_send\fifo_spi_send.v'
-Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\fifo_spi_recv\fifo_spi_recv.v'
+Analyzing Verilog file 'D:\Tasks\PocketLab-RTL\src\spi_slaver.v'
 Compiling module 'main'("D:\Tasks\PocketLab-RTL\src\main.v":1)
 Compiling module 'pll_main'("D:\Tasks\PocketLab-RTL\src\pll_main\pll_main.v":9)
 Compiling module 'ccu'("D:\Tasks\PocketLab-RTL\src\ccu.v":7)
 Compiling module 'ccu_unpack'("D:\Tasks\PocketLab-RTL\src\ccu_unpack.v":7)
 Compiling module 'fifo_ccu_unpack_data_buffer'("D:\Tasks\PocketLab-RTL\src\fifo_ccu_unpack_data_buffer\fifo_ccu_unpack_data_buffer.v":334)
 Compiling module '**'("D:\Tasks\PocketLab-RTL\src\fifo_ccu_unpack_data_buffer\fifo_ccu_unpack_data_buffer.v":0)
-WARN  (EX3784) : Index 15 is out of range [12:0] for 'pack_length'("D:\Tasks\PocketLab-RTL\src\ccu_unpack.v":268)
-WARN  (EX3784) : Index 15 is out of range [12:0] for 'pack_length'("D:\Tasks\PocketLab-RTL\src\ccu_unpack.v":270)
-WARN  (EX3791) : Expression size 14 truncated to fit in target size 13("D:\Tasks\PocketLab-RTL\src\ccu_unpack.v":319)
-WARN  (EX2420) : Latch inferred for net 'pack_id[15]'; We do not recommend the use of latches in FPGA designs, as they may lead to timing problems("D:\Tasks\PocketLab-RTL\src\ccu_unpack.v":442)
-WARN  (EX3670) : Actual bit length 32 differs from formal bit length 1 for port 'sys_fsm_busy'("D:\Tasks\PocketLab-RTL\src\ccu.v":67)
-WARN  (EX3670) : Actual bit length 32 differs from formal bit length 1 for port 'adc_fsm_busy'("D:\Tasks\PocketLab-RTL\src\ccu.v":69)
+WARN  (EX3791) : Expression size 14 truncated to fit in target size 13("D:\Tasks\PocketLab-RTL\src\ccu_unpack.v":289)
+WARN  (EX2420) : Latch inferred for net 'pack_id[15]'; We do not recommend the use of latches in FPGA designs, as they may lead to timing problems("D:\Tasks\PocketLab-RTL\src\ccu_unpack.v":408)
+WARN  (EX3670) : Actual bit length 32 differs from formal bit length 1 for port 'sys_fsm_busy'("D:\Tasks\PocketLab-RTL\src\ccu.v":58)
+WARN  (EX3670) : Actual bit length 32 differs from formal bit length 1 for port 'adc_fsm_busy'("D:\Tasks\PocketLab-RTL\src\ccu.v":60)
 Compiling module 'ccu_pack'("D:\Tasks\PocketLab-RTL\src\ccu_pack.v":1)
-Compiling module 'fifo_ccu_pack_data_buffer'("D:\Tasks\PocketLab-RTL\src\fifo_ccu_pack_data_buffer\fifo_ccu_pack_data_buffer.v":405)
+Compiling module 'fifo_ccu_pack_data_buffer'("D:\Tasks\PocketLab-RTL\src\fifo_ccu_pack_data_buffer\fifo_ccu_pack_data_buffer.v":358)
 Compiling module '**'("D:\Tasks\PocketLab-RTL\src\fifo_ccu_pack_data_buffer\fifo_ccu_pack_data_buffer.v":0)
-WARN  (EX3791) : Expression size 14 truncated to fit in target size 13("D:\Tasks\PocketLab-RTL\src\ccu_pack.v":211)
-WARN  (EX3791) : Expression size 14 truncated to fit in target size 13("D:\Tasks\PocketLab-RTL\src\ccu_pack.v":234)
-WARN  (EX3784) : Index 15 is out of range [12:0] for 'pack_length_b'("D:\Tasks\PocketLab-RTL\src\ccu_pack.v":303)
-WARN  (EX2420) : Latch inferred for net 'pack_id_b[15]'; We do not recommend the use of latches in FPGA designs, as they may lead to timing problems("D:\Tasks\PocketLab-RTL\src\ccu_pack.v":374)
 Compiling module 'clkdiv_adda'("D:\Tasks\PocketLab-RTL\src\clkdiv_adda\clkdiv_adda.v":9)
 Compiling module 'adc'("D:\Tasks\PocketLab-RTL\src\adc.v":1)
 Compiling module 'fifo_adc'("D:\Tasks\PocketLab-RTL\src\fifo_adc\fifo_adc.v":525)
@@ -43,52 +34,47 @@ Compiling module 'dac'("D:\Tasks\PocketLab-RTL\src\dac.v":1)
 Compiling module 'bram_dac'("D:\Tasks\PocketLab-RTL\src\bram_dac\bram_dac.v":9)
 WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("D:\Tasks\PocketLab-RTL\src\dac.v":56)
 WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("D:\Tasks\PocketLab-RTL\src\dac.v":78)
-Compiling module 'spi_recv'("D:\Tasks\PocketLab-RTL\src\spi_recv.v":1)
-Compiling module 'fifo_spi_recv'("D:\Tasks\PocketLab-RTL\src\fifo_spi_recv\fifo_spi_recv.v":270)
-Compiling module '**'("D:\Tasks\PocketLab-RTL\src\fifo_spi_recv\fifo_spi_recv.v":0)
-Compiling module 'spi_send'("D:\Tasks\PocketLab-RTL\src\spi_send.v":1)
-Compiling module 'fifo_spi_send'("D:\Tasks\PocketLab-RTL\src\fifo_spi_send\fifo_spi_send.v":327)
-Compiling module '**'("D:\Tasks\PocketLab-RTL\src\fifo_spi_send\fifo_spi_send.v":0)
-ERROR (EX1998) : Net 'adc_axis_ready' does not have a driver("D:\Tasks\PocketLab-RTL\src\main.v":38)
+Compiling module 'spi_slaver'("D:\Tasks\PocketLab-RTL\src\spi_slaver.v":5)
+WARN  (EX1998) : Net 'adc_axis_ready' does not have a driver("D:\Tasks\PocketLab-RTL\src\main.v":38)
 NOTE  (EX0101) : Current top module is "main"
-WARN  (EX0211) : The output port "dac_axi_awaddr[15]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":24)
-WARN  (EX0211) : The output port "dac_axi_awaddr[14]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":24)
-WARN  (EX0211) : The output port "dac_axi_awaddr[13]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":24)
-WARN  (EX0211) : The output port "dac_axi_awaddr[12]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":24)
-WARN  (EX0211) : The output port "dac_axi_awaddr[11]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":24)
-WARN  (EX0211) : The output port "dac_axi_awaddr[10]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":24)
-WARN  (EX0211) : The output port "dac_axi_awaddr[9]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":24)
-WARN  (EX0211) : The output port "dac_axi_awaddr[8]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":24)
-WARN  (EX0211) : The output port "dac_axi_awaddr[7]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":24)
-WARN  (EX0211) : The output port "dac_axi_awaddr[6]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":24)
-WARN  (EX0211) : The output port "dac_axi_awaddr[5]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":24)
-WARN  (EX0211) : The output port "dac_axi_awaddr[4]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":24)
-WARN  (EX0211) : The output port "dac_axi_awaddr[3]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":24)
-WARN  (EX0211) : The output port "dac_axi_awaddr[2]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":24)
-WARN  (EX0211) : The output port "dac_axi_awaddr[1]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":24)
-WARN  (EX0211) : The output port "dac_axi_awaddr[0]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":24)
-WARN  (EX0211) : The output port "dac_axi_awvalid" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":25)
-WARN  (EX0211) : The output port "dac_axi_wdata[7]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":28)
-WARN  (EX0211) : The output port "dac_axi_wdata[6]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":28)
-WARN  (EX0211) : The output port "dac_axi_wdata[5]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":28)
-WARN  (EX0211) : The output port "dac_axi_wdata[4]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":28)
-WARN  (EX0211) : The output port "dac_axi_wdata[3]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":28)
-WARN  (EX0211) : The output port "dac_axi_wdata[2]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":28)
-WARN  (EX0211) : The output port "dac_axi_wdata[1]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":28)
-WARN  (EX0211) : The output port "dac_axi_wdata[0]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":28)
-WARN  (EX0211) : The output port "dac_axi_wvalid" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":29)
-WARN  (EX0211) : The output port "dac_axi_wlast" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":31)
-WARN  (EX0211) : The output port "dac_axi_bready" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":35)
-WARN  (EX0211) : The output port "adc_axis_tdata[7]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":38)
-WARN  (EX0211) : The output port "adc_axis_tdata[6]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":38)
-WARN  (EX0211) : The output port "adc_axis_tdata[5]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":38)
-WARN  (EX0211) : The output port "adc_axis_tdata[4]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":38)
-WARN  (EX0211) : The output port "adc_axis_tdata[3]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":38)
-WARN  (EX0211) : The output port "adc_axis_tdata[2]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":38)
-WARN  (EX0211) : The output port "adc_axis_tdata[1]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":38)
-WARN  (EX0211) : The output port "adc_axis_tdata[0]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":38)
-WARN  (EX0211) : The output port "adc_axis_tvalid" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":39)
-WARN  (EX0211) : The output port "adc_axis_tlast" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":41)
+WARN  (EX0211) : The output port "dac_axi_awaddr[15]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":17)
+WARN  (EX0211) : The output port "dac_axi_awaddr[14]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":17)
+WARN  (EX0211) : The output port "dac_axi_awaddr[13]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":17)
+WARN  (EX0211) : The output port "dac_axi_awaddr[12]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":17)
+WARN  (EX0211) : The output port "dac_axi_awaddr[11]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":17)
+WARN  (EX0211) : The output port "dac_axi_awaddr[10]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":17)
+WARN  (EX0211) : The output port "dac_axi_awaddr[9]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":17)
+WARN  (EX0211) : The output port "dac_axi_awaddr[8]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":17)
+WARN  (EX0211) : The output port "dac_axi_awaddr[7]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":17)
+WARN  (EX0211) : The output port "dac_axi_awaddr[6]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":17)
+WARN  (EX0211) : The output port "dac_axi_awaddr[5]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":17)
+WARN  (EX0211) : The output port "dac_axi_awaddr[4]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":17)
+WARN  (EX0211) : The output port "dac_axi_awaddr[3]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":17)
+WARN  (EX0211) : The output port "dac_axi_awaddr[2]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":17)
+WARN  (EX0211) : The output port "dac_axi_awaddr[1]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":17)
+WARN  (EX0211) : The output port "dac_axi_awaddr[0]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":17)
+WARN  (EX0211) : The output port "dac_axi_awvalid" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":18)
+WARN  (EX0211) : The output port "dac_axi_wdata[7]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":21)
+WARN  (EX0211) : The output port "dac_axi_wdata[6]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":21)
+WARN  (EX0211) : The output port "dac_axi_wdata[5]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":21)
+WARN  (EX0211) : The output port "dac_axi_wdata[4]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":21)
+WARN  (EX0211) : The output port "dac_axi_wdata[3]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":21)
+WARN  (EX0211) : The output port "dac_axi_wdata[2]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":21)
+WARN  (EX0211) : The output port "dac_axi_wdata[1]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":21)
+WARN  (EX0211) : The output port "dac_axi_wdata[0]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":21)
+WARN  (EX0211) : The output port "dac_axi_wvalid" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":22)
+WARN  (EX0211) : The output port "dac_axi_wlast" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":24)
+WARN  (EX0211) : The output port "dac_axi_bready" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":28)
+WARN  (EX0211) : The output port "adc_axis_tdata[7]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":31)
+WARN  (EX0211) : The output port "adc_axis_tdata[6]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":31)
+WARN  (EX0211) : The output port "adc_axis_tdata[5]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":31)
+WARN  (EX0211) : The output port "adc_axis_tdata[4]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":31)
+WARN  (EX0211) : The output port "adc_axis_tdata[3]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":31)
+WARN  (EX0211) : The output port "adc_axis_tdata[2]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":31)
+WARN  (EX0211) : The output port "adc_axis_tdata[1]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":31)
+WARN  (EX0211) : The output port "adc_axis_tdata[0]" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":31)
+WARN  (EX0211) : The output port "adc_axis_tvalid" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":32)
+WARN  (EX0211) : The output port "adc_axis_tlast" of module "ccu" has no driver("D:\Tasks\PocketLab-RTL\src\ccu.v":34)
 [5%] Running netlist conversion ...
 WARN  (CV0016) : Input adc_data is unused("D:\Tasks\PocketLab-RTL\src\main.v":7)
 WARN  (CV0016) : Input triggers is unused("D:\Tasks\PocketLab-RTL\src\main.v":20)
@@ -107,29 +93,24 @@ Running technical mapping ...
 [75%] Tech-Mapping Phase 2 completed
 [80%] Tech-Mapping Phase 3 completed
 [90%] Tech-Mapping Phase 4 completed
-WARN  (NL0002) : The module "adc" instantiated to "adc_inst" is swept in optimizing("D:\Tasks\PocketLab-RTL\src\main.v":122)
+WARN  (NL0002) : The module "adc" instantiated to "adc_inst" is swept in optimizing("D:\Tasks\PocketLab-RTL\src\main.v":109)
 WARN  (NL0002) : The module "fifo_adc" instantiated to "fifo_adc_inst" is swept in optimizing("D:\Tasks\PocketLab-RTL\src\adc.v":53)
 WARN  (NL0002) : The module "~fifo.fifo_adc" instantiated to "fifo_inst" is swept in optimizing("D:\Tasks\PocketLab-RTL\src\fifo_adc\fifo_adc.v":659)
 [95%] Generate netlist file "D:\Tasks\PocketLab-RTL\impl\gwsynthesis\PocketLab-RTL.vg" completed
-WARN  (CK3000) : Can't calculate clocks' relationship between: "n592_11" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
-WARN  (CK3000) : Can't calculate clocks' relationship between: "n575_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
-WARN  (CK3000) : Can't calculate clocks' relationship between: "n541_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "n625_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "n574_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
 WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "n6_6"
-WARN  (CK3000) : Can't calculate clocks' relationship between: "n4_6_gowin" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
-WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "spi_clk"
-WARN  (CK3000) : Can't calculate clocks' relationship between: "wfull_val_gowin" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
-WARN  (CK3000) : Can't calculate clocks' relationship between: "n464_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
-WARN  (CK3000) : Can't calculate clocks' relationship between: "spi_clk" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
-WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "wfull_val_gowin"
-WARN  (CK3000) : Can't calculate clocks' relationship between: "n502_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
-WARN  (CK3000) : Can't calculate clocks' relationship between: "n517_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
-WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "n454_9"
-WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "n478_9"
-WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "n502_9"
-WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "n517_9"
-WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "n541_9"
-WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "n592_11"
-WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "n464_9"
-WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "n575_9"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "n511_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "n526_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "n550_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "n463_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "n487_9" and "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "n463_9"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "n487_9"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "n511_9"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "n526_9"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "n550_9"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "n574_9"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "pll_main_inst/rpll_inst/CLKOUT.default_gen_clk" and "n625_9"
 [100%] Generate report file "D:\Tasks\PocketLab-RTL\impl\gwsynthesis\PocketLab-RTL_syn.rpt.html" completed
 GowinSynthesis finish
