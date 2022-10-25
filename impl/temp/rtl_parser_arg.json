@@ -51,6 +51,18 @@
   {
    "Path" : "D:/Tasks/PocketLab-RTL/src/spi_slaver.v",
    "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Tasks/PocketLab-RTL/src/dac_fsm.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Tasks/PocketLab-RTL/src/adc_fsm.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Tasks/PocketLab-RTL/src/sys_fsm.v",
+   "Type" : "verilog"
   }
  ],
  "IncludePath" : [

@@ -28,10 +28,10 @@ module ccu (
     output         dac_axi_bready,
 
     // ADC AXI4S
-    output reg [7 : 0] adc_axis_tdata,
-    output reg         adc_axis_tvalid,
-    input              adc_axis_tready,
-    output reg         adc_axis_tlast
+    output [7 : 0] adc_axis_tdata,
+    output         adc_axis_tvalid,
+    input          adc_axis_tready,
+    output         adc_axis_tlast
 );
 
     wire          dac_fsm_busy;
@@ -41,10 +41,10 @@ module ccu (
     wire          adc_fsm_busy;
     wire          adc_fsm_dv;
 
-    wire [15 : 0] pack_id;
-    wire [12 : 0] pack_length;
-    wire [ 7 : 0] pack_data;
-    wire [ 7 : 0] pack_type;
+    wire [15 : 0] unpack_pack_id;
+    wire [12 : 0] unpack_pack_length;
+    wire [ 7 : 0] unpack_pack_data;
+    wire [ 7 : 0] unpack_pack_type;
 
     ccu_unpack ccu_unpack_inst (
         .clk (axi_aclk),
@@ -55,16 +55,24 @@ module ccu (
 
         .dac_fsm_busy(dac_fsm_busy),
         .dac_fsm_dv  (dac_fsm_dv),
-        .sys_fsm_busy(0),
+        .sys_fsm_busy(sys_fsm_busy),
         .sys_fsm_dv  (sys_fsm_dv),
-        .adc_fsm_busy(0),
+        .adc_fsm_busy(adc_fsm_busy),
         .adc_fsm_dv  (adc_fsm_dv),
 
-        .pack_id    (pack_id),
-        .pack_length(pack_length),
-        .pack_data  (pack_data),
-        .pack_type  (pack_type)
+        .pack_id    (unpack_pack_id),
+        .pack_length(unpack_pack_length),
+        .pack_data  (unpack_pack_data),
+        .pack_type  (unpack_pack_type)
     );
+
+    wor  pack_dv;
+    wire pack_busy;
+
+    wire [15 : 0] pack_pack_id;
+    wire [12 : 0] pack_pack_length;
+    wire [ 7 : 0] pack_pack_data;
+    wire [ 7 : 0] pack_pack_type;
 
     ccu_pack ccu_pack_inst (
         .clk (axi_aclk),
@@ -73,13 +81,74 @@ module ccu (
         .txd_data(txd_data),
         .rxd_flag(rxd_flag),
 
-        .pack_en  (dac_fsm_dv),
-        .pack_busy(dac_fsm_busy),
+        .pack_en  (pack_dv),
+        .pack_busy(pack_busy),
 
-        .pack_id    (pack_id),
-        .pack_length(pack_length),
-        .pack_data  (pack_data),
-        .pack_type  (pack_type)
+        .pack_id    (pack_pack_id),
+        .pack_length(pack_pack_length),
+        .pack_data  (pack_pack_data),
+        .pack_type  (pack_pack_type)
     );
 
+    adc_fsm adc_fsm_inst (
+        .clk (axi_aclk),
+        .rstn(axi_aresetn),
+
+        // From CCU Unpack
+        .unpack_busy       (adc_fsm_busy),
+        .unpack_en         (adc_fsm_dv),
+        .unpack_pack_id    (unpack_pack_id),
+        .unpack_pack_length(unpack_pack_length),
+        .unpack_pack_data  (unpack_pack_data),
+        .unpack_pack_type  (unpack_pack_type),
+
+        // To CCU Pack
+        .pack_busy       (pack_busy),
+        .pack_dv         (pack_dv),
+        .pack_pack_id    (pack_pack_id),
+        .pack_pack_length(pack_pack_length),
+        .pack_pack_data  (pack_pack_data),
+        .pack_pack_type  (pack_pack_type),
+
+        // ADC Interface
+        .axis_tvalid(adc_axis_tvalid),
+        .axis_tready(adc_axis_tready),
+        .axis_tdata (adc_axis_tdata),
+        .axis_tlast (adc_axis_tlast)
+    );
+
+    dac_fsm dac_fsm_inst (
+        .clk (axi_aclk),
+        .rstn(axi_aresetn),
+
+        // From CCU Unpack
+        .unpack_busy       (dac_fsm_busy),
+        .unpack_en         (dac_fsm_dv),
+        .unpack_pack_id    (unpack_pack_id),
+        .unpack_pack_length(unpack_pack_length),
+        .unpack_pack_data  (unpack_pack_data),
+        .unpack_pack_type  (unpack_pack_type),
+
+        // To CCU Pack
+        .pack_busy       (pack_busy),
+        .pack_dv         (pack_dv),
+        .pack_pack_id    (pack_pack_id),
+        .pack_pack_length(pack_pack_length),
+        .pack_pack_data  (pack_pack_data),
+        .pack_pack_type  (pack_pack_type),
+
+        // DAC
+        .axi_awaddr (dac_axi_awaddr),
+        .axi_awvalid(dac_axi_awvalid),
+        .axi_awready(dac_axi_awready),
+
+        .axi_wdata (dac_axi_wdata),
+        .axi_wvalid(dac_axi_wvalid),
+        .axi_wready(dac_axi_wready),
+        .axi_wlast (dac_axi_wlast),
+
+        .axi_bresp (dac_axi_bresp),
+        .axi_bvalid(dac_axi_bvalid),
+        .axi_bready(dac_axi_bready)
+    );
 endmodule

@@ -25,6 +25,14 @@
     "SubInsts" : [
      {
       "InstFile" : "D:/Tasks/PocketLab-RTL/src/ccu.v",
+      "InstLine" : 85,
+      "InstName" : "i4",
+      "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/adc_fsm.v",
+      "ModuleLine" : 1,
+      "ModuleName" : "adc_fsm"
+     },
+     {
+      "InstFile" : "D:/Tasks/PocketLab-RTL/src/ccu.v",
       "InstLine" : 49,
       "InstName" : "ccu_unpack_inst",
       "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/ccu_unpack.v",
@@ -144,5 +152,21 @@
     "ModuleName" : "spi_slaver"
    }
   ]
+ },
+ {
+  "InstFile" : "D:/Tasks/PocketLab-RTL/src/dac_fsm.v",
+  "InstLine" : 1,
+  "InstName" : "dac_fsm",
+  "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/dac_fsm.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "dac_fsm"
+ },
+ {
+  "InstFile" : "D:/Tasks/PocketLab-RTL/src/sys_fsm.v",
+  "InstLine" : 1,
+  "InstName" : "sys_fsm",
+  "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/sys_fsm.v",
+  "ModuleLine" : 1,
+  "ModuleName" : "sys_fsm"
  }
 ]
