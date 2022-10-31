@@ -1,10 +1,10 @@
-`timescale 1ns / 100ps
+`timescale 1ns / 1ns
 
 module bench ();
     GSR GSR (.GSRI(1'b1));
 
     reg clk = 0;
-    always #36 clk = ~clk;
+    always #1 clk = ~clk;
 
     reg          rstn = 0;
 
@@ -18,7 +18,7 @@ module bench ();
         end
     end
 
-    `define SPIPERIOD 1254
+    `define SPIPERIOD 10
 
     reg           spi_clk = 1;
     reg   [7 : 0] spi_send_byte;
@@ -69,30 +69,32 @@ module bench ();
 
 
     initial begin
-        #1000 rstn = 1;
+        #20 rstn = 1;
 
         #(20 * `SPIPERIOD) spi_send_byte = 8'h00;
         ->e_spi_send_byte;
 
-        #200000 #(20 * `SPIPERIOD) spi_send_byte = 8'h5a;
-        ->e_spi_send_byte;
+        #150000;
 
-        #(20 * `SPIPERIOD) spi_send_byte = 8'h01;
-        ->e_spi_send_byte;
-
-        #(20 * `SPIPERIOD) spi_send_byte = 8'hff;
+        #20 #(20 * `SPIPERIOD) spi_send_byte = 8'h5a;
         ->e_spi_send_byte;
 
         #(20 * `SPIPERIOD) spi_send_byte = 8'h05;
         ->e_spi_send_byte;
 
+        #(20 * `SPIPERIOD) spi_send_byte = 8'h07;
+        ->e_spi_send_byte;
+
         #(20 * `SPIPERIOD) spi_send_byte = 8'h00;
+        ->e_spi_send_byte;
+
+        #(20 * `SPIPERIOD) spi_send_byte = 8'h22;
         ->e_spi_send_byte;
 
         #(20 * `SPIPERIOD) spi_send_byte = 8'h11;
         ->e_spi_send_byte;
 
-        #(20 * `SPIPERIOD) spi_send_byte = 8'h00;
+        #(20 * `SPIPERIOD) spi_send_byte = 8'h05;
         ->e_spi_send_byte;
 
         #(20 * `SPIPERIOD) spi_send_byte = 8'hdf;
@@ -106,6 +108,8 @@ module bench ();
 
         #(20 * `SPIPERIOD) spi_send_byte = 8'h03;
         ->e_spi_send_byte;
+
+        #200;
 
         #(20 * `SPIPERIOD) spi_send_byte = 8'h00;
         ->e_spi_send_byte;

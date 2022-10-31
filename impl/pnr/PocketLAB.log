@@ -1,0 +1,29 @@
+Reading netlist file: "D:\Tasks\PocketLab-RTL\impl\gwsynthesis\PocketLAB.vg"
+Parsing netlist file "D:\Tasks\PocketLab-RTL\impl\gwsynthesis\PocketLAB.vg" completed
+Processing netlist completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+WARN  (TA1117) : Can't calculate clocks' relationship between: "adc_inst/fifo_adc_inst/fifo_inst/wfull_val" and "clkdiv_adda_inst/clkdiv_inst/CLKOUT.default_gen_clk"
+WARN  (TA1117) : Can't calculate clocks' relationship between: "clkdiv_adda_inst/clkdiv_inst/CLKOUT.default_gen_clk" and "adc_inst/fifo_adc_inst/fifo_inst/wfull_val"
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "D:\Tasks\PocketLab-RTL\impl\pnr\PocketLAB.power.html" completed
+Generate file "D:\Tasks\PocketLab-RTL\impl\pnr\PocketLAB.pin.html" completed
+Generate file "D:\Tasks\PocketLab-RTL\impl\pnr\PocketLAB.rpt.html" completed
+Generate file "D:\Tasks\PocketLab-RTL\impl\pnr\PocketLAB.rpt.txt" completed
+Generate file "D:\Tasks\PocketLab-RTL\impl\pnr\PocketLAB.tr.html" completed
+Mon Oct 31 16:29:16 2022
+

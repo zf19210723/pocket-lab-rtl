@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="fifo_adc" Register="61" Alu="12" Lut="85" Bsram="2"/>
+<Module name="fifo_adc" Register="117" Alu="31" Lut="142" Bsram="16" Ssram="4"/>

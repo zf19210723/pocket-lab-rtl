@@ -4,7 +4,7 @@
 //GOWIN Version: V1.9.8.08
 //Part Number: GW2A-LV18PG256C8/I7
 //Device: GW2A-18C
-//Created Time: Thu Oct 20 15:09:09 2022
+//Created Time: Mon Oct 31 16:27:59 2022
 
 //Change the instance name and port connections to the signal names
 //--------Copy here to design--------
@@ -18,9 +18,9 @@
         .ceb(ceb_i), //input ceb
         .resetb(resetb_i), //input resetb
         .oce(oce_i), //input oce
-        .ada(ada_i), //input [15:0] ada
+        .ada(ada_i), //input [14:0] ada
         .din(din_i), //input [7:0] din
-        .adb(adb_i) //input [15:0] adb
+        .adb(adb_i) //input [14:0] adb
     );
 
 //--------Copy end-------------------

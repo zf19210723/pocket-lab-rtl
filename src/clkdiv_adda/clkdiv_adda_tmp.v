@@ -4,7 +4,7 @@
 //GOWIN Version: V1.9.8.08
 //Part Number: GW2A-LV18PG256C8/I7
 //Device: GW2A-18C
-//Created Time: Fri Oct 21 19:38:12 2022
+//Created Time: Mon Oct 31 16:28:59 2022
 
 //Change the instance name and port connections to the signal names
 //--------Copy here to design--------

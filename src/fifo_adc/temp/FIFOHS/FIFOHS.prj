@@ -8,10 +8,10 @@
         <File path="C:/Gowin/Gowin_V1.9.8.08/IDE/ipcore/FIFO_HS/data/fifo_hs_top.v" type="verilog"/>
     </FileList>
     <OptionList>
-        <Option type="disable_insert_pad" value="0"/>
+        <Option type="disable_insert_pad" value="1"/>
         <Option type="dsp_balance" value="1"/>
         <Option type="include_path" value="C:/Gowin/Gowin_V1.9.8.08/IDE/ipcore/FIFO_HS/data"/>
-        <Option type="include_path" value="D:/Projects/GW/test-dock-2alv18/src/fifo_adc/temp/FIFOHS"/>
+        <Option type="include_path" value="D:/Tasks/PocketLab-RTL/src/fifo_adc/temp/FIFOHS"/>
         <Option type="output_file" value="fifo_adc.vg"/>
         <Option type="output_template" value="fifo_adc_tmp.v"/>
         <Option type="ram_balance" value="1"/>

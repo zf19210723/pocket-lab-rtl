@@ -17,81 +17,7 @@
    },
    {
     "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
-    "InstLine" : 59,
-    "InstName" : "ccu_inst",
-    "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/ccu.v",
-    "ModuleLine" : 7,
-    "ModuleName" : "ccu",
-    "SubInsts" : [
-     {
-      "InstFile" : "D:/Tasks/PocketLab-RTL/src/ccu.v",
-      "InstLine" : 85,
-      "InstName" : "i4",
-      "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/adc_fsm.v",
-      "ModuleLine" : 1,
-      "ModuleName" : "adc_fsm"
-     },
-     {
-      "InstFile" : "D:/Tasks/PocketLab-RTL/src/ccu.v",
-      "InstLine" : 49,
-      "InstName" : "ccu_unpack_inst",
-      "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/ccu_unpack.v",
-      "ModuleLine" : 7,
-      "ModuleName" : "ccu_unpack",
-      "SubInsts" : [
-       {
-        "InstFile" : "D:/Tasks/PocketLab-RTL/src/ccu_unpack.v",
-        "InstLine" : 35,
-        "InstName" : "fifo_ccu_unpack_data_buffer_inst",
-        "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_ccu_unpack_data_buffer/fifo_ccu_unpack_data_buffer.v",
-        "ModuleLine" : 334,
-        "ModuleName" : "fifo_ccu_unpack_data_buffer",
-        "SubInsts" : [
-         {
-          "InstFile" : "D:/Tasks/PocketLab-RTL/src/fifo_ccu_unpack_data_buffer/fifo_ccu_unpack_data_buffer.v",
-          "InstLine" : 355,
-          "InstName" : "fifo_sc_hs_inst",
-          "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_ccu_unpack_data_buffer/fifo_ccu_unpack_data_buffer.v",
-          "ModuleLine" : 1,
-          "ModuleName" : "~fifo_sc_hs.fifo_ccu_unpack_data_buffer"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "InstFile" : "D:/Tasks/PocketLab-RTL/src/ccu.v",
-      "InstLine" : 69,
-      "InstName" : "ccu_pack_inst",
-      "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/ccu_pack.v",
-      "ModuleLine" : 1,
-      "ModuleName" : "ccu_pack",
-      "SubInsts" : [
-       {
-        "InstFile" : "D:/Tasks/PocketLab-RTL/src/ccu_pack.v",
-        "InstLine" : 24,
-        "InstName" : "fifo_ccu_pack_data_buffer_inst",
-        "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_ccu_pack_data_buffer/fifo_ccu_pack_data_buffer.v",
-        "ModuleLine" : 358,
-        "ModuleName" : "fifo_ccu_pack_data_buffer",
-        "SubInsts" : [
-         {
-          "InstFile" : "D:/Tasks/PocketLab-RTL/src/fifo_ccu_pack_data_buffer/fifo_ccu_pack_data_buffer.v",
-          "InstLine" : 381,
-          "InstName" : "fifo_sc_hs_inst",
-          "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_ccu_pack_data_buffer/fifo_ccu_pack_data_buffer.v",
-          "ModuleLine" : 1,
-          "ModuleName" : "~fifo_sc_hs.fifo_ccu_pack_data_buffer"
-         }
-        ]
-       }
-      ]
-     }
-    ]
-   },
-   {
-    "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
-    "InstLine" : 90,
+    "InstLine" : 42,
     "InstName" : "clkdiv_adda_inst",
     "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/clkdiv_adda/clkdiv_adda.v",
     "ModuleLine" : 9,
@@ -99,7 +25,7 @@
    },
    {
     "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
-    "InstLine" : 96,
+    "InstLine" : 48,
     "InstName" : "adc_inst",
     "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/adc.v",
     "ModuleLine" : 1,
@@ -107,15 +33,15 @@
     "SubInsts" : [
      {
       "InstFile" : "D:/Tasks/PocketLab-RTL/src/adc.v",
-      "InstLine" : 40,
+      "InstLine" : 20,
       "InstName" : "fifo_adc_inst",
       "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_adc/fifo_adc.v",
-      "ModuleLine" : 525,
+      "ModuleLine" : 1156,
       "ModuleName" : "fifo_adc",
       "SubInsts" : [
        {
         "InstFile" : "D:/Tasks/PocketLab-RTL/src/fifo_adc/fifo_adc.v",
-        "InstLine" : 649,
+        "InstLine" : 1181,
         "InstName" : "fifo_inst",
         "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/fifo_adc/fifo_adc.v",
         "ModuleLine" : 1,
@@ -127,7 +53,7 @@
    },
    {
     "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
-    "InstLine" : 111,
+    "InstLine" : 61,
     "InstName" : "dac_inst",
     "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/dac.v",
     "ModuleLine" : 1,
@@ -135,7 +61,7 @@
     "SubInsts" : [
      {
       "InstFile" : "D:/Tasks/PocketLab-RTL/src/dac.v",
-      "InstLine" : 31,
+      "InstLine" : 21,
       "InstName" : "bram_dac_inst",
       "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/bram_dac/bram_dac.v",
       "ModuleLine" : 9,
@@ -145,28 +71,12 @@
    },
    {
     "InstFile" : "D:/Tasks/PocketLab-RTL/src/main.v",
-    "InstLine" : 134,
+    "InstLine" : 74,
     "InstName" : "spi_slaver_inst",
     "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/spi_slaver.v",
     "ModuleLine" : 5,
     "ModuleName" : "spi_slaver"
    }
   ]
- },
- {
-  "InstFile" : "D:/Tasks/PocketLab-RTL/src/dac_fsm.v",
-  "InstLine" : 1,
-  "InstName" : "dac_fsm",
-  "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/dac_fsm.v",
-  "ModuleLine" : 1,
-  "ModuleName" : "dac_fsm"
- },
- {
-  "InstFile" : "D:/Tasks/PocketLab-RTL/src/sys_fsm.v",
-  "InstLine" : 1,
-  "InstName" : "sys_fsm",
-  "ModuleFile" : "D:/Tasks/PocketLab-RTL/src/sys_fsm.v",
-  "ModuleLine" : 1,
-  "ModuleName" : "sys_fsm"
  }
 ]

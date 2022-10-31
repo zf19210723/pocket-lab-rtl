@@ -6,8 +6,8 @@
 
 -mod_name clkdiv_adda
 -file_name clkdiv_adda
--path D:/Projects/GW/test-dock-2alv18/src/clkdiv_adda/
+-path D:/Tasks/PocketLab-RTL/src/clkdiv_adda/
 -type CLKDIV
 -file_type vlg
--division_factor 2
+-division_factor 4
 -calib false

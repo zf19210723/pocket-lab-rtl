@@ -6,12 +6,12 @@
 
 -mod_name bram_dac
 -file_name bram_dac
--path D:/Projects/GW/test-dock-2alv18/src/bram_dac/
+-path D:/Tasks/PocketLab-RTL/src/bram_dac/
 -type RAM_SDP
 -file_type vlg
 -bram_b true
--depth_0 65536
--depth_1 65536
+-depth_0 32768
+-depth_1 32768
 -width_0 8
 -width_1 8
 -read_mode pipeline

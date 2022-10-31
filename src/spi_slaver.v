@@ -6,14 +6,14 @@ module spi_slaver (
     input clk,
     input rstn,
 
-    input cs,
-    input sck,
-    input MOSI,
+    input      cs,
+    input      sck,
+    input      MOSI,
     output reg MISO,
 
     output reg [7:0] rxd_out,
-    input [7:0] txd_data,
-    output rxd_flag
+    input      [7:0] txd_data,
+    output           rxd_flag
 );
     reg [7:0] rxd_data;
     reg sck_r0, sck_r1;
