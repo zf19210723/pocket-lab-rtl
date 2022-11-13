@@ -18,7 +18,7 @@ module bench ();
         end
     end
 
-    `define SPIPERIOD 10
+    `define SPIPERIOD 30
 
     reg           spi_clk = 1;
     reg   [7 : 0] spi_send_byte;
@@ -69,12 +69,12 @@ module bench ();
 
 
     initial begin
-        #20 rstn = 1;
-
         #(20 * `SPIPERIOD) spi_send_byte = 8'h00;
         ->e_spi_send_byte;
 
-        #150000;
+        #20 rstn = 1;
+
+        #300000;
 
         #20 #(20 * `SPIPERIOD) spi_send_byte = 8'h5a;
         ->e_spi_send_byte;
@@ -145,6 +145,9 @@ module bench ();
         ->e_spi_send_byte;
     end
 
+    wire [7 : 0] test_points;
+    reg  [1 : 0] triggers = 2'b0;
+
     main main_inst (
         .rst_key(rstn),
         .osc_27m(clk),
@@ -161,10 +164,17 @@ module bench ();
         .spi_clk (spi_clk),
         .spi_mosi(spi_mosi),
         .spi_miso(spi_miso),
-        .spi_cs  (1'b1),
+        .spi_cs  (1'b0),
 
         // Test triggers
-        .triggers()
+        .triggers(),
+
+        .test_points(test_points)
     );
+
+    initial begin
+        #150000;
+        #2000 triggers[0] = 1;
+    end
 
 endmodule

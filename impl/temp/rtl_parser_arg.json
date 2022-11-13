@@ -1,35 +1,35 @@
 {
  "Files" : [
   {
-   "Path" : "D:/Tasks/PocketLab-RTL/src/adc.v",
+   "Path" : "D:/Tasks/PocketLab/src/adc.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Tasks/PocketLab-RTL/src/bram_dac/bram_dac.v",
+   "Path" : "D:/Tasks/PocketLab/src/bram_dac/bram_dac.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Tasks/PocketLab-RTL/src/clkdiv_adda/clkdiv_adda.v",
+   "Path" : "D:/Tasks/PocketLab/src/dac.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Tasks/PocketLab-RTL/src/dac.v",
+   "Path" : "D:/Tasks/PocketLab/src/fifo_adc/fifo_adc.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Tasks/PocketLab-RTL/src/fifo_adc/fifo_adc.v",
+   "Path" : "D:/Tasks/PocketLab/src/main.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Tasks/PocketLab-RTL/src/main.v",
+   "Path" : "D:/Tasks/PocketLab/src/pll_adda/pll_adda.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Tasks/PocketLab-RTL/src/pll_main/pll_main.v",
+   "Path" : "D:/Tasks/PocketLab/src/pll_main/pll_main.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Tasks/PocketLab-RTL/src/spi_slaver.v",
+   "Path" : "D:/Tasks/PocketLab/src/spi_slaver.v",
    "Type" : "verilog"
   }
  ],
@@ -37,8 +37,8 @@
 
  ],
  "LoopLimit" : 2000,
- "ResultFile" : "D:/Tasks/PocketLab-RTL/impl/temp/rtl_parser.result",
- "Top" : "",
+ "ResultFile" : "D:/Tasks/PocketLab/impl/temp/rtl_parser.result",
+ "Top" : "main",
  "VerilogStd" : "verilog_2001",
  "VhdlStd" : "vhdl_93"
 }

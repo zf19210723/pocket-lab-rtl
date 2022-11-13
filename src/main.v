@@ -17,7 +17,10 @@ module main (
     input  spi_cs,
 
     // Test triggers
-    input [1 : 0] triggers
+    input [1 : 0] triggers,
+
+    // Test points
+    output [7 : 0] test_points
 );
     // system clock
     wire sys_clk;
@@ -31,19 +34,18 @@ module main (
     );
 
     wire adda_clk;
+    pll_adda pll_adda_inst (
+        .clkin(osc_27m),
+        .reset(~rst_key),
+
+        .clkout(adda_clk)
+    );
     assign adc_clk = adda_clk;
     assign dac_clk = adda_clk;
 
     wire [7 : 0] spi_rxd_out;
     wire [7 : 0] spi_txd_data;
     wire         spi_rxd_flag;
-
-    // ADC clock
-    clkdiv_adda clkdiv_adda_inst (
-        .clkout(adda_clk),   //output clkout
-        .hclkin(sys_clk),    //input hclkin
-        .resetn(sys_resetn)  //input resetn
-    );
 
     adc adc_inst (
         .resetn(sys_resetn),
@@ -79,7 +81,7 @@ module main (
         .sck (spi_clk),
         .MOSI(spi_mosi),
         .MISO(spi_miso),
-        .cs  (~spi_cs),
+        .cs  (spi_cs),
 
         .rxd_out (spi_rxd_out),
         .txd_data(spi_txd_data),

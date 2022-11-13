@@ -7,12 +7,14 @@
     <FileList>
         <File path="src/adc.v" type="file.verilog" enable="1"/>
         <File path="src/bram_dac/bram_dac.v" type="file.verilog" enable="1"/>
-        <File path="src/clkdiv_adda/clkdiv_adda.v" type="file.verilog" enable="1"/>
         <File path="src/dac.v" type="file.verilog" enable="1"/>
         <File path="src/fifo_adc/fifo_adc.v" type="file.verilog" enable="1"/>
         <File path="src/main.v" type="file.verilog" enable="1"/>
+        <File path="src/pll_adda/pll_adda.v" type="file.verilog" enable="1"/>
         <File path="src/pll_main/pll_main.v" type="file.verilog" enable="1"/>
         <File path="src/spi_slaver.v" type="file.verilog" enable="1"/>
+        <File path="src/main.cst" type="file.cst" enable="1"/>
         <File path="src/main.sdc" type="file.sdc" enable="1"/>
+        <File path="src/PocketLAB.rao" type="file.gao" enable="1"/>
     </FileList>
 </Project>

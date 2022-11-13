@@ -1,25 +1,4 @@
-D:/Projects/GW/PocketLAB/src/clkdiv_adda/clkdiv_adda.v {1 {vlog -work work -vopt -stats=none D:/Projects/GW/PocketLAB/src/clkdiv_adda/clkdiv_adda.v
-Model Technology ModelSim SE-64 vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module clkdiv_adda
-
-Top level modules:
-	clkdiv_adda
-
-} {} {}} D:/Projects/GW/PocketLAB/src/pll_main/pll_main.v {1 {vlog -work work -vopt -stats=none D:/Projects/GW/PocketLAB/src/pll_main/pll_main.v
-Model Technology ModelSim SE-64 vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module pll_main
-
-Top level modules:
-	pll_main
-
-} {} {}} D:/Projects/GW/PocketLAB/bench/bench.v {1 {vlog -work work -vopt -stats=none D:/Projects/GW/PocketLAB/bench/bench.v
-Model Technology ModelSim SE-64 vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module bench
-
-Top level modules:
-	bench
-
-} {} {}} D:/Projects/GW/PocketLAB/src/spi_slaver.v {1 {vlog -work work -vopt -stats=none D:/Projects/GW/PocketLAB/src/spi_slaver.v
+D:/Projects/GW/PocketLAB/src/spi_slaver.v {1 {vlog -work work -vopt -stats=none D:/Projects/GW/PocketLAB/src/spi_slaver.v
 Model Technology ModelSim SE-64 vlog 10.6d Compiler 2018.02 Feb 24 2018
 -- Compiling module spi_slaver
 
@@ -32,13 +11,6 @@ Model Technology ModelSim SE-64 vlog 10.6d Compiler 2018.02 Feb 24 2018
 
 Top level modules:
 	dac
-
-} {} {}} D:/Projects/GW/PocketLAB/src/adc.v {1 {vlog -work work -vopt -stats=none D:/Projects/GW/PocketLAB/src/adc.v
-Model Technology ModelSim SE-64 vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module adc
-
-Top level modules:
-	adc
 
 } {} {}} D:/Projects/GW/PocketLAB/src/fifo_adc/fifo_adc.vo {1 {vlog -work work -vopt -stats=none D:/Projects/GW/PocketLAB/src/fifo_adc/fifo_adc.vo
 Model Technology ModelSim SE-64 vlog 10.6d Compiler 2018.02 Feb 24 2018
@@ -53,13 +25,6 @@ Model Technology ModelSim SE-64 vlog 10.6d Compiler 2018.02 Feb 24 2018
 
 Top level modules:
 	main
-
-} {} {}} D:/Projects/GW/PocketLAB/src/bram_dac/bram_dac.v {1 {vlog -work work -vopt -stats=none D:/Projects/GW/PocketLAB/src/bram_dac/bram_dac.v
-Model Technology ModelSim SE-64 vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module bram_dac
-
-Top level modules:
-	bram_dac
 
 } {} {}} C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_sim.v {1 {vlog -work work -vopt -stats=none C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_sim.v
 Model Technology ModelSim SE-64 vlog 10.6d Compiler 2018.02 Feb 24 2018
@@ -355,6 +320,27 @@ Top level modules:
 	MIPI_IBUF
 	I3C_IOBUF
 
+} {} {}} D:/Projects/GW/PocketLAB/src/pll_main/pll_main.v {1 {vlog -work work -vopt -stats=none D:/Projects/GW/PocketLAB/src/pll_main/pll_main.v
+Model Technology ModelSim SE-64 vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module pll_main
+
+Top level modules:
+	pll_main
+
+} {} {}} D:/Projects/GW/PocketLAB/bench/bench.v {1 {vlog -work work -vopt -stats=none D:/Projects/GW/PocketLAB/bench/bench.v
+Model Technology ModelSim SE-64 vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module bench
+
+Top level modules:
+	bench
+
+} {} {}} D:/Projects/GW/PocketLAB/src/adc.v {1 {vlog -work work -vopt -stats=none D:/Projects/GW/PocketLAB/src/adc.v
+Model Technology ModelSim SE-64 vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module adc
+
+Top level modules:
+	adc
+
 } {} {}} C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v {1 {vlog -work work -vopt -stats=none C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v
 Model Technology ModelSim SE-64 vlog 10.6d Compiler 2018.02 Feb 24 2018
 -- Compiling UDP mux2
@@ -648,5 +634,12 @@ Top level modules:
 	PLLO
 	MIPI_IBUF
 	I3C_IOBUF
+
+} {} {}} D:/Projects/GW/PocketLAB/src/bram_dac/bram_dac.v {1 {vlog -work work -vopt -stats=none D:/Projects/GW/PocketLAB/src/bram_dac/bram_dac.v
+Model Technology ModelSim SE-64 vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module bram_dac
+
+Top level modules:
+	bram_dac
 
 } {} {}}

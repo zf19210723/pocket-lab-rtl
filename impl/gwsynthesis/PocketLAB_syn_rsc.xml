@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module name="main" Lut="1">
     <SubModule name="pll_main_inst"/>
-    <SubModule name="clkdiv_adda_inst"/>
-    <SubModule name="adc_inst" Register="13" Lut="28">
+    <SubModule name="pll_adda_inst"/>
+    <SubModule name="gw_gao_inst_0" Register="254" Alu="10" Lut="349" Bsram="3" Ssram="2"/>
+    <SubModule name="adc_inst" Register="17" Lut="25">
         <SubModule name="fifo_adc_inst" Register="117" Alu="31" Lut="142" Bsram="16" Ssram="4"/>
     </SubModule>
-    <SubModule name="dac_inst" Register="52" Alu="14" Lut="111">
+    <SubModule name="dac_inst" Register="52" Alu="14" Lut="108">
         <SubModule name="bram_dac_inst" Register="2" Lut="8" Bsram="16"/>
     </SubModule>
-    <SubModule name="spi_slaver_inst" Register="28" Lut="24"/>
+    <SubModule name="spi_slaver_inst" Register="27" Lut="23"/>
 </Module>

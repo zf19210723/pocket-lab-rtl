@@ -12,9 +12,13 @@ module adc (
 );
     // FIFO, 8-bit width, independent R/W
     reg           fifo_wr_dv;
-    wire          fifo_full;
-    wire          fifo_empty;
+    reg           fifo_wr_dv_r;
+    wire          fifo_full_w;
+    wire          fifo_empty_w;
+    reg           fifo_full;
+    reg           fifo_empty;
     reg           fifo_rd_dv;
+    reg           fifo_rd_dv_r;
     wire [ 7 : 0] fifo_rd_data;
     wire [15 : 0] fifo_data_rnum;
     fifo_adc fifo_adc_inst (
@@ -22,16 +26,30 @@ module adc (
 
         .Data (adc_data),
         .WrClk(adc_clk),
-        .WrEn (fifo_wr_dv),
+        .WrEn (fifo_wr_dv_r),
 
         .RdClk(clk),
-        .RdEn (fifo_rd_dv),
+        .RdEn (fifo_rd_dv_r),
         .Q    (fifo_rd_data),
 
-        .Empty(fifo_empty),
-        .Full (fifo_full),
+        .Empty(fifo_empty_w),
+        .Full (fifo_full_w),
         .Rnum (fifo_data_rnum)
     );
+
+    always @(posedge clk) begin
+        if (!resetn) begin
+            fifo_rd_dv_r <= 1'b0;
+            fifo_empty   <= 1'b0;
+            fifo_full    <= 1'b0;
+            fifo_wr_dv_r <= 1'b0;
+        end else begin
+            fifo_rd_dv_r <= fifo_rd_dv;
+            fifo_empty   <= fifo_empty_w;
+            fifo_full    <= fifo_full_w;
+            fifo_wr_dv_r <= fifo_wr_dv;
+        end
+    end
 
     reg [7 : 0] state;
     reg [7 : 0] state_next;

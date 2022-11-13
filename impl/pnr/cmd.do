@@ -1,11 +1,14 @@
--d D:\Tasks\PocketLab-RTL\impl\gwsynthesis\PocketLAB.vg
+-d D:\Tasks\PocketLab\impl\gwsynthesis\PocketLAB.vg
 -p GW2A-18C-PBGA256-8
 -pn GW2A-LV18PG256C8/I7
--cfg D:\Tasks\PocketLab-RTL\impl\pnr\device.cfg
--sdc D:\Tasks\PocketLab-RTL\src\main.sdc
+-cst D:\Tasks\PocketLab\src\main.cst
+-cfg D:\Tasks\PocketLab\impl\pnr\device.cfg
+-sdc D:\Tasks\PocketLab\src\main.sdc
+-gao_crc 1001100111100010
 -bit
 -tr
 -ph
 -timing
 -cst_error
 -route_maxfan 23
+-rtl_gao
