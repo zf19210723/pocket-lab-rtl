@@ -70,7 +70,9 @@ module main (
 
         // SPI
         .rxd_out (spi_rxd_out),
-        .rxd_flag(spi_rxd_flag)
+        .rxd_flag(spi_rxd_flag),
+
+        .spi_cs(spi_cs)
     );
 
     spi_slaver spi_slaver_inst (

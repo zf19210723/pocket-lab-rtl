@@ -1,49 +1,49 @@
 [
  {
-  "InstFile" : "D:/Projects/GW/PocketLAB/src/main.v",
+  "InstFile" : "D:/Tasks/PocketLab/src/main.v",
   "InstLine" : 1,
   "InstName" : "main",
-  "ModuleFile" : "D:/Projects/GW/PocketLAB/src/main.v",
+  "ModuleFile" : "D:/Tasks/PocketLab/src/main.v",
   "ModuleLine" : 1,
   "ModuleName" : "main",
   "SubInsts" : [
    {
-    "InstFile" : "D:/Projects/GW/PocketLAB/src/main.v",
+    "InstFile" : "D:/Tasks/PocketLab/src/main.v",
     "InstLine" : 28,
     "InstName" : "pll_main_inst",
-    "ModuleFile" : "D:/Projects/GW/PocketLAB/src/pll_main/pll_main.v",
+    "ModuleFile" : "D:/Tasks/PocketLab/src/pll_main/pll_main.v",
     "ModuleLine" : 9,
     "ModuleName" : "pll_main"
    },
    {
-    "InstFile" : "D:/Projects/GW/PocketLAB/src/main.v",
+    "InstFile" : "D:/Tasks/PocketLab/src/main.v",
     "InstLine" : 37,
     "InstName" : "pll_adda_inst",
-    "ModuleFile" : "D:/Projects/GW/PocketLAB/src/pll_adda/pll_adda.v",
+    "ModuleFile" : "D:/Tasks/PocketLab/src/pll_adda/pll_adda.v",
     "ModuleLine" : 9,
     "ModuleName" : "pll_adda"
    },
    {
-    "InstFile" : "D:/Projects/GW/PocketLAB/src/main.v",
+    "InstFile" : "D:/Tasks/PocketLab/src/main.v",
     "InstLine" : 50,
     "InstName" : "adc_inst",
-    "ModuleFile" : "D:/Projects/GW/PocketLAB/src/adc.v",
+    "ModuleFile" : "D:/Tasks/PocketLab/src/adc.v",
     "ModuleLine" : 1,
     "ModuleName" : "adc",
     "SubInsts" : [
      {
-      "InstFile" : "D:/Projects/GW/PocketLAB/src/adc.v",
+      "InstFile" : "D:/Tasks/PocketLab/src/adc.v",
       "InstLine" : 24,
       "InstName" : "fifo_adc_inst",
-      "ModuleFile" : "D:/Projects/GW/PocketLAB/src/fifo_adc/fifo_adc.v",
+      "ModuleFile" : "D:/Tasks/PocketLab/src/fifo_adc/fifo_adc.v",
       "ModuleLine" : 1156,
       "ModuleName" : "fifo_adc",
       "SubInsts" : [
        {
-        "InstFile" : "D:/Projects/GW/PocketLAB/src/fifo_adc/fifo_adc.v",
+        "InstFile" : "D:/Tasks/PocketLab/src/fifo_adc/fifo_adc.v",
         "InstLine" : 1181,
         "InstName" : "fifo_inst",
-        "ModuleFile" : "D:/Projects/GW/PocketLAB/src/fifo_adc/fifo_adc.v",
+        "ModuleFile" : "D:/Tasks/PocketLab/src/fifo_adc/fifo_adc.v",
         "ModuleLine" : 1,
         "ModuleName" : "~fifo.fifo_adc"
        }
@@ -52,28 +52,28 @@
     ]
    },
    {
-    "InstFile" : "D:/Projects/GW/PocketLAB/src/main.v",
+    "InstFile" : "D:/Tasks/PocketLab/src/main.v",
     "InstLine" : 63,
     "InstName" : "dac_inst",
-    "ModuleFile" : "D:/Projects/GW/PocketLAB/src/dac.v",
+    "ModuleFile" : "D:/Tasks/PocketLab/src/dac.v",
     "ModuleLine" : 1,
     "ModuleName" : "dac",
     "SubInsts" : [
      {
-      "InstFile" : "D:/Projects/GW/PocketLAB/src/dac.v",
-      "InstLine" : 21,
+      "InstFile" : "D:/Tasks/PocketLab/src/dac.v",
+      "InstLine" : 24,
       "InstName" : "bram_dac_inst",
-      "ModuleFile" : "D:/Projects/GW/PocketLAB/src/bram_dac/bram_dac.v",
+      "ModuleFile" : "D:/Tasks/PocketLab/src/bram_dac/bram_dac.v",
       "ModuleLine" : 9,
       "ModuleName" : "bram_dac"
      }
     ]
    },
    {
-    "InstFile" : "D:/Projects/GW/PocketLAB/src/main.v",
-    "InstLine" : 76,
+    "InstFile" : "D:/Tasks/PocketLab/src/main.v",
+    "InstLine" : 78,
     "InstName" : "spi_slaver_inst",
-    "ModuleFile" : "D:/Projects/GW/PocketLAB/src/spi_slaver.v",
+    "ModuleFile" : "D:/Tasks/PocketLab/src/spi_slaver.v",
     "ModuleLine" : 5,
     "ModuleName" : "spi_slaver"
    }

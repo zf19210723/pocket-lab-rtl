@@ -33,7 +33,7 @@ module spi_slaver (
     assign sck_p = (~sck_r1 & sck_r0) ? 1'b1 : 1'b0;
     //-----------------------spi_slaver read data-------------------------------
     reg       rxd_flag_r;
-    reg [2:0] rxd_state;
+    reg [7:0] rxd_state;
     always @(posedge clk) begin
         if (!rstn) begin
             rxd_data   <= 1'b0;
@@ -49,32 +49,32 @@ module spi_slaver (
                     end
                     3'd1: begin
                         rxd_data[6] <= MOSI;
-                        rxd_flag_r  <= rxd_flag_r;
+                        rxd_flag_r  <= 1'b0;
                         rxd_state   <= 3'd2;
                     end
                     3'd2: begin
                         rxd_data[5] <= MOSI;
-                        rxd_flag_r  <= rxd_flag_r;
+                        rxd_flag_r  <= 1'b0;
                         rxd_state   <= 3'd3;
                     end
                     3'd3: begin
                         rxd_data[4] <= MOSI;
-                        rxd_flag_r  <= rxd_flag_r;
+                        rxd_flag_r  <= 1'b0;
                         rxd_state   <= 3'd4;
                     end
                     3'd4: begin
                         rxd_data[3] <= MOSI;
-                        rxd_flag_r  <= rxd_flag_r;
+                        rxd_flag_r  <= 1'b0;
                         rxd_state   <= 3'd5;
                     end
                     3'd5: begin
                         rxd_data[2] <= MOSI;
-                        rxd_flag_r  <= rxd_flag_r;
+                        rxd_flag_r  <= 1'b0;
                         rxd_state   <= 3'd6;
                     end
                     3'd6: begin
                         rxd_data[1] <= MOSI;
-                        rxd_flag_r  <= rxd_flag_r;
+                        rxd_flag_r  <= 1'b0;
                         rxd_state   <= 3'd7;
                     end
                     3'd7: begin
@@ -113,7 +113,7 @@ module spi_slaver (
     assign rxd_flag = (~rxd_flag_r1 && rxd_flag_r0) ? 1'b1 : 1'b0;
 
     //---------------------spi_slaver send data---------------------------
-    reg [2:0] txd_state;
+    reg [7:0] txd_state;
     always @(posedge clk) begin
         if (!rstn) begin
             txd_state <= 3'd0;

@@ -15,6 +15,6 @@
         <File path="src/spi_slaver.v" type="file.verilog" enable="1"/>
         <File path="src/main.cst" type="file.cst" enable="1"/>
         <File path="src/main.sdc" type="file.sdc" enable="1"/>
-        <File path="src/PocketLAB.rao" type="file.gao" enable="1"/>
+        <File path="src/dac.rao" type="file.gao" enable="1"/>
     </FileList>
 </Project>

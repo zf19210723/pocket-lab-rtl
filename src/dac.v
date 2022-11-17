@@ -8,7 +8,10 @@ module dac (
 
     // SPI Socket
     input [7:0] rxd_out,
-    input       rxd_flag
+    input       rxd_flag,
+
+    // SPI
+    input spi_cs
 );
     // Buffer
     reg          buffer_wr_dv;
@@ -110,7 +113,7 @@ module dac (
             end
 
             STATE_RECV_DATA: begin
-                if (recv_data_ct == 16'h0) begin
+                if (recv_data_ct == 16'h0 || spi_cs) begin
                     state_next = STATE_RECV_FLAG;
                 end else begin
                     state_next = STATE_RECV_DATA;
