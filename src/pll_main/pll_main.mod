@@ -6,17 +6,17 @@
 
 -mod_name pll_main
 -file_name pll_main
--path D:/Projects/GW/PocketLAB/src/pll_main/
+-path D:/Tasks/PocketLab/src/pll_main/
 -type PLL
 -rPll true
 -file_type vlg
 -dev_type GW2A-18C
 -dyn_idiv_sel false
--idiv_sel 4
+-idiv_sel 7
 -dyn_fbdiv_sel false
--fbdiv_sel 3
+-fbdiv_sel 13
 -dyn_odiv_sel false
--odiv_sel 32
+-odiv_sel 16
 -dyn_da_en false
 -rst_sig true
 -rst_sig_p false

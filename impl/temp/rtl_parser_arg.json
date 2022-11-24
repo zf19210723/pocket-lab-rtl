@@ -21,15 +21,19 @@
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/Tasks/PocketLab/src/pll_adda/pll_adda.v",
-   "Type" : "verilog"
-  },
-  {
    "Path" : "D:/Tasks/PocketLab/src/pll_main/pll_main.v",
    "Type" : "verilog"
   },
   {
    "Path" : "D:/Tasks/PocketLab/src/spi_slaver.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Tasks/PocketLab/src/pll_dac/pll_dac.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/Tasks/PocketLab/src/pll_adc/pll_adc.v",
    "Type" : "verilog"
   }
  ],

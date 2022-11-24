@@ -33,15 +33,18 @@ module main (
         .lock  (sys_resetn)
     );
 
-    wire adda_clk;
-    pll_adda pll_adda_inst (
+    pll_adc pll_adc_inst (
         .clkin(osc_27m),
         .reset(~rst_key),
 
-        .clkout(adda_clk)
+        .clkout(adc_clk)
     );
-    assign adc_clk = adda_clk;
-    assign dac_clk = adda_clk;
+    pll_dac pll_dac_inst (
+        .clkin(osc_27m),
+        .reset(~rst_key),
+
+        .clkout(dac_clk)
+    );
 
     wire [7 : 0] spi_rxd_out;
     wire [7 : 0] spi_txd_data;
@@ -52,7 +55,7 @@ module main (
         .clk   (sys_clk),
 
         // ADC socket, positive edge sensitive
-        .adc_clk (adda_clk),
+        .adc_clk (adc_clk),
         .adc_data(adc_data),
 
         // SPI
@@ -65,7 +68,7 @@ module main (
         .clk   (sys_clk),
 
         // ADC socket, positive edge sensitive
-        .dac_clk (adda_clk),
+        .dac_clk (dac_clk),
         .dac_data(dac_data),
 
         // SPI

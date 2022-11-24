@@ -61,11 +61,12 @@ module dac (
     reg [ 7 : 0] state;
     reg [ 7 : 0] state_next;
     localparam STATE_RESET = 8'h0;
-    localparam STATE_RECV_FLAG = 8'h1;
-    localparam STATE_RECV_ADDR = 8'h2;
-    localparam STATE_RECV_LENGTH_LB = 8'h3;
-    localparam STATE_RECV_LENGTH_HB = 8'h4;
-    localparam STATE_RECV_DATA = 8'h5;
+    localparam STATE_INIT_BRAM = 8'h1;
+    localparam STATE_RECV_FLAG = 8'h2;
+    localparam STATE_RECV_ADDR = 8'h3;
+    localparam STATE_RECV_LENGTH_LB = 8'h4;
+    localparam STATE_RECV_LENGTH_HB = 8'h5;
+    localparam STATE_RECV_DATA = 8'h6;
     always @(posedge clk) begin
         if (!resetn) begin
             state <= STATE_RESET;
@@ -77,7 +78,15 @@ module dac (
     always @(*) begin
         case (state)
             STATE_RESET: begin
-                state_next = STATE_RECV_FLAG;
+                state_next = STATE_INIT_BRAM;
+            end
+
+            STATE_INIT_BRAM: begin
+                if (buffer_wr_addr < 16'hffff) begin
+                    state_next = STATE_INIT_BRAM;
+                end else begin
+                    state_next = STATE_RECV_FLAG;
+                end
             end
 
             STATE_RECV_FLAG: begin
@@ -143,6 +152,17 @@ module dac (
                     buffer_wr_addr  <= 16'h0;
 
                     recv_data_ct    <= 16'h0;
+                end
+
+                STATE_INIT_BRAM: begin
+                    oag_output_ctrl <= 1'b0;
+                    oag_init_ctrl   <= 1'b1;
+
+                    if (buffer_wr_addr <= 16'hffff) begin
+                        buffer_wr_addr <= buffer_wr_addr + 1;
+                    end
+
+                    recv_data_ct <= 16'h0;
                 end
 
                 STATE_RECV_FLAG: begin
@@ -219,19 +239,27 @@ module dac (
     end
 
     always @(*) begin
-        if (state == STATE_RECV_DATA) begin
-            if (rxd_flag) begin
+        case (state)
+            STATE_INIT_BRAM: begin
                 buffer_wr_dv   = 1'b1;
-                buffer_wr_data = rxd_out;
-            end else begin
-                buffer_wr_dv   = 1'b0;
                 buffer_wr_data = 8'h0;
             end
 
-        end else begin
-            buffer_wr_dv   = 1'b0;
-            buffer_wr_data = 8'h0;
-        end
+            STATE_RECV_DATA: begin
+                if (rxd_flag) begin
+                    buffer_wr_dv   = 1'b1;
+                    buffer_wr_data = rxd_out;
+                end else begin
+                    buffer_wr_dv   = 1'b0;
+                    buffer_wr_data = 8'h0;
+                end
+            end
+
+            default: begin
+                buffer_wr_dv   = 1'b0;
+                buffer_wr_data = 8'h0;
+            end
+        endcase
     end
 
 endmodule

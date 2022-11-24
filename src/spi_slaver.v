@@ -1,6 +1,4 @@
 //极性特点：时钟空闲时为高电平
-//在上升沿采样数据，获取MOSI的输入
-//在下降沿发送数据,将数据发送到MISO
 //sck的时钟要大大小于clk的时钟，至多为clk/8
 module spi_slaver (
     input clk,
@@ -119,7 +117,7 @@ module spi_slaver (
             txd_state <= 3'd0;
             MISO      <= 1'b1;
         end else begin
-            if (sck_n && !cs) begin
+            if (sck_p && !cs) begin
                 case (txd_state)
                     3'd0: begin
                         MISO      <= txd_data[7];

@@ -28,41 +28,8 @@
 # 11 compiles, 0 failed with no errors.
 vsim -voptargs=+acc work.bench
 # vsim -voptargs="+acc" work.bench 
-# Start time: 16:51:50 on Nov 17,2022
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12369): (vopt-2697) MSB of part-select into 'mem_a' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12373): (vopt-2697) MSB of part-select into 'mem_a' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12377): (vopt-2697) MSB of part-select into 'mem_a' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12381): (vopt-2697) MSB of part-select into 'mem_a' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12385): (vopt-2697) MSB of part-select into 'mem_a' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12393): (vopt-2697) MSB of part-select into 'mem_b' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12397): (vopt-2697) MSB of part-select into 'mem_b' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12401): (vopt-2697) MSB of part-select into 'mem_b' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12405): (vopt-2697) MSB of part-select into 'mem_b' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12410): (vopt-2697) MSB of part-select into 'mem_b' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12369): (vopt-2697) MSB of part-select into 'mem_a' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12373): (vopt-2697) MSB of part-select into 'mem_a' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12377): (vopt-2697) MSB of part-select into 'mem_a' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12381): (vopt-2697) MSB of part-select into 'mem_a' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12385): (vopt-2697) MSB of part-select into 'mem_a' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12393): (vopt-2697) MSB of part-select into 'mem_b' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12397): (vopt-2697) MSB of part-select into 'mem_b' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12401): (vopt-2697) MSB of part-select into 'mem_b' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12405): (vopt-2697) MSB of part-select into 'mem_b' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12410): (vopt-2697) MSB of part-select into 'mem_b' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12369): (vopt-2697) MSB of part-select into 'mem_a' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12373): (vopt-2697) MSB of part-select into 'mem_a' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12377): (vopt-2697) MSB of part-select into 'mem_a' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12381): (vopt-2697) MSB of part-select into 'mem_a' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12385): (vopt-2697) MSB of part-select into 'mem_a' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12393): (vopt-2697) MSB of part-select into 'mem_b' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12397): (vopt-2697) MSB of part-select into 'mem_b' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12401): (vopt-2697) MSB of part-select into 'mem_b' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12405): (vopt-2697) MSB of part-select into 'mem_b' is out of bounds.
-# ** Warning: C:/Gowin/Gowin_V1.9.8.08/IDE/simlib/gw2a/prim_tsim.v(12410): (vopt-2697) MSB of part-select into 'mem_b' is out of bounds.
-# ** Note: (vopt-143) Recognized 1 FSM in module "dac(fast)".
-# ** Note: (vopt-143) Recognized 2 FSMs in module "spi_slaver(fast)".
-# ** Note: (vopt-143) Recognized 1 FSM in module "adc(fast)".
+# Start time: 08:59:29 on Nov 24,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
 # Loading work.bench(fast)
 # Loading work.GSR(fast)
 # Loading work.main(fast)
@@ -138,5 +105,809 @@ vsim -voptargs=+acc work.bench
 add wave -position insertpoint sim:/bench/main_inst/dac_inst/*
 add wave -position insertpoint sim:/bench/main_inst/spi_slaver_inst/*
 run
-# End time: 17:03:13 on Nov 17,2022, Elapsed time: 0:11:23
-# Errors: 0, Warnings: 32
+# Compile of adc.v was successful.
+# Compile of dac.v was successful.
+# Compile of main.v was successful.
+# Compile of spi_slaver.v was successful.
+# Compile of bench.v was successful.
+# Compile of bram_dac.v was successful.
+# Compile of fifo_adc.vo was successful.
+# Compile of pll_main.v was successful.
+# Compile of prim_sim.v was successful.
+# Compile of prim_tsim.v was successful.
+# Compile of pll_adda.v was successful.
+# 11 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.bench
+# End time: 09:01:18 on Nov 24,2022, Elapsed time: 0:01:49
+# Errors: 0, Warnings: 2
+# vsim -voptargs="+acc" work.bench 
+# Start time: 09:01:18 on Nov 24,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# Loading work.bench(fast)
+# Loading work.GSR(fast)
+# Loading work.main(fast)
+# Loading work.pll_main(fast)
+# Loading work.rPLL(fast)
+# Loading work.pll_adda(fast)
+# Loading work.rPLL(fast__1)
+# Loading work.adc(fast)
+# Loading work.fifo_adc(fast)
+# Loading work.VCC(fast)
+# Loading work.GND(fast)
+# Loading work.LUT2(fast)
+# Loading work.MUX4(fast)
+# Loading work.MUX2(fast)
+# Loading work.LUT4(fast)
+# Loading work.MUX16(fast)
+# Loading work.MUX8(fast)
+# Loading work.LUT2(fast__1)
+# Loading work.LUT3(fast)
+# Loading work.LUT4(fast__1)
+# Loading work.LUT4(fast__2)
+# Loading work.LUT4(fast__3)
+# Loading work.LUT2(fast__2)
+# Loading work.LUT4(fast__4)
+# Loading work.LUT2(fast__3)
+# Loading work.LUT2(fast__4)
+# Loading work.LUT3(fast__1)
+# Loading work.LUT3(fast__2)
+# Loading work.LUT3(fast__3)
+# Loading work.LUT3(fast__4)
+# Loading work.LUT2(fast__5)
+# Loading work.LUT4(fast__5)
+# Loading work.LUT4(fast__6)
+# Loading work.LUT4(fast__7)
+# Loading work.LUT4(fast__8)
+# Loading work.LUT3(fast__5)
+# Loading work.LUT4(fast__9)
+# Loading work.LUT3(fast__6)
+# Loading work.LUT4(fast__10)
+# Loading work.LUT4(fast__11)
+# Loading work.LUT4(fast__12)
+# Loading work.LUT4(fast__13)
+# Loading work.LUT4(fast__14)
+# Loading work.LUT4(fast__15)
+# Loading work.LUT4(fast__16)
+# Loading work.LUT4(fast__17)
+# Loading work.LUT4(fast__18)
+# Loading work.LUT3(fast__7)
+# Loading work.LUT3(fast__8)
+# Loading work.LUT4(fast__19)
+# Loading work.DFFC(fast)
+# Loading work.DFFP(fast)
+# Loading work.DFFE(fast)
+# Loading work.DFF(fast)
+# Loading work.DFFCE(fast)
+# Loading work.DLCE(fast)
+# Loading work.DFFNP(fast)
+# Loading work.SDPB(fast)
+# Loading work.RAM16S4(fast)
+# Loading work.ALU(fast)
+# Loading work.ALU(fast__1)
+# Loading work.LUT1(fast)
+# Loading work.INV(fast)
+# Loading work.dac(fast)
+# Loading work.bram_dac(fast)
+# Loading work.SDPB(fast__1)
+# Loading work.SDPB(fast__2)
+# Loading work.spi_slaver(fast)
+# ** Warning: (vsim-3015) D:/Projects/GW/PocketLAB/src/dac.v(21): [PCDPC] - Port size (15) does not match connection size (16) for port 'ada'. The port definition is at: D:/Projects/GW/PocketLAB/src/bram_dac/bram_dac.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /bench/main_inst/dac_inst/bram_dac_inst File: D:/Projects/GW/PocketLAB/src/bram_dac/bram_dac.v
+# ** Warning: (vsim-3015) D:/Projects/GW/PocketLAB/src/dac.v(21): [PCDPC] - Port size (15) does not match connection size (16) for port 'adb'. The port definition is at: D:/Projects/GW/PocketLAB/src/bram_dac/bram_dac.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /bench/main_inst/dac_inst/bram_dac_inst File: D:/Projects/GW/PocketLAB/src/bram_dac/bram_dac.v
+add wave -position insertpoint sim:/bench/main_inst/dac_inst/*
+add wave -position insertpoint sim:/bench/main_inst/spi_slaver_inst/*
+run
+add wave -position insertpoint sim:/bench/main_inst/*
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# Loading work.bench(fast)
+# Loading work.GSR(fast)
+# Loading work.main(fast)
+# Loading work.pll_main(fast)
+# Loading work.rPLL(fast)
+# Loading work.pll_adda(fast)
+# Loading work.rPLL(fast__1)
+# Loading work.adc(fast)
+# Loading work.fifo_adc(fast)
+# Loading work.VCC(fast)
+# Loading work.GND(fast)
+# Loading work.LUT2(fast)
+# Loading work.MUX4(fast)
+# Loading work.MUX2(fast)
+# Loading work.LUT4(fast)
+# Loading work.MUX16(fast)
+# Loading work.MUX8(fast)
+# Loading work.LUT2(fast__1)
+# Loading work.LUT3(fast)
+# Loading work.LUT4(fast__1)
+# Loading work.LUT4(fast__2)
+# Loading work.LUT4(fast__3)
+# Loading work.LUT2(fast__2)
+# Loading work.LUT4(fast__4)
+# Loading work.LUT2(fast__3)
+# Loading work.LUT2(fast__4)
+# Loading work.LUT3(fast__1)
+# Loading work.LUT3(fast__2)
+# Loading work.LUT3(fast__3)
+# Loading work.LUT3(fast__4)
+# Loading work.LUT2(fast__5)
+# Loading work.LUT4(fast__5)
+# Loading work.LUT4(fast__6)
+# Loading work.LUT4(fast__7)
+# Loading work.LUT4(fast__8)
+# Loading work.LUT3(fast__5)
+# Loading work.LUT4(fast__9)
+# Loading work.LUT3(fast__6)
+# Loading work.LUT4(fast__10)
+# Loading work.LUT4(fast__11)
+# Loading work.LUT4(fast__12)
+# Loading work.LUT4(fast__13)
+# Loading work.LUT4(fast__14)
+# Loading work.LUT4(fast__15)
+# Loading work.LUT4(fast__16)
+# Loading work.LUT4(fast__17)
+# Loading work.LUT4(fast__18)
+# Loading work.LUT3(fast__7)
+# Loading work.LUT3(fast__8)
+# Loading work.LUT4(fast__19)
+# Loading work.DFFC(fast)
+# Loading work.DFFP(fast)
+# Loading work.DFFE(fast)
+# Loading work.DFF(fast)
+# Loading work.DFFCE(fast)
+# Loading work.DLCE(fast)
+# Loading work.DFFNP(fast)
+# Loading work.SDPB(fast)
+# Loading work.RAM16S4(fast)
+# Loading work.ALU(fast)
+# Loading work.ALU(fast__1)
+# Loading work.LUT1(fast)
+# Loading work.INV(fast)
+# Loading work.dac(fast)
+# Loading work.bram_dac(fast)
+# Loading work.SDPB(fast__1)
+# Loading work.SDPB(fast__2)
+# Loading work.spi_slaver(fast)
+# ** Warning: (vsim-3015) D:/Projects/GW/PocketLAB/src/dac.v(21): [PCDPC] - Port size (15) does not match connection size (16) for port 'ada'. The port definition is at: D:/Projects/GW/PocketLAB/src/bram_dac/bram_dac.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /bench/main_inst/dac_inst/bram_dac_inst File: D:/Projects/GW/PocketLAB/src/bram_dac/bram_dac.v
+# ** Warning: (vsim-3015) D:/Projects/GW/PocketLAB/src/dac.v(21): [PCDPC] - Port size (15) does not match connection size (16) for port 'adb'. The port definition is at: D:/Projects/GW/PocketLAB/src/bram_dac/bram_dac.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /bench/main_inst/dac_inst/bram_dac_inst File: D:/Projects/GW/PocketLAB/src/bram_dac/bram_dac.v
+run
+# Compile of prim_sim.v was successful.
+# Compile of prim_tsim.v was successful.
+# Compile of adc.v was successful.
+# Compile of dac.v was successful.
+# Compile of main.v was successful.
+# Compile of spi_slaver.v was successful.
+# Compile of bram_dac.v was successful.
+# Compile of bench.v was successful.
+# Compile of fifo_adc.vo was successful.
+# Compile of pll_adc.v was successful.
+# Compile of pll_dac.v was successful.
+# Compile of pll_main.v was successful.
+# 12 compiles, 0 failed with no errors.
+vlog -work work -refresh -force_refresh
+# Model Technology ModelSim SE-64 vlog 10.6d Compiler 2018.02 Feb 24 2018
+# Start time: 09:05:37 on Nov 24,2022
+# vlog -reportprogress 300 -work work -refresh -force_refresh 
+# -- Refreshing module adc
+# -- Refreshing module ALU
+# -- Refreshing module ALU54D
+# -- Refreshing module bench
+# -- Refreshing module bram_dac
+# -- Refreshing module BUFG
+# -- Refreshing module BUFS
+# -- Refreshing module CLKDIV
+# -- Refreshing module CLKDIV2
+# -- Refreshing module CLKDIVG
+# -- Refreshing module dac
+# -- Refreshing module DCS
+# -- Refreshing module DFF
+# -- Refreshing module DFFC
+# -- Refreshing module DFFCE
+# -- Refreshing module DFFE
+# -- Refreshing module DFFN
+# -- Refreshing module DFFNC
+# -- Refreshing module DFFNCE
+# -- Refreshing module DFFNE
+# -- Refreshing module DFFNP
+# -- Refreshing module DFFNPE
+# -- Refreshing module DFFNR
+# -- Refreshing module DFFNRE
+# -- Refreshing module DFFNS
+# -- Refreshing module DFFNSE
+# -- Refreshing module DFFP
+# -- Refreshing module DFFPE
+# -- Refreshing module DFFR
+# -- Refreshing module DFFRE
+# -- Refreshing module DFFS
+# -- Refreshing module DFFSE
+# -- Refreshing module DHCEN
+# -- Refreshing module DL
+# -- Refreshing module DLC
+# -- Refreshing module DLCE
+# -- Refreshing module DLE
+# -- Refreshing module DLL
+# -- Refreshing module DLLDLY
+# -- Refreshing module DLN
+# -- Refreshing module DLNC
+# -- Refreshing module DLNCE
+# -- Refreshing module DLNE
+# -- Refreshing module DLNP
+# -- Refreshing module DLNPE
+# -- Refreshing module DLP
+# -- Refreshing module DLPE
+# -- Refreshing module DP
+# -- Refreshing module DPB
+# -- Refreshing module DPX9
+# -- Refreshing module DPX9B
+# -- Refreshing module DQCE
+# -- Refreshing module DQS
+# -- Refreshing module ELVDS_IBUF
+# -- Refreshing module ELVDS_IBUF_R
+# -- Refreshing module ELVDS_IOBUF
+# -- Refreshing module ELVDS_IOBUF_R
+# -- Refreshing module ELVDS_OBUF
+# -- Refreshing module ELVDS_TBUF
+# -- Refreshing UDP ff
+# -- Refreshing UDP ffn
+# -- Refreshing module fifo_adc
+# -- Refreshing module GND
+# -- Refreshing module GSR
+# -- Refreshing module I3C_IOBUF
+# -- Refreshing module IBUF
+# -- Refreshing module IBUF_R
+# -- Refreshing module IDDR
+# -- Refreshing module IDDR_MEM
+# -- Refreshing module IDDRC
+# -- Refreshing module IDES10
+# -- Refreshing module IDES4
+# -- Refreshing module IDES4_MEM
+# -- Refreshing module IDES8
+# -- Refreshing module IDES8_MEM
+# -- Refreshing module IEM
+# -- Refreshing module INV
+# -- Refreshing module IOBUF
+# -- Refreshing module IOBUF_R
+# -- Refreshing module IODELAY
+# -- Refreshing module IODELAYA
+# -- Refreshing module IVIDEO
+# -- Refreshing module LUT1
+# -- Refreshing module LUT2
+# -- Refreshing module LUT3
+# -- Refreshing module LUT4
+# -- Refreshing module LUT5
+# -- Refreshing module LUT6
+# -- Refreshing module LUT7
+# -- Refreshing module LUT8
+# -- Refreshing module main
+# -- Refreshing module MIPI_IBUF
+# -- Refreshing module MULT18X18
+# -- Refreshing module MULT36X36
+# -- Refreshing module MULT9X9
+# -- Refreshing module MULTADDALU18X18
+# -- Refreshing module MULTALU18X18
+# -- Refreshing module MULTALU36X18
+# -- Refreshing module MUX16
+# -- Refreshing UDP mux2
+# -- Refreshing module MUX2
+# -- Refreshing module MUX2_LUT5
+# -- Refreshing module MUX2_LUT6
+# -- Refreshing module MUX2_LUT7
+# -- Refreshing module MUX2_LUT8
+# -- Refreshing module MUX2_MUX16
+# -- Refreshing module MUX2_MUX32
+# -- Refreshing module MUX2_MUX8
+# -- Refreshing module MUX32
+# -- Refreshing module MUX4
+# -- Refreshing module MUX8
+# -- Refreshing module OBUF
+# -- Refreshing module ODDR
+# -- Refreshing module ODDR_MEM
+# -- Refreshing module ODDRC
+# -- Refreshing module OSC
+# -- Refreshing module OSCW
+# -- Refreshing module OSER10
+# -- Refreshing module OSER4
+# -- Refreshing module OSER4_MEM
+# -- Refreshing module OSER8
+# -- Refreshing module OSER8_MEM
+# -- Refreshing module OTP
+# -- Refreshing module OVIDEO
+# -- Refreshing module PADD18
+# -- Refreshing module PADD9
+# -- Refreshing module PLL
+# -- Refreshing module pll_adc
+# -- Refreshing module pll_adda
+# -- Refreshing module pll_dac
+# -- Refreshing module pll_main
+# -- Refreshing module PLLO
+# -- Refreshing module pROM
+# -- Refreshing module pROMX9
+# -- Refreshing module RAM16S1
+# -- Refreshing module RAM16S2
+# -- Refreshing module RAM16S4
+# -- Refreshing module RAM16SDP1
+# -- Refreshing module RAM16SDP2
+# -- Refreshing module RAM16SDP4
+# -- Refreshing module ROM
+# -- Refreshing module ROM16
+# -- Refreshing module ROMX9
+# -- Refreshing module rPLL
+# -- Refreshing module rROM
+# -- Refreshing module rROMX9
+# -- Refreshing module rSDP
+# -- Refreshing module rSDPX9
+# -- Refreshing module SAMB
+# -- Refreshing module SDP
+# -- Refreshing module SDPB
+# -- Refreshing module SDPX9
+# -- Refreshing module SDPX9B
+# -- Refreshing module SP
+# -- Refreshing module spi_slaver
+# -- Refreshing module SPX9
+# -- Refreshing module TBUF
+# -- Refreshing module TLVDS_IBUF
+# -- Refreshing module TLVDS_IOBUF
+# -- Refreshing module TLVDS_OBUF
+# -- Refreshing module TLVDS_TBUF
+# -- Refreshing module VCC
+# End time: 09:05:38 on Nov 24,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -work work -refresh -force_refresh
+# Model Technology ModelSim SE-64 vcom 10.6d Compiler 2018.02 Feb 24 2018
+# Start time: 09:05:38 on Nov 24,2022
+# vcom -reportprogress 300 -work work -refresh -force_refresh 
+# -- Skipping module adc
+# -- Skipping module ALU
+# -- Skipping module ALU54D
+# -- Skipping module bench
+# -- Skipping module bram_dac
+# -- Skipping module BUFG
+# -- Skipping module BUFS
+# -- Skipping module CLKDIV
+# -- Skipping module CLKDIV2
+# -- Skipping module CLKDIVG
+# -- Skipping module dac
+# -- Skipping module DCS
+# -- Skipping module DFF
+# -- Skipping module DFFC
+# -- Skipping module DFFCE
+# -- Skipping module DFFE
+# -- Skipping module DFFN
+# -- Skipping module DFFNC
+# -- Skipping module DFFNCE
+# -- Skipping module DFFNE
+# -- Skipping module DFFNP
+# -- Skipping module DFFNPE
+# -- Skipping module DFFNR
+# -- Skipping module DFFNRE
+# -- Skipping module DFFNS
+# -- Skipping module DFFNSE
+# -- Skipping module DFFP
+# -- Skipping module DFFPE
+# -- Skipping module DFFR
+# -- Skipping module DFFRE
+# -- Skipping module DFFS
+# -- Skipping module DFFSE
+# -- Skipping module DHCEN
+# -- Skipping module DL
+# -- Skipping module DLC
+# -- Skipping module DLCE
+# -- Skipping module DLE
+# -- Skipping module DLL
+# -- Skipping module DLLDLY
+# -- Skipping module DLN
+# -- Skipping module DLNC
+# -- Skipping module DLNCE
+# -- Skipping module DLNE
+# -- Skipping module DLNP
+# -- Skipping module DLNPE
+# -- Skipping module DLP
+# -- Skipping module DLPE
+# -- Skipping module DP
+# -- Skipping module DPB
+# -- Skipping module DPX9
+# -- Skipping module DPX9B
+# -- Skipping module DQCE
+# -- Skipping module DQS
+# -- Skipping module ELVDS_IBUF
+# -- Skipping module ELVDS_IBUF_R
+# -- Skipping module ELVDS_IOBUF
+# -- Skipping module ELVDS_IOBUF_R
+# -- Skipping module ELVDS_OBUF
+# -- Skipping module ELVDS_TBUF
+# -- Skipping UDP ff
+# -- Skipping UDP ffn
+# -- Skipping module fifo_adc
+# -- Skipping module GND
+# -- Skipping module GSR
+# -- Skipping module I3C_IOBUF
+# -- Skipping module IBUF
+# -- Skipping module IBUF_R
+# -- Skipping module IDDR
+# -- Skipping module IDDR_MEM
+# -- Skipping module IDDRC
+# -- Skipping module IDES10
+# -- Skipping module IDES4
+# -- Skipping module IDES4_MEM
+# -- Skipping module IDES8
+# -- Skipping module IDES8_MEM
+# -- Skipping module IEM
+# -- Skipping module INV
+# -- Skipping module IOBUF
+# -- Skipping module IOBUF_R
+# -- Skipping module IODELAY
+# -- Skipping module IODELAYA
+# -- Skipping module IVIDEO
+# -- Skipping module LUT1
+# -- Skipping module LUT2
+# -- Skipping module LUT3
+# -- Skipping module LUT4
+# -- Skipping module LUT5
+# -- Skipping module LUT6
+# -- Skipping module LUT7
+# -- Skipping module LUT8
+# -- Skipping module main
+# -- Skipping module MIPI_IBUF
+# -- Skipping module MULT18X18
+# -- Skipping module MULT36X36
+# -- Skipping module MULT9X9
+# -- Skipping module MULTADDALU18X18
+# -- Skipping module MULTALU18X18
+# -- Skipping module MULTALU36X18
+# -- Skipping module MUX16
+# -- Skipping module MUX2
+# -- Skipping UDP mux2
+# -- Skipping module MUX2_LUT5
+# -- Skipping module MUX2_LUT6
+# -- Skipping module MUX2_LUT7
+# -- Skipping module MUX2_LUT8
+# -- Skipping module MUX2_MUX16
+# -- Skipping module MUX2_MUX32
+# -- Skipping module MUX2_MUX8
+# -- Skipping module MUX32
+# -- Skipping module MUX4
+# -- Skipping module MUX8
+# -- Skipping module OBUF
+# -- Skipping module ODDR
+# -- Skipping module ODDR_MEM
+# -- Skipping module ODDRC
+# -- Skipping module OSC
+# -- Skipping module OSCW
+# -- Skipping module OSER10
+# -- Skipping module OSER4
+# -- Skipping module OSER4_MEM
+# -- Skipping module OSER8
+# -- Skipping module OSER8_MEM
+# -- Skipping module OTP
+# -- Skipping module OVIDEO
+# -- Skipping module PADD18
+# -- Skipping module PADD9
+# -- Skipping module PLL
+# -- Skipping module pll_adc
+# -- Skipping module pll_adda
+# -- Skipping module pll_dac
+# -- Skipping module pll_main
+# -- Skipping module PLLO
+# -- Skipping module pROM
+# -- Skipping module pROMX9
+# -- Skipping module RAM16S1
+# -- Skipping module RAM16S2
+# -- Skipping module RAM16S4
+# -- Skipping module RAM16SDP1
+# -- Skipping module RAM16SDP2
+# -- Skipping module RAM16SDP4
+# -- Skipping module ROM
+# -- Skipping module ROM16
+# -- Skipping module ROMX9
+# -- Skipping module rPLL
+# -- Skipping module rROM
+# -- Skipping module rROMX9
+# -- Skipping module rSDP
+# -- Skipping module rSDPX9
+# -- Skipping module SAMB
+# -- Skipping module SDP
+# -- Skipping module SDPB
+# -- Skipping module SDPX9
+# -- Skipping module SDPX9B
+# -- Skipping module SP
+# -- Skipping module spi_slaver
+# -- Skipping module SPX9
+# -- Skipping module TBUF
+# -- Skipping module TLVDS_IBUF
+# -- Skipping module TLVDS_IOBUF
+# -- Skipping module TLVDS_OBUF
+# -- Skipping module TLVDS_TBUF
+# -- Skipping module VCC
+# End time: 09:05:38 on Nov 24,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vmap -del work
+# Model Technology ModelSim SE-64 vmap 10.6d Lib Mapping Utility 2018.02 Feb 24 2018
+# vmap -del work 
+# Removing reference to logical library work
+# Modifying D:/Tasks/PocketLab/PocketLAB.mpf
+vdel -all -lib work
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is zhangfan@DESKTOP-NSMO1H9.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is zhangfan@DESKTOP-NSMO1H9.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is zhangfan@DESKTOP-NSMO1H9.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is zhangfan@DESKTOP-NSMO1H9.
+# Compile of prim_sim.v was successful.
+# Compile of prim_tsim.v was successful.
+# Compile of adc.v was successful.
+# Compile of dac.v was successful.
+# Compile of main.v was successful.
+# Compile of spi_slaver.v was successful.
+# Compile of bram_dac.v was successful.
+# Compile of bench.v was successful.
+# Compile of fifo_adc.vo was successful.
+# Compile of pll_adc.v was successful.
+# Compile of pll_dac.v was successful.
+# Compile of pll_main.v was successful.
+# 12 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.bench
+# End time: 09:05:58 on Nov 24,2022, Elapsed time: 0:04:40
+# Errors: 0, Warnings: 4
+# vsim -voptargs="+acc" work.bench 
+# Start time: 09:05:58 on Nov 24,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "dac(fast)".
+# ** Note: (vopt-143) Recognized 2 FSMs in module "spi_slaver(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "adc(fast)".
+# Loading work.bench(fast)
+# Loading work.GSR(fast)
+# Loading work.main(fast)
+# Loading work.pll_main(fast)
+# Loading work.rPLL(fast)
+# Loading work.pll_adc(fast)
+# Loading work.rPLL(fast__1)
+# Loading work.pll_dac(fast)
+# Loading work.rPLL(fast__2)
+# Loading work.adc(fast)
+# Loading work.fifo_adc(fast)
+# Loading work.VCC(fast)
+# Loading work.GND(fast)
+# Loading work.LUT2(fast)
+# Loading work.MUX4(fast)
+# Loading work.MUX2(fast)
+# Loading work.LUT4(fast)
+# Loading work.MUX16(fast)
+# Loading work.MUX8(fast)
+# Loading work.LUT2(fast__1)
+# Loading work.LUT3(fast)
+# Loading work.LUT4(fast__1)
+# Loading work.LUT4(fast__2)
+# Loading work.LUT4(fast__3)
+# Loading work.LUT2(fast__2)
+# Loading work.LUT4(fast__4)
+# Loading work.LUT2(fast__3)
+# Loading work.LUT2(fast__4)
+# Loading work.LUT3(fast__1)
+# Loading work.LUT3(fast__2)
+# Loading work.LUT3(fast__3)
+# Loading work.LUT3(fast__4)
+# Loading work.LUT2(fast__5)
+# Loading work.LUT4(fast__5)
+# Loading work.LUT4(fast__6)
+# Loading work.LUT4(fast__7)
+# Loading work.LUT4(fast__8)
+# Loading work.LUT3(fast__5)
+# Loading work.LUT4(fast__9)
+# Loading work.LUT3(fast__6)
+# Loading work.LUT4(fast__10)
+# Loading work.LUT4(fast__11)
+# Loading work.LUT4(fast__12)
+# Loading work.LUT4(fast__13)
+# Loading work.LUT4(fast__14)
+# Loading work.LUT4(fast__15)
+# Loading work.LUT4(fast__16)
+# Loading work.LUT4(fast__17)
+# Loading work.LUT4(fast__18)
+# Loading work.LUT3(fast__7)
+# Loading work.LUT3(fast__8)
+# Loading work.LUT4(fast__19)
+# Loading work.DFFC(fast)
+# Loading work.DFFP(fast)
+# Loading work.DFFE(fast)
+# Loading work.DFF(fast)
+# Loading work.DFFCE(fast)
+# Loading work.DLCE(fast)
+# Loading work.DFFNP(fast)
+# Loading work.SDPB(fast)
+# Loading work.RAM16S4(fast)
+# Loading work.ALU(fast)
+# Loading work.ALU(fast__1)
+# Loading work.LUT1(fast)
+# Loading work.INV(fast)
+# Loading work.dac(fast)
+# Loading work.bram_dac(fast)
+# Loading work.SDPB(fast__1)
+# Loading work.SDPB(fast__2)
+# Loading work.spi_slaver(fast)
+# ** Warning: (vsim-3015) D:/Tasks/PocketLab/src/dac.v(24): [PCDPC] - Port size (15) does not match connection size (16) for port 'ada'. The port definition is at: D:/Tasks/PocketLab/src/bram_dac/bram_dac.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /bench/main_inst/dac_inst/bram_dac_inst File: D:/Tasks/PocketLab/src/bram_dac/bram_dac.v
+# ** Warning: (vsim-3015) D:/Tasks/PocketLab/src/dac.v(24): [PCDPC] - Port size (15) does not match connection size (16) for port 'adb'. The port definition is at: D:/Tasks/PocketLab/src/bram_dac/bram_dac.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /bench/main_inst/dac_inst/bram_dac_inst File: D:/Tasks/PocketLab/src/bram_dac/bram_dac.v
+add wave -position insertpoint sim:/bench/main_inst/*
+add wave -position insertpoint sim:/bench/main_inst/spi_slaver_inst/*
+add wave -position insertpoint sim:/bench/main_inst/dac_inst/*
+run
+run
+run
+run
+run
+run
+# Compile of dac.v was successful.
+vsim -voptargs=+acc work.bench
+# End time: 09:09:41 on Nov 24,2022, Elapsed time: 0:03:43
+# Errors: 0, Warnings: 2
+# vsim -voptargs="+acc" work.bench 
+# Start time: 09:09:41 on Nov 24,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "dac(fast)".
+# Loading work.bench(fast)
+# Loading work.GSR(fast)
+# Loading work.main(fast)
+# Loading work.pll_main(fast)
+# Loading work.rPLL(fast)
+# Loading work.pll_adc(fast)
+# Loading work.rPLL(fast__1)
+# Loading work.pll_dac(fast)
+# Loading work.rPLL(fast__2)
+# Loading work.adc(fast)
+# Loading work.fifo_adc(fast)
+# Loading work.VCC(fast)
+# Loading work.GND(fast)
+# Loading work.LUT2(fast)
+# Loading work.MUX4(fast)
+# Loading work.MUX2(fast)
+# Loading work.LUT4(fast)
+# Loading work.MUX16(fast)
+# Loading work.MUX8(fast)
+# Loading work.LUT2(fast__1)
+# Loading work.LUT3(fast)
+# Loading work.LUT4(fast__1)
+# Loading work.LUT4(fast__2)
+# Loading work.LUT4(fast__3)
+# Loading work.LUT2(fast__2)
+# Loading work.LUT4(fast__4)
+# Loading work.LUT2(fast__3)
+# Loading work.LUT2(fast__4)
+# Loading work.LUT3(fast__1)
+# Loading work.LUT3(fast__2)
+# Loading work.LUT3(fast__3)
+# Loading work.LUT3(fast__4)
+# Loading work.LUT2(fast__5)
+# Loading work.LUT4(fast__5)
+# Loading work.LUT4(fast__6)
+# Loading work.LUT4(fast__7)
+# Loading work.LUT4(fast__8)
+# Loading work.LUT3(fast__5)
+# Loading work.LUT4(fast__9)
+# Loading work.LUT3(fast__6)
+# Loading work.LUT4(fast__10)
+# Loading work.LUT4(fast__11)
+# Loading work.LUT4(fast__12)
+# Loading work.LUT4(fast__13)
+# Loading work.LUT4(fast__14)
+# Loading work.LUT4(fast__15)
+# Loading work.LUT4(fast__16)
+# Loading work.LUT4(fast__17)
+# Loading work.LUT4(fast__18)
+# Loading work.LUT3(fast__7)
+# Loading work.LUT3(fast__8)
+# Loading work.LUT4(fast__19)
+# Loading work.DFFC(fast)
+# Loading work.DFFP(fast)
+# Loading work.DFFE(fast)
+# Loading work.DFF(fast)
+# Loading work.DFFCE(fast)
+# Loading work.DLCE(fast)
+# Loading work.DFFNP(fast)
+# Loading work.SDPB(fast)
+# Loading work.RAM16S4(fast)
+# Loading work.ALU(fast)
+# Loading work.ALU(fast__1)
+# Loading work.LUT1(fast)
+# Loading work.INV(fast)
+# Loading work.dac(fast)
+# Loading work.bram_dac(fast)
+# Loading work.SDPB(fast__1)
+# Loading work.SDPB(fast__2)
+# Loading work.spi_slaver(fast)
+# ** Warning: (vsim-3015) D:/Tasks/PocketLab/src/dac.v(24): [PCDPC] - Port size (15) does not match connection size (16) for port 'ada'. The port definition is at: D:/Tasks/PocketLab/src/bram_dac/bram_dac.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /bench/main_inst/dac_inst/bram_dac_inst File: D:/Tasks/PocketLab/src/bram_dac/bram_dac.v
+# ** Warning: (vsim-3015) D:/Tasks/PocketLab/src/dac.v(24): [PCDPC] - Port size (15) does not match connection size (16) for port 'adb'. The port definition is at: D:/Tasks/PocketLab/src/bram_dac/bram_dac.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /bench/main_inst/dac_inst/bram_dac_inst File: D:/Tasks/PocketLab/src/bram_dac/bram_dac.v
+add wave -position insertpoint sim:/bench/main_inst/*
+add wave -position insertpoint sim:/bench/main_inst/spi_slaver_inst/*
+add wave -position insertpoint sim:/bench/main_inst/dac_inst/*
+run
+# Compile of bench.v was successful.
+vsim -voptargs=+acc work.bench
+# End time: 09:10:51 on Nov 24,2022, Elapsed time: 0:01:10
+# Errors: 0, Warnings: 2
+# vsim -voptargs="+acc" work.bench 
+# Start time: 09:10:51 on Nov 24,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.bench(fast)
+# Loading work.GSR(fast)
+# Loading work.main(fast)
+# Loading work.pll_main(fast)
+# Loading work.rPLL(fast)
+# Loading work.pll_adc(fast)
+# Loading work.rPLL(fast__1)
+# Loading work.pll_dac(fast)
+# Loading work.rPLL(fast__2)
+# Loading work.adc(fast)
+# Loading work.fifo_adc(fast)
+# Loading work.VCC(fast)
+# Loading work.GND(fast)
+# Loading work.LUT2(fast)
+# Loading work.MUX4(fast)
+# Loading work.MUX2(fast)
+# Loading work.LUT4(fast)
+# Loading work.MUX16(fast)
+# Loading work.MUX8(fast)
+# Loading work.LUT2(fast__1)
+# Loading work.LUT3(fast)
+# Loading work.LUT4(fast__1)
+# Loading work.LUT4(fast__2)
+# Loading work.LUT4(fast__3)
+# Loading work.LUT2(fast__2)
+# Loading work.LUT4(fast__4)
+# Loading work.LUT2(fast__3)
+# Loading work.LUT2(fast__4)
+# Loading work.LUT3(fast__1)
+# Loading work.LUT3(fast__2)
+# Loading work.LUT3(fast__3)
+# Loading work.LUT3(fast__4)
+# Loading work.LUT2(fast__5)
+# Loading work.LUT4(fast__5)
+# Loading work.LUT4(fast__6)
+# Loading work.LUT4(fast__7)
+# Loading work.LUT4(fast__8)
+# Loading work.LUT3(fast__5)
+# Loading work.LUT4(fast__9)
+# Loading work.LUT3(fast__6)
+# Loading work.LUT4(fast__10)
+# Loading work.LUT4(fast__11)
+# Loading work.LUT4(fast__12)
+# Loading work.LUT4(fast__13)
+# Loading work.LUT4(fast__14)
+# Loading work.LUT4(fast__15)
+# Loading work.LUT4(fast__16)
+# Loading work.LUT4(fast__17)
+# Loading work.LUT4(fast__18)
+# Loading work.LUT3(fast__7)
+# Loading work.LUT3(fast__8)
+# Loading work.LUT4(fast__19)
+# Loading work.DFFC(fast)
+# Loading work.DFFP(fast)
+# Loading work.DFFE(fast)
+# Loading work.DFF(fast)
+# Loading work.DFFCE(fast)
+# Loading work.DLCE(fast)
+# Loading work.DFFNP(fast)
+# Loading work.SDPB(fast)
+# Loading work.RAM16S4(fast)
+# Loading work.ALU(fast)
+# Loading work.ALU(fast__1)
+# Loading work.LUT1(fast)
+# Loading work.INV(fast)
+# Loading work.dac(fast)
+# Loading work.bram_dac(fast)
+# Loading work.SDPB(fast__1)
+# Loading work.SDPB(fast__2)
+# Loading work.spi_slaver(fast)
+# ** Warning: (vsim-3015) D:/Tasks/PocketLab/src/dac.v(24): [PCDPC] - Port size (15) does not match connection size (16) for port 'ada'. The port definition is at: D:/Tasks/PocketLab/src/bram_dac/bram_dac.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /bench/main_inst/dac_inst/bram_dac_inst File: D:/Tasks/PocketLab/src/bram_dac/bram_dac.v
+# ** Warning: (vsim-3015) D:/Tasks/PocketLab/src/dac.v(24): [PCDPC] - Port size (15) does not match connection size (16) for port 'adb'. The port definition is at: D:/Tasks/PocketLab/src/bram_dac/bram_dac.v(9).
+#    Time: 0 ps  Iteration: 0  Instance: /bench/main_inst/dac_inst/bram_dac_inst File: D:/Tasks/PocketLab/src/bram_dac/bram_dac.v
+add wave -position insertpoint sim:/bench/main_inst/*
+add wave -position insertpoint sim:/bench/main_inst/spi_slaver_inst/*
+add wave -position insertpoint sim:/bench/main_inst/dac_inst/*
+run
+# End time: 09:11:25 on Nov 24,2022, Elapsed time: 0:00:34
+# Errors: 0, Warnings: 2

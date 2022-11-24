@@ -17,15 +17,23 @@
    },
    {
     "InstFile" : "D:/Tasks/PocketLab/src/main.v",
-    "InstLine" : 37,
-    "InstName" : "pll_adda_inst",
-    "ModuleFile" : "D:/Tasks/PocketLab/src/pll_adda/pll_adda.v",
+    "InstLine" : 36,
+    "InstName" : "pll_adc_inst",
+    "ModuleFile" : "D:/Tasks/PocketLab/src/pll_adc/pll_adc.v",
     "ModuleLine" : 9,
-    "ModuleName" : "pll_adda"
+    "ModuleName" : "pll_adc"
    },
    {
     "InstFile" : "D:/Tasks/PocketLab/src/main.v",
-    "InstLine" : 50,
+    "InstLine" : 42,
+    "InstName" : "pll_dac_inst",
+    "ModuleFile" : "D:/Tasks/PocketLab/src/pll_dac/pll_dac.v",
+    "ModuleLine" : 9,
+    "ModuleName" : "pll_dac"
+   },
+   {
+    "InstFile" : "D:/Tasks/PocketLab/src/main.v",
+    "InstLine" : 53,
     "InstName" : "adc_inst",
     "ModuleFile" : "D:/Tasks/PocketLab/src/adc.v",
     "ModuleLine" : 1,
@@ -53,7 +61,7 @@
    },
    {
     "InstFile" : "D:/Tasks/PocketLab/src/main.v",
-    "InstLine" : 63,
+    "InstLine" : 66,
     "InstName" : "dac_inst",
     "ModuleFile" : "D:/Tasks/PocketLab/src/dac.v",
     "ModuleLine" : 1,
@@ -71,7 +79,7 @@
    },
    {
     "InstFile" : "D:/Tasks/PocketLab/src/main.v",
-    "InstLine" : 78,
+    "InstLine" : 81,
     "InstName" : "spi_slaver_inst",
     "ModuleFile" : "D:/Tasks/PocketLab/src/spi_slaver.v",
     "ModuleLine" : 5,
